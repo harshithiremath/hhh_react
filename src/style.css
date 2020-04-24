@@ -1,0 +1,284 @@
+@font-face {
+  font-family: "ostrich_reg";
+  src: url("././fonts/ostrich_regular/ostrichsansinline-regular.woff")
+      format("woff"),
+    url("././fonts/ostrich_regular/ostrichsansinline-regular.svg#filename")
+      format("svg");
+}
+
+@font-face {
+  font-family: "ostrich_bold";
+  src: url("./fonts/ostrich_bold/ostrich-sans-bold.woff") format("woff"),
+    url("./fonts/ostrich_bold/ostrich-sans-bold.svg#filename") format("svg");
+}
+
+@font-face {
+  font-family: "ostrich_thick";
+  src: url("./fonts/ostrich_thick/ostrich-sans-black.woff") format("woff"),
+    url("./fonts/ostrich_thick/ostrich-sans-black.svg#filename") format("svg");
+}
+
+@font-face {
+  font-family: "jonathanharris";
+  src: url("./fonts/jonathanharris/true_lies-webfont.woff") format("woff"),
+    url("./fonts/jonathanharris/true_lies-webfont.svg#filename") format("svg");
+}
+
+@font-face {
+  font-family: "ostrich_rounded";
+  src: url("./fonts/ostrich_medium_rounded/ostrichsansrounded-medium.woff")
+      format("woff"),
+    url("./fonts/ostrich_medium_rounded/ostrichsansrounded-medium.svg")
+      format("svg");
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+  background-color: #111;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #42455a;
+}
+::-webkit-scrollbar-thumb:hover {
+  width: 15px;
+  background: #fec325aa;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #efefef;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.menu ul {
+  display: inline-flex;
+  margin: 20px;
+  background: transparent;
+}
+.menu ul li {
+  font-family: "ostrich_rounded";
+  font-size: 30px;
+  list-style: none;
+  margin: 0 30px;
+  color: #b2b1b1;
+  cursor: pointer;
+  background: transparent;
+  transition: 0.2s;
+}
+.active {
+  color: #fec325 !important;
+  text-decoration: none;
+  background: transparent;
+}
+
+.signup-btn {
+  right: 20px;
+  position: absolute;
+  border: 2px solid #555555;
+  border-radius: 12px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transition: 0.2s;
+}
+.signup-btn:hover {
+  background-image: linear-gradient(#555, #555),
+    radial-gradient(circle at center, #000, #fec3453a);
+}
+.signup-text {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px 1px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  background: transparent;
+  font-family: "ostrich_thick";
+}
+
+.banner {
+  width: 80%;
+  height: 70%;
+  top: 5%;
+  left: 1%;
+  position: absolute;
+  color: #fff;
+  background: transparent;
+}
+.app-text {
+  width: 50%;
+  float: left;
+}
+.app-text h1 {
+  font-family: "jonathanharris";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 160px;
+  width: 640px;
+  position: relative;
+  margin-left: 130px;
+  margin-top: 45px;
+  color: #efefef;
+  background: transparent;
+  text-shadow: 4px 4px 10px #42455a;
+}
+
+.app-text p {
+  font-family: "ostrich_reg";
+  width: 650px;
+  font-size: 45px;
+  margin: 30px 0 30px 70px;
+  line-height: 37px;
+  color: #a1a1a1;
+}
+.app-text span {
+  font-family: "ostrich_rounded";
+  width: 650px;
+  font-size: 20px;
+  margin: 30px 0 30px 70px;
+  line-height: 37px;
+  color: #a1a1a1;
+}
+.app-picture {
+  width: 50%;
+  float: right;
+  background: transparent;
+}
+.app-picture img {
+  width: 100%;
+  float: right;
+  background: transparent;
+  resize: inherit;
+}
+.cloudcontainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  z-index: -1;
+}
+.cloud {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(3px);
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./components/images/vectorcloud.png");
+  background-size: cover;
+  animation: animate 90s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 100px;
+  }
+  100% {
+    background-position: 5440px;
+  }
+}
+
+.btn {
+  position: fixed;
+  /*top:91%;*/
+  left: 36.5%;
+  transform: translateY(0%);
+  text-align: center;
+  /*transform:translateX(0%);*/
+  width: 100%;
+  /*-ms-ime-align:center*/
+}
+
+footer {
+  position: fixed;
+  bottom: 35px;
+  right: 520px;
+}
+.btn {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background: #000000;
+  margin: 4px;
+  border-radius: 30%;
+  box-shadow: 0 5px 15px -5px #00000070;
+  color: #fec325;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 1px 1px #42455a;
+}
+
+.btn {
+  position: relative;
+  /*margin-top: 9px;*/
+  top: 34px;
+  left: 500px;
+  margin-left: 10;
+  margin-right: -10;
+}
+.btn .foot-head {
+  position: fixed;
+  top: 20%;
+  left: 23%;
+  text-align: center;
+}
+.btn:hover .foot-cap {
+  position: relative;
+  margin-top: 9px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  transform: scale(1.2);
+  color: #000000;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: #fec325;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+
+.btn:hover::before {
+  animation: aaa 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+
+@keyframes aaa {
+  0% {
+    left: -110%;
+    top: 90%;
+  }
+  50% {
+    left: 10%;
+    top: -30%;
+  }
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}
+.no_und {
+  text-decoration: none;
+}
+.orders {
+  color: #222222;
+}

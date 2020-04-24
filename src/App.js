@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Cloud from "./components/Cloud";
+import OrderHistory from "./pages/OrderHistory";
+import { Route, Switch } from "react-router-dom";
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="banner">
+          <Switch>
+            <Route exact path="/">
+              <Cloud />
+            </Route>
+            <Route exact path="/orders">
+              <OrderHistory />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
