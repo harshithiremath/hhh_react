@@ -3,19 +3,23 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Cloud from "./components/Cloud";
 import OrderHistory from "./pages/OrderHistory";
+import Tours from "./pages/Tours";
 import { Route, Switch } from "react-router-dom";
 class App extends React.Component {
   render() {
     return (
       <div>
         <Header />
-        <div className="banner">
+        <div>
           <Switch>
             <Route exact path="/">
               <Cloud />
             </Route>
-            <Route exact path="/orders">
+            <Route path="/orders">
               <OrderHistory />
+            </Route>
+            <Route path="/passes">
+              <Tours />
             </Route>
           </Switch>
         </div>

@@ -11,6 +11,17 @@ export default function Header() {
             </Link>
           </li>
 
+          <li>
+            <Link className="non-active" to="/passes">
+              Tours/Passes
+            </Link>
+          </li>
+
+          <li>
+            <Link className="non-active" to="/merch">
+              Merch
+            </Link>
+          </li>
           <div className="signup-btn">
             <Link to="/orders" className="signup-text">
               Orders

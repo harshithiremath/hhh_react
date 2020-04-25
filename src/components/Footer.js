@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div>
+    <div style={{ marginTop: 140 }}>
       <footer>
         <div className="foot">
-          <a className="btn" href="#">
+          <a className="btn" href="/">
             <img
               src={require("./images/facebook-logo-yellow.png")}
               alt="facebook-logo"
@@ -22,7 +22,7 @@ export default function Footer() {
               top="10px"
             />
           </a>
-          <a className="btn" href="#">
+          <a className="btn" href="/">
             <img
               src={require("./images/twitter-yellow.png")}
               alt="twitter-logo"
@@ -38,7 +38,7 @@ export default function Footer() {
               height="20px"
             />
           </a>
-          <a className="btn" href="#">
+          <a className="btn" href="/">
             <img
               src={require("./images/search_yellow.png")}
               alt="google-logo"
@@ -54,7 +54,7 @@ export default function Footer() {
               height="20px"
             />
           </a>
-          <a className="btn" href="#">
+          <a className="btn" href="/">
             <img
               src={require("./images/instagram-logo-yellow.png")}
               alt="insta-logo"
@@ -70,7 +70,7 @@ export default function Footer() {
               height="20px"
             />
           </a>
-          <a className="btn" href="#">
+          <a className="btn" href="/">
             <img
               src={require("./images/youtube-yellow.png")}
               alt="youtube-logo"

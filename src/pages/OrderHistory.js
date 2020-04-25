@@ -9,8 +9,8 @@ class OrderHistory extends React.Component {
   render() {
     const orders = Data.map((order) => {
       return (
-        <div className="orders">
-          <h1 key={order.product_id}>{order.name}</h1>
+        <div className="orders" key={order.product_id}>
+          <h1>{order.name}</h1>
           <h3>{order.price}</h3>
           <h4>Date ordered:{order.date_ordered}</h4>
           <hr />
