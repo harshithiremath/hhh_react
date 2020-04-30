@@ -1,6 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ContextConsumer } from "../components/Context";
 export default function Header() {
+  let displayHeads = null;
+
+  // if (context.signed_in === true) {
+  //   displayHeads = <h1>Hi logged in</h1>;
+  // } else {
+  //   displayHeads = <h1>Hi logged out</h1>;
+  // }
   return (
     <header>
       <div className="menu">
@@ -22,11 +30,30 @@ export default function Header() {
               Merch
             </Link>
           </li>
-          <div className="signup-btn">
-            <Link to="/orders" className="signup-text">
-              Orders
-            </Link>
-          </div>
+
+          <ContextConsumer>
+            {(context) => {
+              if (context.signed_in) {
+                return (
+                  <div>
+                    <a className="non-active">
+                      <Link to="/signin">Log out</Link>
+                    </a>
+                  </div>
+                );
+              } else {
+                return (
+                  <div>
+                    <a className="signup-btn">
+                      <Link to="/signin" className="signup-text">
+                        Log in
+                      </Link>
+                    </a>
+                  </div>
+                );
+              }
+            }}
+          </ContextConsumer>
         </ul>
         {/*<a href="lion.html" className="no_und">
             <li className="allheads">New Music</li>

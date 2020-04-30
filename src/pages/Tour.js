@@ -1,4 +1,5 @@
 import React from "react";
+const AppContext = React.createContext();
 function Tour(props) {
   /*
     This function will return single tour items in the tourslist
@@ -6,6 +7,7 @@ function Tour(props) {
     This data will be queried from Tours Table
     item object will have, 'tour_id', 'name', 'location', 'timing', 'price', 'no_passes'
     */
+  //The function that determines if available/selling fast should be output
   let text1 = "";
   let fast = false;
   if (props.item.no_passes < 100) {
@@ -14,9 +16,14 @@ function Tour(props) {
   } else {
     text1 = "Available";
   }
-  function handleClick(e) {
-    props.func(e);
-  }
+
+  // function handleClick(e) {
+  //   console.log(e);
+
+  //   return null;
+
+  //   //props.func(e);
+  // }
   return (
     <div className="tour" style={{ fontSize: 25 }}>
       <img
@@ -39,9 +46,9 @@ function Tour(props) {
           Rs. {props.item.price}
         </h4>
         {fast ? <h6 style={{ color: "red" }}>{text1}</h6> : <h6>{text1}</h6>}
-        <button onClick={(e) => handleClick(e)} className="buy-btn">
-          BUY
-        </button>
+        <AppContext.Consumer value={AppContext}>
+          {() => <button className="buy-btn">BUY</button>}
+        </AppContext.Consumer>
       </div>
     </div>
   );

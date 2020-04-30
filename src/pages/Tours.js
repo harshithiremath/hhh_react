@@ -5,23 +5,10 @@ class Tours extends React.Component {
   /*
     This data will be queried from Tours Table
     */
-  constructor() {
-    super();
-    this.state = {
-      tours: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    this.setState({
-      tours: 1,
-    });
-    console.log(this.state);
-  }
 
   render() {
     const items = tourData.map((item) => {
-      return <Tour key={item.id} item={item} func={this.handleClick} />;
+      return <Tour key={item.id} item={item} />;
     });
     return (
       <div>
