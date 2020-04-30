@@ -2,7 +2,7 @@ import React from "react";
 const { Provider, Consumer } = React.createContext();
 class ContextProvider extends React.Component {
   state = {
-    signed_in: false,
+    signed_in: true,
   };
   addToCart(item) {
     console.log(item);
