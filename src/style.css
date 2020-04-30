@@ -61,16 +61,15 @@ body {
 }
 
 .menu ul {
-  display: inline-flex;
-  margin: 20px;
+  display: flex;
+  margin: 20px 20px 0px 20px;
   background: transparent;
 }
 .menu ul li {
   font-family: "ostrich_rounded";
   font-size: 30px;
   list-style: none;
-  margin: 0 30px;
-  color: #b2b1b1;
+  margin: 0 30px 0px;
   cursor: pointer;
   background: transparent;
   transition: 0.2s;
@@ -81,7 +80,6 @@ body {
   background: transparent;
 }
 .non-active {
-  position: static;
   color: #aaa4a4;
   text-decoration: none;
   background: transparent;
@@ -94,7 +92,7 @@ body {
 }
 .non-active:hover {
   border: 2px solid rgb(63, 56, 56);
-  color: rgb(68, 66, 66);
+  color: rgb(37, 37, 37);
 }
 .signup-btn {
   right: 20px;
@@ -117,7 +115,30 @@ body {
   background: transparent;
   font-family: "ostrich_thick";
 }
+.account-head-wrapper {
+  color: #4cd137;
+}
+.account-head-wrapper ul {
+  display: none;
+}
 
+.account-head-wrapper:hover > ul {
+  background-color: rgb(70, 66, 66);
+  display: flex;
+  margin: 0px;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+}
+.account-head-wrapper .ul:hover {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.account-head-wrapper ul li {
+  margin: 10px 10px 0px 10px;
+  color: #dbdbdb;
+}
 .banner {
   width: 80%;
   height: 70%;
@@ -177,7 +198,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: #000000;
   z-index: -1;
 }
@@ -189,13 +210,12 @@ body {
   filter: blur(3px);
   opacity: 0.4;
   position: fixed;
-  top: 0;
-  left: 0;
+
   width: 100%;
   height: 100%;
   background: url("./components/images/vectorcloud.png");
   background-size: cover;
-  animation: animate 90s linear infinite;
+  animation: animate 200s linear infinite;
 }
 @keyframes animate {
   0% {

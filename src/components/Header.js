@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ContextConsumer } from "../components/Context";
 export default function Header() {
-  let displayHeads = null;
-
   // if (context.signed_in === true) {
   //   displayHeads = <h1>Hi logged in</h1>;
   // } else {
@@ -12,7 +10,7 @@ export default function Header() {
   return (
     <header>
       <div className="menu">
-        <ul className="menu">
+        <ul>
           <li>
             <Link className="active" to="/">
               Home
@@ -36,9 +34,14 @@ export default function Header() {
               if (context.signed_in) {
                 return (
                   <div>
-                    <a className="non-active">
-                      <Link to="/signin">Log out</Link>
-                    </a>
+                    <li className="account-head-wrapper">
+                      Account
+                      <ul>
+                        <li>Cart</li>
+                        <li>Orders</li>
+                        <li>Log out</li>
+                      </ul>
+                    </li>
                   </div>
                 );
               } else {
