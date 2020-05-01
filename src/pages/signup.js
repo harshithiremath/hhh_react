@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Particles from "react-particles-js";
+import axios from "axios";
+import { ContextConsumer } from "../components/Context";
 export default class Signup extends Component {
   particlesOptions = {
     particles: {
@@ -76,14 +78,22 @@ export default class Signup extends Component {
       [name]: value,
     });
   }
-  handleSubmit = (e) => {
+  handleSubmit = (e, props) => {
+    let user = {
+      first_name: this.state.name,
+      last_name: this.state.lastname,
+      email: this.state.email,
+      password: this.state.password,
+      phone: this.state.phone,
+    };
     e.preventDefault();
     if (this.validate()) {
-      console.log("registered");
-      //Run backend user signin code here
-      //
-      //
-      //
+      axios.post("http://localhost:5000/users", { user }).then((res) => {
+        console.log(res.data);
+        if (res.status === 200) {
+          props.toggleSignIn();
+        }
+      });
     } else {
       console.log("register fail");
       this.setState({
@@ -124,66 +134,75 @@ export default class Signup extends Component {
         <Particles className="particles" params={this.particlesOptions} />
         <div className="signin-box-container">
           <h1>Sign up</h1>
-          <form className="forms" onSubmit={this.handleSubmit}>
-            <div className="tbox">
-              <input
-                type="text"
-                value={this.state.name}
-                onChange={this.handleChange}
-                placeholder="First Name"
-                name="name"
-              />
-            </div>
-            <div className="tbox">
-              <input
-                type="text"
-                value={this.state.lastname}
-                onChange={this.handleChange}
-                placeholder="Last Name"
-                name="lastname"
-              />
-            </div>
-            <div className="tbox">
-              <input
-                type="number"
-                className="number-input"
-                value={this.state["phone"]}
-                onChange={this.handleChange}
-                placeholder="Phone number"
-                name="phone"
-              />
-            </div>
+          <ContextConsumer>
+            {(item) => (
+              <div>
+                <form
+                  className="forms"
+                  onSubmit={(e) => this.handleSubmit(e, item)}
+                >
+                  <div className="tbox">
+                    <input
+                      type="text"
+                      value={this.state.name}
+                      onChange={this.handleChange}
+                      placeholder="First Name"
+                      name="name"
+                    />
+                  </div>
+                  <div className="tbox">
+                    <input
+                      type="text"
+                      value={this.state.lastname}
+                      onChange={this.handleChange}
+                      placeholder="Last Name"
+                      name="lastname"
+                    />
+                  </div>
+                  <div className="tbox">
+                    <input
+                      type="number"
+                      className="number-input"
+                      value={this.state["phone"]}
+                      onChange={this.handleChange}
+                      placeholder="Phone number"
+                      name="phone"
+                    />
+                  </div>
 
-            <div className="tbox">
-              <input
-                type="email"
-                value={this.state["email"]}
-                onChange={this.handleChange}
-                placeholder="Email"
-                name="email"
-              />
-            </div>
+                  <div className="tbox">
+                    <input
+                      type="email"
+                      value={this.state["email"]}
+                      onChange={this.handleChange}
+                      placeholder="Email"
+                      name="email"
+                    />
+                  </div>
 
-            <div className="tbox">
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-                placeholder="Password"
-                name="password"
-              />
-            </div>
-            <div className="tbox">
-              <input
-                type="password"
-                value={this.state.repassword}
-                onChange={this.handleChange}
-                placeholder="Re-enter Password"
-                name="repassword"
-              />
-            </div>
-            <input className="loginbtn" type="submit" value="Sign Up" />
-          </form>
+                  <div className="tbox">
+                    <input
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.handleChange}
+                      placeholder="Password"
+                      name="password"
+                    />
+                  </div>
+                  <div className="tbox">
+                    <input
+                      type="password"
+                      value={this.state.repassword}
+                      onChange={this.handleChange}
+                      placeholder="Re-enter Password"
+                      name="repassword"
+                    />
+                  </div>
+                  <input className="loginbtn" type="submit" value="Sign Up" />
+                </form>
+              </div>
+            )}
+          </ContextConsumer>
           <Link to="/signin" className="new_member_text">
             Already a member?
           </Link>
