@@ -2,11 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ContextConsumer } from "../components/Context";
 export default function Header() {
-  // if (context.signed_in === true) {
-  //   displayHeads = <h1>Hi logged in</h1>;
-  // } else {
-  //   displayHeads = <h1>Hi logged out</h1>;
-  // }
+  const signOut = (props) => {
+    props.SignOut();
+  };
   return (
     <header>
       <div className="menu">
@@ -31,15 +29,31 @@ export default function Header() {
 
           <ContextConsumer>
             {(context) => {
-              if (context.signed_in) {
+              if (context.state.signed_in) {
                 return (
                   <div>
                     <li className="account-head-wrapper">
                       Account
                       <ul>
-                        <li>Cart</li>
-                        <li>Orders</li>
-                        <li>Log out</li>
+                        <li>
+                          <Link className="account-head-item" to="/cart">
+                            Cart
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="account-head-item" to="/orders">
+                            Orders
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            onClick={() => signOut(context)}
+                            className="account-head-item"
+                            to="/signin"
+                          >
+                            Log Out
+                          </Link>
+                        </li>
                       </ul>
                     </li>
                   </div>

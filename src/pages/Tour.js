@@ -1,5 +1,5 @@
 import React from "react";
-const AppContext = React.createContext();
+import { ContextConsumer } from "../components/Context";
 function Tour(props) {
   /*
     This function will return single tour items in the tourslist
@@ -46,9 +46,16 @@ function Tour(props) {
           Rs. {props.item.price}
         </h4>
         {fast ? <h6 style={{ color: "red" }}>{text1}</h6> : <h6>{text1}</h6>}
-        <AppContext.Consumer value={AppContext}>
-          {() => <button className="buy-btn">BUY</button>}
-        </AppContext.Consumer>
+        <ContextConsumer>
+          {(context) => (
+            <button
+              onClick={() => context.addToCart(props.item.tour_id)}
+              className="buy-btn"
+            >
+              BUY
+            </button>
+          )}
+        </ContextConsumer>
       </div>
     </div>
   );

@@ -91,7 +91,7 @@ export default class Signup extends Component {
       axios.post("http://localhost:5000/users", { user }).then((res) => {
         console.log(res.data);
         if (res.status === 200) {
-          props.toggleSignIn();
+          props.SignIn();
         }
       });
     } else {

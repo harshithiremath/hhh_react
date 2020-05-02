@@ -7,6 +7,8 @@ import Tours from "./pages/Tours";
 import { Route, Switch } from "react-router-dom";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
+import MainPage from "./pages/MainPage";
+import Merchs from "./pages/Merchs";
 /*
 class AppProvider extends React.Component {
   state = {
@@ -38,6 +40,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               <Cloud />
+              <MainPage />
             </Route>
             <Route path="/orders">
               <OrderHistory />
@@ -45,7 +48,12 @@ class App extends React.Component {
             <Route path="/passes">
               <Tours />
             </Route>
-            <Route path="/login"></Route>
+            <Route path="/merch">
+              <Merchs />
+            </Route>
+            <Route path="/login">
+              <SignIn />
+            </Route>
             <Route path="/signin">
               <SignIn />
             </Route>

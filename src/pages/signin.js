@@ -2,6 +2,8 @@ import React from "react";
 import Particles from "react-particles-js";
 import { ContextConsumer } from "../components/Context";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+// import axios from "axios";
 class SignIn extends React.Component {
   particlesOptions = {
     particles: {
@@ -60,7 +62,9 @@ class SignIn extends React.Component {
   };
   constructor() {
     super();
+
     this.state = {
+      redirect: false,
       email: "",
       password: "",
     };
@@ -74,14 +78,27 @@ class SignIn extends React.Component {
       [name]: value,
     });
   }
-  handleSubmit = (e) => {
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+  };
+  handleSubmit = (e, context) => {
     e.preventDefault();
+    // let user = {
+    //   email: this.state.email,
+    //   password: this.state.password,
+    // };
     if (this.validate()) {
       console.log("logged_in");
-      //Run backend user signin code here
-      //
-      //
-      //
+      context.SignIn();
+      this.setState({ redirect: true });
+      // axios.post("http://localhost:5000/signin", { user }).then((res) => {
+      //   console.log(res);
+      //   if(res.status === 500){
+      //     console.log("w")
+      //   }
+      // });
     } else {
       console.log("sign_in_failed");
       this.setState({
@@ -111,41 +128,56 @@ class SignIn extends React.Component {
   render() {
     return (
       <div>
+        {/* <ContextConsumer>
+          {(context) => {
+
+            context.SignOut();
+            return null;
+          }}
+        </ContextConsumer> */}
+        {this.renderRedirect()}
         <Particles className="particles" params={this.particlesOptions} />
         <div className="signin-box-container">
           <h1>Log In</h1>
-          <form className="forms" onSubmit={this.handleSubmit}>
-            <div className="tbox">
-              <input
-                type="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-                placeholder="Email"
-                name="email"
-              />
-            </div>
+          <ContextConsumer>
+            {(context) => (
+              <form
+                className="forms"
+                onSubmit={(e) => this.handleSubmit(e, context)}
+              >
+                <div className="tbox">
+                  <input
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    placeholder="Email"
+                    name="email"
+                  />
+                </div>
 
-            <div className="tbox">
-              <input
-                type="password"
-                value={this.state["password"]}
-                onChange={this.handleChange}
-                placeholder="Password"
-                name="password"
-              />
-            </div>
-            <div>
-              <span>
-                <a className="forgot">FORGOT PASSWORD?</a>
-              </span>
-            </div>
-            <input
-              className="loginbtn"
-              type="submit"
-              name="login-submit"
-              value="Login"
-            />
-          </form>
+                <div className="tbox">
+                  <input
+                    type="password"
+                    value={this.state["password"]}
+                    onChange={this.handleChange}
+                    placeholder="Password"
+                    name="password"
+                  />
+                </div>
+                <div>
+                  <span>
+                    <a className="forgot">FORGOT PASSWORD?</a>
+                  </span>
+                </div>
+                <input
+                  className="loginbtn"
+                  type="submit"
+                  name="login-submit"
+                  value="Login"
+                />
+              </form>
+            )}
+          </ContextConsumer>
           <Link to="/signup" className="new_member_text">
             New Member?
           </Link>

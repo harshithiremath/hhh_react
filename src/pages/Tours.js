@@ -1,5 +1,5 @@
 import React from "react";
-import tourData from "./toursData";
+// import tourData from "./toursData";
 import Tour from "./Tour";
 import axios from "axios";
 class Tours extends React.Component {
@@ -10,14 +10,15 @@ class Tours extends React.Component {
     tours: [],
   };
   componentDidMount() {
-    axios.get("localhost:5000/tours").then((res) => {
+    axios.get("http://localhost:5000/tours").then((res) => {
       const tours = res.data;
+      console.log(res.data);
       this.setState({ tours: tours });
     });
   }
   render() {
     const items = this.state.tours.map((item) => {
-      return <Tour key={item.id} item={item} />;
+      return <Tour key={item.tour_id} item={item} />;
     });
     return (
       <div>

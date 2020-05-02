@@ -1,24 +1,51 @@
 import React from "react";
 const { Provider, Consumer } = React.createContext();
+
 class ContextProvider extends React.Component {
   state = {
     signed_in: false,
+    cart: [],
   };
-  toggleSignIn = () => {
-    console.log("called toggle sign1");
-    this.setState((prevState) => {
-      console.log("called toggle sign2");
-      return {
-        signed_in: true,
-      };
-    });
+  SignIn = () => {
+    console.log("called sign in");
+    if (!this.state.signed_in) {
+      this.setState(() => {
+        console.log("called toggle sign in");
+        return {
+          signed_in: true,
+        };
+      });
+    }
   };
-  addToCart(item) {
+  SignOut = () => {
+    console.log("called sign out");
+    if (this.state.signed_in) {
+      this.setState(() => {
+        console.log("called toggle sign out");
+        return {
+          signed_in: false,
+        };
+      });
+    }
+  };
+  addToCart = (item) => {
+    let currCart = this.state.cart.concat(item);
     console.log(item);
-  }
+    this.setState({
+      cart: currCart,
+    });
+    console.log(this.state);
+  };
   render() {
     return (
-      <Provider value={{ theme: this.state, toggleSignIn: this.toggleSignIn }}>
+      <Provider
+        value={{
+          state: this.state,
+          addToCart: this.addToCart,
+          SignIn: this.SignIn,
+          SignOut: this.SignOut,
+        }}
+      >
         {this.props.children}
       </Provider>
     );
