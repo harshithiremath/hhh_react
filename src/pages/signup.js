@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Particles from "react-particles-js";
 import axios from "axios";
 import { ContextConsumer } from "../components/Context";
+import { Redirect } from "react-router-dom";
 export default class Signup extends Component {
   particlesOptions = {
     particles: {
@@ -62,6 +63,7 @@ export default class Signup extends Component {
   constructor() {
     super();
     this.state = {
+      redirect: false,
       name: "",
       lastname: "",
       email: "",
@@ -89,12 +91,22 @@ export default class Signup extends Component {
     e.preventDefault();
     if (this.validate()) {
       axios.post("http://localhost:5000/users", { user }).then((res) => {
-        console.log(res.data);
+        console.log(res.status);
         if (res.status === 200) {
           props.SignIn();
         }
-      });
-    } else {
+      }).catch(err=>{
+        const resp=err.response
+        if(resp.status == 418 ){
+          window.alert("User already present in database")
+            this.setState({
+              redirect:true
+            });
+            return;
+        }
+      })
+     } 
+     else {
       console.log("register fail");
       this.setState({
         password: "",
@@ -128,9 +140,15 @@ export default class Signup extends Component {
     }
     return true;
   }
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/signin" />;
+    }
+  };
   render() {
     return (
       <div>
+        {this.renderRedirect()}
         <Particles className="particles" params={this.particlesOptions} />
         <div className="signin-box-container">
           <h1>Sign up</h1>
