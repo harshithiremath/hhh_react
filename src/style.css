@@ -451,13 +451,6 @@ footer {
 .new_member_text:hover {
   color: #fec325;
 }
-.orders {
-  padding-left: 50px;
-  padding-top: 20px;
-  padding-right: 60px;
-  color: #343435;
-  display: block;
-}
 
 .tours_list {
   padding-top: 20px;
@@ -499,4 +492,24 @@ footer {
 }
 .buy-btn:hover {
   background: rgba(73, 67, 67, 0.384);
+}
+
+.orders {
+  width: 60%;
+  margin-left: 20%;
+}
+
+.order {
+  margin-top: 30px;
+  font-size: 280%;
+}
+.order h4 {
+  font-size: 50%;
+  margin-top: 5px;
+  color: #838591c5;
+  user-select: none;
+}
+.order h4:hover {
+  color: #51535a;
+  cursor: default;
 }

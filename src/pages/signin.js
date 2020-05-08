@@ -91,7 +91,7 @@ class SignIn extends React.Component {
     // };
     if (this.validate()) {
       console.log("logged_in");
-      context.SignIn();
+      context.SignIn(this.state.email);
       this.setState({ redirect: true });
       // axios.post("http://localhost:5000/signin", { user }).then((res) => {
       //   console.log(res);

@@ -9,6 +9,7 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import MainPage from "./pages/MainPage";
 import Merchs from "./pages/Merchs";
+import { ContextConsumer } from "./components/Context";
 /*
 class AppProvider extends React.Component {
   state = {
@@ -37,20 +38,33 @@ class App extends React.Component {
       <div>
         <Header />
         <div>
+          <ContextConsumer>
+            {(context) => {
+              return (
+                <Switch>
+                  <Route path="/orders">
+                    <OrderHistory user={context.user} context={context} />
+                    {/* Because we always want the OrderHistory page to have the context*/}
+                  </Route>
+                </Switch>
+              );
+            }}
+          </ContextConsumer>
           <Switch>
             <Route exact path="/">
               <Cloud />
               <MainPage />
             </Route>
-            <Route path="/orders">
+            {/* <Route path="/orders">
               <OrderHistory />
-            </Route>
+            </Route> */}
             <Route path="/passes">
               <Tours />
             </Route>
             <Route path="/merch">
               <Merchs />
             </Route>
+
             <Route path="/login">
               <SignIn />
             </Route>

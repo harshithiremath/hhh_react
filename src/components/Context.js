@@ -6,13 +6,14 @@ class ContextProvider extends React.Component {
     signed_in: false,
     cart: [],
   };
-  SignIn = () => {
+  SignIn = (email) => {
     console.log("called sign in");
     if (!this.state.signed_in) {
       this.setState(() => {
         console.log("called toggle sign in");
         return {
           signed_in: true,
+          user: email,
         };
       });
     }
@@ -41,9 +42,11 @@ class ContextProvider extends React.Component {
       <Provider
         value={{
           state: this.state,
+          signed_in: this.state.signed_in,
           addToCart: this.addToCart,
           SignIn: this.SignIn,
           SignOut: this.SignOut,
+          user: this.state.user,
         }}
       >
         {this.props.children}

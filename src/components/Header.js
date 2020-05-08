@@ -61,11 +61,11 @@ export default function Header() {
               } else {
                 return (
                   <div>
-                    <a className="signup-btn">
+                    <div className="signup-btn">
                       <Link to="/signin" className="signup-text">
                         Log in
                       </Link>
-                    </a>
+                    </div>
                   </div>
                 );
               }

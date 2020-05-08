@@ -90,23 +90,25 @@ export default class Signup extends Component {
     };
     e.preventDefault();
     if (this.validate()) {
-      axios.post("http://localhost:5000/users", { user }).then((res) => {
-        console.log(res.status);
-        if (res.status === 200) {
-          props.SignIn();
-        }
-      }).catch(err=>{
-        const resp=err.response
-        if(resp.status == 418 ){
-          window.alert("User already present in database")
+      axios
+        .post("http://localhost:5000/users", { user })
+        .then((res) => {
+          console.log(res.status);
+          if (res.status === 200) {
+            props.SignIn();
+          }
+        })
+        .catch((err) => {
+          const resp = err.response;
+          if (resp.status === 418) {
+            window.alert("User already present in database");
             this.setState({
-              redirect:true
+              redirect: true,
             });
             return;
-        }
-      })
-     } 
-     else {
+          }
+        });
+    } else {
       console.log("register fail");
       this.setState({
         password: "",
