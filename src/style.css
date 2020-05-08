@@ -453,28 +453,41 @@ footer {
 }
 
 .tours_list {
-  padding-top: 20px;
+  /* padding-top: 20px;
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 30px; */
+  width: 90%;
+  margin-left: 10%;
+  margin-top: 1%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
-
+.h2_upcoming_tours {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #ffa801;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.596);
+  user-select: none;
+}
 .tour {
   color: rgba(255, 255, 255, 0.733);
-  display: flex;
+  display: grid;
   flex-direction: column;
   border: 2px solid transparent;
   border-radius: 8px;
   width: 15%;
   flex-wrap: wrap;
   margin-left: 20px;
-  padding: 50px 90px 45px 20px;
+  padding: 50px 40px 45px 20px;
+  transition: transform 0.1s;
 }
 .tour:hover {
   background: #7c7b6c36;
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 .tourLower {
   display: flex;

@@ -40,7 +40,7 @@ class SignIn extends React.Component {
       },
       line_linked: {
         enable: true,
-        distance: 190,
+        distance: 200,
         color: "#000000",
         opacity: 0.4,
         width: 0.5,

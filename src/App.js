@@ -9,6 +9,7 @@ import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
 import MainPage from "./pages/MainPage";
 import Merchs from "./pages/Merchs";
+import Cart from "./pages/Cart";
 import { ContextConsumer } from "./components/Context";
 /*
 class AppProvider extends React.Component {
@@ -45,6 +46,9 @@ class App extends React.Component {
                   <Route path="/orders">
                     <OrderHistory user={context.user} context={context} />
                     {/* Because we always want the OrderHistory page to have the context*/}
+                  </Route>
+                  <Route path="/cart">
+                    <Cart user={context.user} context={context} />
                   </Route>
                 </Switch>
               );

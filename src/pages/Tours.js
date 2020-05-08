@@ -22,17 +22,7 @@ class Tours extends React.Component {
     });
     return (
       <div>
-        <h2
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textTransform: "uppercase",
-            fontSize: 40,
-            color: "#ffa801",
-          }}
-        >
-          Upcoming tours of HHH
-        </h2>
+        <h2 className="h2_upcoming_tours">Upcoming tours of HHH</h2>
         <div className="tours_list">{items}</div>
       </div>
     );
