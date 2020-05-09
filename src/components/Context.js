@@ -6,9 +6,27 @@ class ContextProvider extends React.Component {
     signed_in: false,
     cart: [],
   };
+
+  // ! As cookies are implemented, the user won't need to log in again if he opens a new tab
+
+  initialCheck = () => {
+    console.log("signed_in", localStorage.getItem("signed_in"));
+    if (localStorage.getItem("signed_in")) {
+      this.setState({
+        user: localStorage.getItem("user"),
+        signed_in: localStorage.getItem("signed_in"),
+      });
+    }
+  };
+  componentDidMount() {
+    this.initialCheck();
+  }
+
   SignIn = (email) => {
     console.log("called sign in");
     if (!this.state.signed_in) {
+      localStorage.setItem("signed_in", true);
+      localStorage.setItem("user", email);
       this.setState(() => {
         console.log("called toggle sign in");
         return {
@@ -22,6 +40,8 @@ class ContextProvider extends React.Component {
     console.log("called sign out");
     if (this.state.signed_in) {
       this.setState(() => {
+        localStorage.removeItem("signed_in");
+        localStorage.removeItem("user");
         console.log("called toggle sign out");
         return {
           signed_in: false,
@@ -42,11 +62,11 @@ class ContextProvider extends React.Component {
       <Provider
         value={{
           state: this.state,
+          user: this.state.user,
           signed_in: this.state.signed_in,
           addToCart: this.addToCart,
           SignIn: this.SignIn,
           SignOut: this.SignOut,
-          user: this.state.user,
         }}
       >
         {this.props.children}

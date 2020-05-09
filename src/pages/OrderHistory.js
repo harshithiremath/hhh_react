@@ -1,6 +1,6 @@
 import React from "react";
 import SingleOrder from "./single_order";
-// import Data from "./ordersData";
+// // import Data from "./ordersData";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 class OrderHistory extends React.Component {

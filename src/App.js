@@ -11,6 +11,7 @@ import MainPage from "./pages/MainPage";
 import Merchs from "./pages/Merchs";
 import Cart from "./pages/Cart";
 import { ContextConsumer } from "./components/Context";
+
 /*
 class AppProvider extends React.Component {
   state = {

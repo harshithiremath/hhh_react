@@ -4,13 +4,13 @@ import Tour from "./Tour";
 import axios from "axios";
 class Tours extends React.Component {
   /*
-    This data will be queried from Tours Table
+    // This data will be queried from Tours Table
   */
   state = {
     tours: [],
   };
   componentDidMount() {
-    axios.get("http://localhost:5000/tours").then((res) => {
+    axios.get("/tours").then((res) => {
       const tours = res.data;
       console.log(res.data);
       this.setState({ tours: tours });
