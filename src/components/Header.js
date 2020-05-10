@@ -14,7 +14,11 @@ export default function Header() {
               Home
             </Link>
           </li>
-
+          <li>
+            <Link className="non-active" to="/webPlayer">
+              Music
+            </Link>
+          </li>
           <li>
             <Link className="non-active" to="/passes">
               Tours/Passes

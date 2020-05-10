@@ -11,7 +11,7 @@ import MainPage from "./pages/MainPage";
 import Merchs from "./pages/Merchs";
 import Cart from "./pages/Cart";
 import { ContextConsumer } from "./components/Context";
-
+import WebPlayer from "./pages/WebPlayer";
 /*
 class AppProvider extends React.Component {
   state = {
@@ -78,6 +78,9 @@ class App extends React.Component {
             </Route>
             <Route path="/signup">
               <SignUp />
+            </Route>
+            <Route path="/webPlayer">
+              <WebPlayer />
             </Route>
           </Switch>
         </div>
