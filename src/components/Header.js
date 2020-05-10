@@ -29,6 +29,8 @@ export default function Header() {
 
           <ContextConsumer>
             {(context) => {
+              // ? Context is passed as the signed_in state has to be known to change the content of the header
+
               if (context.state.signed_in) {
                 return (
                   <div>
@@ -72,19 +74,6 @@ export default function Header() {
             }}
           </ContextConsumer>
         </ul>
-        {/*<a href="lion.html" className="no_und">
-            <li className="allheads">New Music</li>
-            </a>
-            <a href="lion.html" className="no_und">
-            <li className="allheads">Tour</li>
-            </a>
-            <a href="lion.html" className="no_und">
-            <li className="allheads">Merch</li>
-            </a>
-            <a href="team_page/index.php" class="no_und">
-            <li class="allheads">Team</li>
-            </a>
-        */}
       </div>
     </header>
   );

@@ -49,7 +49,11 @@ class App extends React.Component {
                     {/* Because we always want the OrderHistory page to have the context*/}
                   </Route>
                   <Route path="/cart">
-                    <Cart user={context.user} context={context} />
+                    <Cart
+                      user={context.user}
+                      signed_in={context.signed_in}
+                      context={context}
+                    />
                   </Route>
                 </Switch>
               );

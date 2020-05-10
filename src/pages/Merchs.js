@@ -6,7 +6,7 @@ export default class Merchs extends Component {
     merch: [],
   };
   componentDidMount() {
-    axios("http://localhost:5000/merch").then((res) => {
+    axios.get("http://localhost:5000/merch").then((res) => {
       console.log(res.data);
       let merchs = res.data;
       this.setState({ merch: merchs });
