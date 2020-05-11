@@ -37,7 +37,7 @@ export default function Header() {
 
               if (context.state.signed_in) {
                 return (
-                  <div>
+                  <div className="account-header">
                     <li className="account-head-wrapper">
                       Account
                       <ul>

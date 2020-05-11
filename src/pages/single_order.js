@@ -10,14 +10,14 @@ export default class single_order extends React.Component {
         params: { merch_id: this.props.order.merch_id },
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         this.setState({ order: res.data[0] });
       });
   }
 
   render() {
     const order_arr = this.state.order;
-    console.log("in single_order order_arr", order_arr);
+    // console.log("in single_order order_arr", order_arr);
     return (
       <div className="order">
         <div style={{ display: "flex", justifyContent: "space-between" }}>

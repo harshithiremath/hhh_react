@@ -20,7 +20,7 @@ class OrderHistory extends React.Component {
         .then((res) => {
           // // console.log(res);
           const orders = res.data;
-          console.log("orders array after axios", orders);
+          // console.log("orders array after axios", orders);
           this.setState({
             orders: orders,
           });
@@ -36,7 +36,7 @@ class OrderHistory extends React.Component {
       const orders_to_render = this.state.orders.map((order) => (
         <SingleOrder key={order.order_id} order={order} />
       ));
-      console.log(orders_to_render);
+      // console.log(orders_to_render);
       return (
         <div>
           {orders_to_render.length === 0 ? (

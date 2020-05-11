@@ -1,58 +1,58 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import '../css/AudioPLayer.css';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
+import "../css/AudioPLayer.css";
 import Particles from "react-particles-js";
 
 class AudioPlayer extends PureComponent {
   particlesOptions = {
-    "particles": {
-      "number": {
-        "value": 313,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
+    particles: {
+      number: {
+        value: 313,
+        density: {
+          enable: true,
+          value_area: 800,
+        },
       },
-      "color": {
-        "value": "#fec345"
+      color: {
+        value: "#fec345",
       },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
-        }
+      shape: {
+        type: "circle",
+        stroke: {
+          width: 0,
+          color: "#000000",
+        },
       },
-      "opacity": {
-        "value": 1,
-        "random": true,
-        "anim": {
-          "enable": true,
-          "speed": 1,
-          "opacity_min": 0,
-          "sync": false
-        }
+      opacity: {
+        value: 1,
+        random: true,
+        anim: {
+          enable: true,
+          speed: 1,
+          opacity_min: 0,
+          sync: false,
+        },
       },
-      "size": {
-        "value": 3,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 4,
-          "size_min": 0.3,
-          "sync": false
-        }
+      size: {
+        value: 3,
+        random: true,
+        anim: {
+          enable: false,
+          speed: 4,
+          size_min: 0.3,
+          sync: false,
+        },
       },
-      "line_linked": {
-        "enable": false,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 1
+      line_linked: {
+        enable: false,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1,
       },
     },
-    "retina_detect": true
+    retina_detect: true,
   };
   static propTypes = {
     songs: PropTypes.array.isRequired,
@@ -91,31 +91,30 @@ class AudioPlayer extends PureComponent {
       volume: 1.0,
       queue: false,
     };
-    this.playList=this.playList.bind(this);
+    this.playList = this.playList.bind(this);
 
-    this.audio = document.createElement('audio');
+    this.audio = document.createElement("audio");
     this.audio.src = this.state.active.url;
     this.audio.autoplay = !!this.state.autoplay;
 
-    this.audio.addEventListener('timeupdate', e => {
+    this.audio.addEventListener("timeupdate", (e) => {
       this.updateProgress();
 
       props.onTimeUpdate(e);
     });
-    this.audio.addEventListener('ended', e => {
+    this.audio.addEventListener("ended", (e) => {
       this.next();
 
       props.onEnded(e);
     });
-    this.audio.addEventListener('error', e => {
+    this.audio.addEventListener("error", (e) => {
       this.next();
 
       props.onError(e);
     });
-    this.audio.addEventListener('onvolumechange',e=>{
+    this.audio.addEventListener("onvolumechange", (e) => {
       this.volumeChange();
-
-    })
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -131,7 +130,7 @@ class AudioPlayer extends PureComponent {
     });
   }
 
-  shuffle = arr => arr.sort(() => Math.random() - 0.5);
+  shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
 
   updateProgress = () => {
     const { duration, currentTime } = this.audio;
@@ -142,8 +141,9 @@ class AudioPlayer extends PureComponent {
     });
   };
 
-  setProgress = e => {
-    const target = e.target.nodeName === 'SPAN' ? e.target.parentNode : e.target;
+  setProgress = (e) => {
+    const target =
+      e.target.nodeName === "SPAN" ? e.target.parentNode : e.target;
     const width = target.clientWidth;
     const rect = target.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
@@ -180,16 +180,16 @@ class AudioPlayer extends PureComponent {
     this.props.onPause();
   };
 
-  toggle = () => this.state.playing ? this.pause() : this.play();
+  toggle = () => (this.state.playing ? this.pause() : this.play());
 
   next = () => {
     const { repeat, current, songs } = this.state;
     const total = songs.length;
     const newSongToPlay = repeat
-                          ? current
-                          : current < total - 1
-                            ? current + 1
-                            : 0;
+      ? current
+      : current < total - 1
+      ? current + 1
+      : 0;
     const active = songs[newSongToPlay];
 
     this.setState({
@@ -201,24 +201,23 @@ class AudioPlayer extends PureComponent {
 
     this.audio.src = active.url;
     this.play();
-    this.props.onNext(); 
+    this.props.onNext();
   };
 
-  playList=(next)=>{
-    const{ current,songs }=this.state;
-    const song=songs.find(song=> song.url===next.url)
-    const songindex=songs.indexOf(song);
+  playList = (next) => {
+    const { current, songs } = this.state;
+    const song = songs.find((song) => song.url === next.url);
+    const songindex = songs.indexOf(song);
     this.setState({
       current: songindex,
       active: song,
       progress: 0,
       repeat: false,
-    })
+    });
 
-    this.audio.src=song.url;
+    this.audio.src = song.url;
     this.play();
-
-  }
+  };
 
   previous = () => {
     const { current, songs } = this.state;
@@ -262,34 +261,43 @@ class AudioPlayer extends PureComponent {
     this.audio.volume = !!mute;
   };
 
-  volumeChange=()=>{
-    const { volume } =this.state;
-    console.log(this.audio.volume)
-    const volum= this.audio.volume;
-    const vol= volum-0.1;
+  volumeChange = () => {
+    const { volume } = this.state;
+    console.log(this.audio.volume);
+    const volum = this.audio.volume;
+    const vol = volum - 0.1;
     this.setState({
       volume: vol,
     });
 
-    this.audio.volume=vol;
+    this.audio.volume = vol;
   };
-  toggleQueue=()=>{
-    const {queue} = this.state;
+  toggleQueue = () => {
+    const { queue } = this.state;
     this.setState({
-      queue:!queue,
-    })
-  }
-  showQueue=()=>{
-    const {songs,queue,active}= this.state;
-    if(!!queue){
-      return (<ul className="queue">
-        {songs.map(song => {
-        return (<li key = {song.artist} onClick= {()=>this.playList(song)} className={song=== active ? "queues" : "queueue"}>{song.artist.song}</li>)
-      })}
-      </ul>
-      )
+      queue: !queue,
+    });
+  };
+  showQueue = () => {
+    const { songs, queue, active } = this.state;
+    if (!!queue) {
+      return (
+        <ul className="queue">
+          {songs.map((song) => {
+            return (
+              <li
+                key={song.id}
+                onClick={() => this.playList(song)}
+                className={song === active ? "queues" : "queueue"}
+              >
+                {song.artist.song}
+              </li>
+            );
+          })}
+        </ul>
+      );
     }
-  }
+  };
   render() {
     const {
       active: currentSong,
@@ -302,47 +310,54 @@ class AudioPlayer extends PureComponent {
       queue,
     } = this.state;
     const coverClass = classnames({
-      'player-cover': true,
-      'no-height': !!active.cover === false,
+      "player-cover": true,
+      "no-height": !!active.cover === false,
     });
 
     const playPauseClass = classnames({
-      'fa': true,
-      'fa-play': !playing,
-      'fa-pause': playing,
+      fa: true,
+      "fa-play": !playing,
+      "fa-pause": playing,
     });
 
     const volumeClass = classnames({
-      'fa': true,
-      'fa-volume-up': !mute,
-      'fa-volume-off': mute,
-      'player-btn active': !mute,
+      fa: true,
+      "fa-volume-up": !mute,
+      "fa-volume-off": mute,
+      "player-btn active": !mute,
     });
 
     const randomClass = classnames({
-      'player-btn random': true,
-      'active': random,
-    })
+      "player-btn random": true,
+      active: random,
+    });
 
     const repeatClass = classnames({
-      'player-btn repeat': true,
-      'active': repeat,
+      "player-btn repeat": true,
+      active: repeat,
     });
-		return (
+    return (
       <div>
         <Particles className="particlesPlayer" params={this.particlesOptions} />
         <div className="player-container">
-
-          <div className={coverClass} style={{backgroundImage: `url(${currentSong.cover || ''})`}}></div>
+          <div
+            className={coverClass}
+            style={{ backgroundImage: `url(${currentSong.cover || ""})` }}
+          ></div>
 
           <div className="artist-info">
             <h2 className="artist-song-name">{currentSong.artist.song}</h2>
             <h3 className="artist-name">{currentSong.artist.name}</h3>
-
           </div>
 
-          <div className="player-progress-container" onClick={e => this.setProgress(e)}>
-            <span className="player-progress-value" style={{width: progress + '%'}}></span>
+          <div
+            className="player-progress-container"
+            onClick={(e) => this.setProgress(e)}
+          >
+            <span
+              className="player-progress-value"
+              style={{ width: progress + "%" }}
+            ></span>
           </div>
 
           <div className="player-options">
@@ -382,7 +397,6 @@ class AudioPlayer extends PureComponent {
                 className={repeatClass}
                 onClick={this.repeat}
                 title="Repeat"
-
               >
                 <i className="fa fa-repeat"></i>
               </button>
@@ -394,19 +408,19 @@ class AudioPlayer extends PureComponent {
                 <i className="fa fa-random"></i>
               </button>
               <button
-                className={queue ?"player-btn active": "player-btn small" }
+                className={queue ? "player-btn active" : "player-btn small"}
                 onClick={this.toggleQueue}
                 title="Queue"
               >
-                <i class="fa fa-list fa-xs" ></i>
+                <i className="fa fa-list fa-xs"></i>
               </button>
             </div>
           </div>
-            { this.showQueue()}
+          {this.showQueue()}
         </div>
-    </div>
+      </div>
     );
-	}
+  }
 }
 
 export default AudioPlayer;

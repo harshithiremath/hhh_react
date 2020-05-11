@@ -12,7 +12,7 @@ class Tours extends React.Component {
   componentDidMount() {
     axios.get("/tours").then((res) => {
       const tours = res.data;
-      console.log(res.data);
+      // console.log(res.data);
       this.setState({ tours: tours });
     });
   }
