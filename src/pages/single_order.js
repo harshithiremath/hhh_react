@@ -21,9 +21,9 @@ export default class single_order extends React.Component {
     return (
       <div className="order">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <span>{order_arr.merch_name}</span>
-          <span>{this.props.order.quantity} </span>
-          <span>{this.props.order.price}</span>
+          <span className="order-merch-name">{order_arr.merch_name}</span>
+          <span className="order-quantity">{this.props.order.quantity} </span>
+          <span className="order-price">₹ {this.props.order.price}</span>
         </div>
         <h4> Ordered on: {this.props.order.time_purchased}</h4>
       </div>
