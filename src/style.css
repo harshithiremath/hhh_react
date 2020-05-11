@@ -566,6 +566,7 @@ footer {
   box-sizing: border-box;
   color: #d2d5d6;
   font-size: 18px;
+  user-select: none;
 }
 .containerPlayer > h1 {
   text-align: center;

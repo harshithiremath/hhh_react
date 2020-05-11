@@ -16,34 +16,34 @@ export default class Cart extends Component {
       });
   }
   render() {
-    // if (this.props.signed_in) {
-    return (
-      <div className="cart-container">
-        <div className="cart-items-above-final-price">
-          <div>
-            <ul className="cart-container-left-ul">
-              <li>hi1</li>
-              <li>hi2</li>
-              <hr />
-            </ul>
-            <div className="cart-container-right-price">
-              <span>₹ 69</span>
+    if (this.props.signed_in) {
+      return (
+        <div className="cart-container">
+          <div className="cart-items-above-final-price">
+            <div>
+              <ul className="cart-container-left-ul">
+                <li>hi1</li>
+                <li>hi2</li>
+                <hr />
+              </ul>
+              <div className="cart-container-right-price">
+                <span>₹ 69</span>
+              </div>
             </div>
-          </div>
-          <div>
-            <ul className="cart-container-left-ul">
-              <li>hi1</li>
-              <li>hi2</li>
-            </ul>
-            <div className="cart-container-right-price">
-              <span>₹ 69</span>
+            <div>
+              <ul className="cart-container-left-ul">
+                <li>hi1</li>
+                <li>hi2</li>
+              </ul>
+              <div className="cart-container-right-price">
+                <span>₹ 69</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
-    // } else {
-    //   return <Redirect to="/signin" />;
-    // }
+      );
+    } else {
+      return <Redirect to="/signin" />;
+    }
   }
 }
