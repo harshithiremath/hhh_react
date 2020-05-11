@@ -48,7 +48,6 @@ class OrderHistory extends React.Component {
     // console.log(this.state.tickets);
     if (this.props.user) {
       // // console.log("orders array in orderhistory", this.state.orders);
-
       let orders_to_render = [];
 
       if (this.state.orders.length > 0) {
