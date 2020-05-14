@@ -2,13 +2,27 @@ import React from "react";
 // import tourData from "./toursData";
 import Tour from "./Tour";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 class Tours extends React.Component {
   /*
     // This data will be queried from Tours Table
   */
-  state = {
-    tours: [],
-  };
+
+  constructor() {
+    super();
+    this.state = {
+      tours: [],
+    };
+    this.toggleRedirect = this.toggleRedirect.bind(this);
+  }
+  renderRedirect() {
+    if (this.state.redirectToSignin) {
+      return <Redirect to="/signin" />;
+    }
+  }
+  toggleRedirect() {
+    this.setState({ redirectToSignin: true });
+  }
   componentDidMount() {
     axios.get("http://localhost:5000/tours").then((res) => {
       const tours = res.data;
@@ -18,10 +32,17 @@ class Tours extends React.Component {
   }
   render() {
     const items = this.state.tours.map((item) => {
-      return <Tour key={item.tour_id} item={item} />;
+      return (
+        <Tour
+          toggleRedirect={this.toggleRedirect}
+          key={item.tour_id}
+          item={item}
+        />
+      );
     });
     return (
       <div>
+        {this.renderRedirect()}
         <h2 className="h2_upcoming_tours" style={{ color: "#fec325" }}>
           Upcoming tours of HHH
         </h2>

@@ -1,6 +1,5 @@
 import React from "react";
 import { ContextConsumer } from "../components/Context";
-import { Redirect } from "react-router-dom";
 function Tour(props) {
   /*
     This function will return single tour items in the tourslist
@@ -12,9 +11,6 @@ function Tour(props) {
   let text1 = "";
   let fast = false;
   let soldOut = false;
-  const renderRedirect = () => {
-    return <Redirect to="/" />;
-  };
   if (props.item.tours_limit == 0) {
     text1 = "Sold Out! :(";
     fast = true;
@@ -65,7 +61,11 @@ function Tour(props) {
           <ContextConsumer>
             {(context) => (
               <button
-                onClick={() => context.addToCart(props.item.tour_id)}
+                onClick={() => {
+                  context.signed_in
+                    ? context.addToCart(props.item.tour_id)
+                    : props.toggleRedirect();
+                }}
                 className="buy-btn"
               >
                 BUY
