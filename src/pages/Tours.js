@@ -4,10 +4,6 @@ import Tour from "./Tour";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 class Tours extends React.Component {
-  /*
-    // This data will be queried from Tours Table
-  */
-
   constructor() {
     super();
     this.state = {

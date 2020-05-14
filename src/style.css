@@ -481,7 +481,7 @@ footer {
   justify-content: center;
   text-transform: uppercase;
   font-size: 40px;
-  color: #ffa801;
+  color: #3b3830;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.596);
   user-select: none;
 }
@@ -494,8 +494,9 @@ footer {
   width: 16%;
   flex-wrap: wrap;
   margin-left: 20px;
-  padding: 50px 40px 45px 20px;
+  padding: 50px 40px 40px 20px;
   transition: transform 0.1s;
+  user-select: none;
 }
 .tour:hover {
   background: #7c7b6c36;

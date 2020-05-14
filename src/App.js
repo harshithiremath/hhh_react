@@ -12,6 +12,7 @@ import Merchs from "./pages/Merchs";
 import Cart from "./pages/Cart";
 import { ContextConsumer } from "./components/Context";
 import WebPlayer from "./pages/WebPlayer";
+import SingleMerch from "./pages/SingleMerch";
 /*
 class AppProvider extends React.Component {
   state = {
@@ -55,6 +56,9 @@ class App extends React.Component {
                       context={context}
                     />
                   </Route>
+                  <Route path="/merch/:product_id">
+                    <SingleMerch context={context} />
+                  </Route>
                 </Switch>
               );
             }}
@@ -64,16 +68,12 @@ class App extends React.Component {
               <Cloud />
               <MainPage />
             </Route>
-            {/* <Route path="/orders">
-              <OrderHistory />
-            </Route> */}
             <Route path="/passes">
               <Tours />
             </Route>
-            <Route path="/merch">
+            <Route exact path="/merch">
               <Merchs />
             </Route>
-
             <Route path="/login">
               <SignIn />
             </Route>
