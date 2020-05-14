@@ -491,7 +491,7 @@ footer {
   flex-direction: column;
   border: 2px solid transparent;
   border-radius: 8px;
-  width: 15%;
+  width: 16%;
   flex-wrap: wrap;
   margin-left: 20px;
   padding: 50px 40px 45px 20px;
@@ -518,7 +518,10 @@ footer {
 .buy-btn:hover {
   background: rgba(73, 67, 67, 0.384);
 }
-
+.soldout:hover {
+  background: inherit !important;
+  cursor: not-allowed;
+}
 .orders {
   width: 60%;
   margin-left: 20%;

@@ -10,7 +10,7 @@ class Tours extends React.Component {
     tours: [],
   };
   componentDidMount() {
-    axios.get("/tours").then((res) => {
+    axios.get("http://localhost:5000/tours").then((res) => {
       const tours = res.data;
       // console.log(res.data);
       this.setState({ tours: tours });
@@ -22,7 +22,9 @@ class Tours extends React.Component {
     });
     return (
       <div>
-        <h2 className="h2_upcoming_tours">Upcoming tours of HHH</h2>
+        <h2 className="h2_upcoming_tours" style={{ color: "#fec325" }}>
+          Upcoming tours of HHH
+        </h2>
         <div className="tours_list">{items}</div>
       </div>
     );

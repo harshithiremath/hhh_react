@@ -421,6 +421,9 @@ class AudioPlayer extends PureComponent {
       </div>
     );
   }
+  componentWillUnmount() {
+    this.pause();
+  }
 }
 
 export default AudioPlayer;

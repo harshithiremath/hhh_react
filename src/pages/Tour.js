@@ -1,5 +1,6 @@
 import React from "react";
 import { ContextConsumer } from "../components/Context";
+import { Redirect } from "react-router-dom";
 function Tour(props) {
   /*
     This function will return single tour items in the tourslist
@@ -10,7 +11,15 @@ function Tour(props) {
   //The function that determines if available/selling fast should be output
   let text1 = "";
   let fast = false;
-  if (props.item.tours_limit < 100) {
+  let soldOut = false;
+  const renderRedirect = () => {
+    return <Redirect to="/" />;
+  };
+  if (props.item.tours_limit == 0) {
+    text1 = "Sold Out! :(";
+    fast = true;
+    soldOut = true;
+  } else if (props.item.tours_limit < 100) {
     text1 = "Selling out fast!";
     fast = true;
   } else {
@@ -45,17 +54,25 @@ function Tour(props) {
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
           Rs. {props.item.price}
         </h4>
-        {fast ? <h6 style={{ color: "red" }}>{text1}</h6> : <h6>{text1}</h6>}
-        <ContextConsumer>
-          {(context) => (
-            <button
-              onClick={() => context.addToCart(props.item.tour_id)}
-              className="buy-btn"
-            >
-              BUY
-            </button>
-          )}
-        </ContextConsumer>
+        {fast ? (
+          <h6 style={{ color: "red" }}>{text1}</h6>
+        ) : (
+          <h6 style={{ color: "#a6a4a4" }}>{text1}</h6>
+        )}
+        {soldOut ? (
+          <button className="buy-btn soldout">BUY</button>
+        ) : (
+          <ContextConsumer>
+            {(context) => (
+              <button
+                onClick={() => context.addToCart(props.item.tour_id)}
+                className="buy-btn"
+              >
+                BUY
+              </button>
+            )}
+          </ContextConsumer>
+        )}
       </div>
     </div>
   );
