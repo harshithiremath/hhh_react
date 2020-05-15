@@ -22,7 +22,11 @@ export default class single_order extends React.Component {
     return (
       <div className="order">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <img src={order_arr.image_url} className="merch-image-in-orders" />
+          <img
+            src={order_arr.image_url}
+            className="merch-image-in-orders"
+            alt="merch_image"
+          />
           <Link
             to={`/merch/${order_arr.merch_id}`}
             className="order-merch-name"

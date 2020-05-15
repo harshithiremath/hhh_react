@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import "./SingleMerchcss.css";
 import axios from "axios";
-import { number } from "prop-types";
 export default function SingleMerch(props) {
   const { product_id } = useParams();
   let [state, setstate] = useState({ gotData: false });
@@ -16,7 +15,7 @@ export default function SingleMerch(props) {
           params: { merch_id: product_id },
         })
         .then((res) => {
-          if (res.data.length != 0)
+          if (res.data.length !== 0)
             setstate({ merch: res.data[0], gotData: true });
         });
     }
@@ -38,7 +37,7 @@ export default function SingleMerch(props) {
     getData();
   } else {
     let displayAvailable = "";
-    if (state.merch.merch_limit == 0) {
+    if (state.merch.merch_limit === 0) {
       displayAvailable = (
         <span
           className="product-page-available-status"
@@ -74,11 +73,16 @@ export default function SingleMerch(props) {
               <img
                 className="product-page-thumbnail"
                 src={state.merch.image_url}
+                alt="thumb 1"
               />
             </div>
           </div>
           <div>
-            <img className="product-page-image" src={state.merch.image_url} />
+            <img
+              className="product-page-image"
+              src={state.merch.image_url}
+              alt="main_img"
+            />
           </div>
         </div>
         <div className="product-page-merch-info">
@@ -93,7 +97,7 @@ export default function SingleMerch(props) {
           </div>
           {displayAvailable}
 
-          {state.merch.merch_limit != 0 ? (
+          {state.merch.merch_limit !== 0 ? (
             <>
               <span className="product-page-form__Label">Quantity:</span>
               <div className="product-page-form__quantity">
@@ -109,6 +113,7 @@ export default function SingleMerch(props) {
                     className="quantity__CurrentQuantity"
                     name="quantity"
                     value={formstate.quantity}
+                    readOnly
                   />
                   <span
                     className="quantity__Button Link Link--secondary"

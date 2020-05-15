@@ -164,11 +164,11 @@ class SignIn extends React.Component {
                     name="password"
                   />
                 </div>
-                <div>
+                {/* <div>
                   <span>
                     <a className="forgot">FORGOT PASSWORD?</a>
                   </span>
-                </div>
+                </div> */}
                 <input
                   className="loginbtn"
                   type="submit"
