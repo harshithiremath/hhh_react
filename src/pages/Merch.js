@@ -13,7 +13,7 @@ function Merch(props) {
     text1 = "Sold Out! :(";
     fast = true;
     soldOut = true;
-  } else if (props.item.merch_limit < 20) {
+  } else if (props.item.merch_limit < 10) {
     text1 = "Selling out fast!";
     fast = true;
   } else {
@@ -29,15 +29,17 @@ function Merch(props) {
   // }
   return (
     <div className="tour" style={{ fontSize: 25 }}>
-      <img
-        src={`${props.item.image_url}`}
-        alt="merch_image"
-        style={{
-          width: 180,
-          background: "#ddd",
-          borderRadius: 4,
-        }}
-      />
+      <Link to={`/merch/${props.item.merch_id}`}>
+        <img
+          src={`${props.item.image_url}`}
+          alt="merch_image"
+          style={{
+            width: 180,
+            background: "#ddd",
+            borderRadius: 4,
+          }}
+        />
+      </Link>
       <h1>
         <Link
           style={{ color: "#222f3e", textDecoration: "none" }}
@@ -59,7 +61,7 @@ function Merch(props) {
           <h6 style={{ color: "#a6a4a4" }}>{text1}</h6>
         )}
         {soldOut ? (
-          <button className="buy-btn soldout">BUY</button>
+          <button className="buy-btn soldout">Sold Out</button>
         ) : (
           <ContextConsumer>
             {(context) => (
@@ -71,7 +73,7 @@ function Merch(props) {
                 }}
                 className="buy-btn"
               >
-                BUY
+                Add to Cart
               </button>
             )}
           </ContextConsumer>

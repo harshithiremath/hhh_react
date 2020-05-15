@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export default class single_order extends React.Component {
   state = {
     order: {},
@@ -21,7 +22,13 @@ export default class single_order extends React.Component {
     return (
       <div className="order">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <span className="order-merch-name">{order_arr.merch_name}</span>
+          <img src={order_arr.image_url} className="merch-image-in-orders" />
+          <Link
+            to={`/merch/${order_arr.merch_id}`}
+            className="order-merch-name"
+          >
+            {order_arr.merch_name}
+          </Link>
           <span className="order-quantity">{this.props.order.quantity} </span>
           <span className="order-price">₹ {this.props.order.price}</span>
         </div>

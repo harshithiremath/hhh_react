@@ -33,18 +33,38 @@
     url("./fonts/ostrich_medium_rounded/ostrichsansrounded-medium.svg")
       format("svg");
 }
+@font-face {
+  font-family: "lato-thin";
+  src: url("./fonts/Lato-Hairline/Lato-Thin.woff") format("woff"),
+    url("./fonts/Lato-Hairline/Lato-Thin.svg") format("svg");
+}
+@font-face {
+  font-family: "lato-light";
+  src: url("./fonts/Lato-Light/Lato-Light.woff") format("woff"),
+    url("./fonts/Lato-Light/Lato-Light.svg") format("svg");
+}
+
+@font-face {
+  font-family: "lato-regular";
+  src: url("./fonts/Lato-Regular/Lato-Regular.woff") format("woff"),
+    url("./fonts/Lato-Regular/Lato-Regular.svg") format("svg");
+}
+@font-face {
+  font-family: "lato-Bold";
+  src: url("./fonts/Lato-Bold/Lato-Bold.woff") format("woff"),
+    url("./fonts/Lato-Bold/Lato-Bold.svg") format("svg");
+}
 ::-webkit-scrollbar {
   width: 12px;
   background: transparent;
-  background-color: #111;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  background: #42455a;
+  border-radius: 3px;
+  background: #29261e;
 }
 ::-webkit-scrollbar-thumb:hover {
   width: 15px;
-  background: #fec325aa;
+  background: #262833;
 }
 body {
   margin: 0;
@@ -494,7 +514,7 @@ footer {
   width: 16%;
   flex-wrap: wrap;
   margin-left: 20px;
-  padding: 50px 40px 40px 20px;
+  padding: 50px 40px 30px 20px;
   transition: transform 0.1s;
   user-select: none;
 }
@@ -509,6 +529,7 @@ footer {
 }
 .buy-btn {
   margin-top: 10px;
+  font-family: lato-regular;
   justify-self: flex-end;
   font-size: 30px;
   background: transparent;
@@ -533,7 +554,13 @@ footer {
   margin-top: 30px;
   font-size: 220%;
 }
+.merch-image-in-orders {
+  width: 7.5%;
+  margin: 1%;
+}
 .order-merch-name {
+  color: #1e272e;
+  text-decoration: none;
   width: 60%;
   display: inline-block;
 }

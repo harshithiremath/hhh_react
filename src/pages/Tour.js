@@ -63,7 +63,7 @@ function Tour(props) {
               <button
                 onClick={() => {
                   context.signed_in
-                    ? context.addToCart(props.item.tour_id)
+                    ? props.buyTicket(props.item.tour_id)
                     : props.toggleRedirect();
                 }}
                 className="buy-btn"

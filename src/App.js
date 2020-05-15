@@ -1,18 +1,21 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Cloud from "./components/Cloud";
-import OrderHistory from "./pages/OrderHistory";
-import Tours from "./pages/Tours";
 import { Route, Switch } from "react-router-dom";
+import { ContextConsumer } from "./components/Context";
+import Cloud from "./components/Cloud";
+import Header from "./components/Header";
+import WebPlayer from "./pages/WebPlayer";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
+import OrderHistory from "./pages/OrderHistory";
+import Tours from "./pages/Tours";
 import MainPage from "./pages/MainPage";
 import Merchs from "./pages/Merchs";
 import Cart from "./pages/Cart";
-import { ContextConsumer } from "./components/Context";
-import WebPlayer from "./pages/WebPlayer";
+
 import SingleMerch from "./pages/SingleMerch";
+import TicketCheckout from "./pages/TicketCheckout";
+import Footer from "./components/Footer";
+
 /*
 class AppProvider extends React.Component {
   state = {
@@ -58,6 +61,9 @@ class App extends React.Component {
                   </Route>
                   <Route path="/merch/:product_id">
                     <SingleMerch context={context} />
+                  </Route>
+                  <Route path="/checkout/ticket">
+                    <TicketCheckout context={context} />
                   </Route>
                 </Switch>
               );

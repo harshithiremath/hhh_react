@@ -10,11 +10,25 @@ class Tours extends React.Component {
       tours: [],
     };
     this.toggleRedirect = this.toggleRedirect.bind(this);
+    this.buyTicket = this.buyTicket.bind(this);
   }
   renderRedirect() {
     if (this.state.redirectToSignin) {
       return <Redirect to="/signin" />;
+    } else if (this.state.redirectToCart) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/checkout/ticket",
+            state: { tour_id: this.state.tour_id_to_be_purchased },
+          }}
+        />
+      );
     }
+  }
+
+  buyTicket(tour_id) {
+    this.setState({ redirectToCart: true, tour_id_to_be_purchased: tour_id });
   }
   toggleRedirect() {
     this.setState({ redirectToSignin: true });
@@ -30,6 +44,7 @@ class Tours extends React.Component {
     const items = this.state.tours.map((item) => {
       return (
         <Tour
+          buyTicket={this.buyTicket}
           toggleRedirect={this.toggleRedirect}
           key={item.tour_id}
           item={item}
@@ -39,9 +54,7 @@ class Tours extends React.Component {
     return (
       <div>
         {this.renderRedirect()}
-        <h2 className="h2_upcoming_tours" style={{ color: "#fec325" }}>
-          Upcoming tours of HHH
-        </h2>
+        <h2 className="h2_upcoming_tours">Upcoming tours of HHH</h2>
         <div className="tours_list">{items}</div>
       </div>
     );
