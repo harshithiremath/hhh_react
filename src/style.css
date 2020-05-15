@@ -34,6 +34,22 @@
       format("svg");
 }
 @font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+}
+@font-face {
   font-family: "lato-thin";
   src: url("./fonts/Lato-Hairline/Lato-Thin.woff") format("woff"),
     url("./fonts/Lato-Hairline/Lato-Thin.svg") format("svg");
@@ -54,6 +70,7 @@
   src: url("./fonts/Lato-Bold/Lato-Bold.woff") format("woff"),
     url("./fonts/Lato-Bold/Lato-Bold.svg") format("svg");
 }
+
 ::-webkit-scrollbar {
   width: 12px;
   background: transparent;
@@ -84,70 +101,65 @@ body {
 
 .menu ul {
   display: flex;
-  margin: 20px 20px 0px 20px;
-  background: transparent;
+  padding: 10px 0px 0px 0px;
+  background: black;
+  border-bottom:4px solid #fec325;
+  box-shadow: 3px 3px 6px 3px #05050585;
 }
 .menu ul li {
-  font-family: "ostrich_rounded";
-  font-size: 30px;
+  text-transform: uppercase;
+  font-family: "proxima_nova_rgregular",sans-serif;
+  font-size: 19px;
   list-style: none;
-  margin: 0 30px 0px;
+  margin: 12px 10px 0px;
   cursor: pointer;
   background: transparent;
 }
-.active {
-  color: #292121;
-  text-decoration: none;
-  background: transparent;
-  border: 2px solid transparent;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  border-radius: 3px;
-}
-.active:hover {
-  border: 2px solid black;
-  color: #fec325;
-}
+
 .non-active {
-  color: #aaa4a4;
+  color: #ffffff;
   text-decoration: none;
   background: transparent;
   padding-left: 4px;
-  padding-right: 4px;
+  padding-right: 2px;
   padding-top: 2px;
   padding-bottom: 2px;
   border: 2px solid transparent;
   border-radius: 3px;
 }
 .non-active:hover {
-  border: 2px solid rgb(63, 56, 56);
-  color: rgb(37, 37, 37);
+  border-top:2px solid #fec325;
+  transition-timing-function: linear;
+  transition: all 0.5s;
 }
 
 .signup-btn {
   right: 20px;
+  margin-top: 4px;
+  border: 2px solid transparent;
   position: absolute;
-  border: 1px solid #272626bd;
-  border-radius: 12px;
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  background: rgba(85, 85, 85, 0.253);
-  transition: 0.05s background;
+  background:transparent;
+  border-radius: 3px;
+  padding: 2px;
+  transition: all 0.5s;
 }
 .signup-btn:hover {
-  background: rgba(58, 57, 57, 0.664);
+    border-top: 2px solid #fec345;
 }
 .signup-text {
+  padding:3px;
   display: flex;
   align-items: center;
-  padding: 5px 20px 5px 20px;
   text-decoration: none;
-  color: rgb(245, 245, 245);
-  font-size: 30px;
-  background: transparent;
-  font-family: "ostrich_rounded";
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform:uppercase ;
+  font-family: "proxima_nova_rgregular";
+  transition: all 0.4s;
+}
+.signup-text:hover{
+  color: #fec345;
 }
 .account-header {
   position: absolute;
@@ -156,38 +168,41 @@ body {
 }
 .account-head-wrapper {
   color: #fec325;
-  transition: color 0.1s !important;
+  transition: color 0.3s !important;
 }
 .account-head-wrapper ul {
   display: none;
 }
 .account-head-wrapper:hover {
-  color: #292121;
+  color: #fec345;
 }
 .account-head-wrapper:hover > ul {
-  background-color: rgb(83, 81, 81);
+  background-color: #111010;
   border-radius: 5px;
   display: flex;
   margin: 0px;
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
+  transition: all 0.4s;
 }
 .account-head-wrapper .ul:hover {
   display: flex;
   flex-direction: column;
   position: absolute;
+  transition: all 0.4s;
 }
 .account-head-wrapper ul li {
   margin: 5px 10px 5px 10px;
   color: #dbdbdb;
 }
 .account-head-item {
-  color: #a0a0a0;
+  color: #ffffff;
   text-decoration: none;
 }
 .account-head-item:hover {
-  color: #d3d3d3;
+  color: #fec345;
+  transition: all 0.4s;
 }
 .banner {
   width: 80%;
@@ -245,7 +260,7 @@ body {
   resize: inherit;
 }
 .cloudcontainer {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -409,7 +424,7 @@ footer {
   text-shadow: 2px 2px #7977747d;
 }
 .tbox {
-  font-family: "Montserrat", sans-serif;
+  font-family: "proxima_nova_rgregular";
   margin-bottom: 3%;
   width: 80%;
   height: 40px;
@@ -664,4 +679,224 @@ footer {
 .containerPlayer > h2 {
   font-size: 15px;
   text-align: center;
+}
+.mainPagecontainer{
+  font-family: "proxima_nova_rgregular";
+}
+.Albums{
+  margin-left: 20%;
+  margin-top: 25.33%;
+  display: inline-block;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: 'proxima_nova_rgregular';
+  text-transform: uppercase;
+}
+.Albums > h1{
+  text-align: center;
+}
+.Albumbutton{
+  display: flex;
+  background-color: #000;
+  color: #fff;
+  border: 3px solid #000;
+  width: 33.33%;
+  height: 60px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 50px;
+  margin-left: 33.33%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.Albumbutton:hover{
+  background-color: #fff; 
+  color:#000;
+  
+}
+.gallery {
+  margin-top: 20px;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 5vw);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 0.0px;
+
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:inline-block;
+}
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.gallery__item--2 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+
+.gallery__item--3 {
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.gallery__item--4 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+.gallery__item--5 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+.gallery__item--6 {
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 5;
+  grid-row-end: 9;
+}
+
+.MainTours{
+  margin-top:70px;
+  padding:50px;
+  background-color: black;
+  color:#fff;
+  text-align:center;
+  font-family:'proxima_nova_rgregular' ;
+  box-sizing: border-box;
+}
+.MainTours >h1{
+  margin:-20px 0px 30px 0px;
+}
+.column {
+  float: left;
+  width: 25%;
+}
+
+.row {margin: 0 -20px 0px -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  text-transform: uppercase;
+  padding:10px 0px 10px 0px ;
+  margin:20px;
+  text-align: center;
+  background-color: #000000;
+  color: #fff;
+  border: 2px solid #fff;
+  
+}
+
+.Ticketsbutton{
+  display: flex;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+  width: 25%;
+  height: 60px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 40px;
+  margin-left: 38%;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.Ticketsbutton:hover{
+  background-color: #000; 
+  color:#fff;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.048);
+}
+.Merch{
+  font-family: 'proxima_nova_rgregular';
+  background-color: #fec325;
+  color: #000;
+  text-align: center;
+  padding: 30px;
+}
+.Merch >h1{
+  padding-bottom: 30px ;
+}
+.Merchbutton{
+  display: flex;
+  background-color: #000; 
+  color:#fff;
+  border: 2.5px solid #000;
+  width: 25%;
+  height: 60px;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+  margin-left: 38%;
+  cursor: pointer;
+  transition-duration: 0.4s all;
+  
+}
+.Merchbutton:hover{
+
+  border: 2.5px solid #fec345;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mainPagefooter{
+  width: 100%;
+  bottom:12;
+  background-color: #000;
+  margin-bottom: -100px;
+  padding: 20px;
+  font-family:"proxima_nova_rgregular"
+}
+.mainPagefooter li{
+  text-transform: uppercase;
+  margin:0px;
+  color: #fff;
+  display: inline;
+  padding:10px 40px 0px 0px;
+}
+.mainPagefooter > p{
+  color:#fff;
+  padding: 10px 0px;
+  text-transform: capitalize;
+}
+.mainPagefooter > h3{
+  color:#fff;
+  padding: 10px 0px;
+  font-size: 13px;
+}
+.foot{
+ color:#fff;
+ text-decoration: none;
 }
