@@ -117,18 +117,18 @@ class AudioPlayer extends PureComponent {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      active: nextProps.songs[0],
-      songs: nextProps.songs,
-      current: 0,
-      progress: 0,
-      random: false,
-      playing: !!nextProps.autoplay,
-      repeat: false,
-      mute: false,
-    });
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({
+  //     active: nextProps.songs[0],
+  //     songs: nextProps.songs,
+  //     current: 0,
+  //     progress: 0,
+  //     random: false,
+  //     playing: !!nextProps.autoplay,
+  //     repeat: false,
+  //     mute: false,
+  //   });
+  // }
 
   shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
 
@@ -205,7 +205,7 @@ class AudioPlayer extends PureComponent {
   };
 
   playList = (next) => {
-    const { current, songs } = this.state;
+    const { songs } = this.state;
     const song = songs.find((song) => song.url === next.url);
     const songindex = songs.indexOf(song);
     this.setState({
@@ -262,7 +262,7 @@ class AudioPlayer extends PureComponent {
   };
 
   volumeChange = () => {
-    const { volume } = this.state;
+    // const { volume } = this.state;
     console.log(this.audio.volume);
     const volum = this.audio.volume;
     const vol = volum - 0.1;

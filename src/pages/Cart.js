@@ -5,7 +5,7 @@ import axios from "axios";
 export default class Cart extends Component {
   componentDidMount() {
     axios
-      .post("http://localhost:3000/cart", {
+      .post("http://localhost:5000/cart", {
         message: "view",
         details: {
           user_id: 23,

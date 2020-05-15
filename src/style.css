@@ -565,6 +565,9 @@ footer {
   background: inherit !important;
   cursor: not-allowed;
 }
+.orders-page-container {
+  margin-bottom: 50px;
+}
 .orders {
   width: 60%;
   margin-left: 20%;
@@ -581,6 +584,8 @@ footer {
 }
 .order-merch-name {
   color: #1e272e;
+  font-family: lato-bold;
+  letter-spacing: 2px;
   text-decoration: none;
   width: 60%;
   display: inline-block;
@@ -836,12 +841,12 @@ footer {
   margin-top: 40px;
   margin-left: 38%;
   cursor: pointer;
-  transition-duration: 0.4s;
+  transition-duration: 0.1s;
 }
 .Ticketsbutton:hover {
   background-color: #000;
   color: #fff;
-  border: 3px solid #fff;
+  border: 2px solid rgb(129, 129, 129);
   box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2),
     0 6px 20px 0 rgba(255, 255, 255, 0.048);
 }
@@ -868,10 +873,10 @@ footer {
   margin-top: 40px;
   margin-left: 38%;
   cursor: pointer;
-  transition-duration: 0.4s all;
+  transition-duration: 0.1s;
 }
 .Merchbutton:hover {
-  border: 2.5px solid #fec345;
+  border: 1px solid #fec345;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .mainPagefooter {

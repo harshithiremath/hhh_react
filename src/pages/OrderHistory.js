@@ -66,7 +66,7 @@ class OrderHistory extends React.Component {
       }
       // console.log(orders_to_render);
       return (
-        <div>
+        <div className="orders-page-container">
           {tickets_to_render.length === 0 ? (
             <h1 style={{ marginTop: 60 }} className="h2_upcoming_tours">
               You didn't purchase any tour passes yet! :)

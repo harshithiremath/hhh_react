@@ -71,7 +71,9 @@ class SignIn extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  // componentDidMount() {
+  //   this.props.context.SignOut();
+  // }
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({
@@ -126,62 +128,62 @@ class SignIn extends React.Component {
     return true;
   }
   render() {
+    const signed_in = this.props.context.signed_in;
     return (
       <div>
-        {/* <ContextConsumer>
-          {(context) => {
-
-            context.SignOut();
-            return null;
-          }}
-        </ContextConsumer> */}
         {this.renderRedirect()}
-        <Particles className="particles" params={this.particlesOptions} />
-        <div className="signin-box-container">
-          <h1>Log In</h1>
-          <ContextConsumer>
-            {(context) => (
-              <form
-                className="forms"
-                onSubmit={(e) => this.handleSubmit(e, context)}
-              >
-                <div className="tbox">
-                  <input
-                    type="email"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                    placeholder="Email"
-                    name="email"
-                  />
-                </div>
+        {signed_in ? (
+          <Redirect to="/" />
+        ) : (
+          <div>
+            <Particles className="particles" params={this.particlesOptions} />
+            <div className="signin-box-container">
+              <h1>Log In</h1>
+              <ContextConsumer>
+                {(context) => (
+                  <form
+                    className="forms"
+                    onSubmit={(e) => this.handleSubmit(e, context)}
+                  >
+                    <div className="tbox">
+                      <input
+                        type="email"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                        placeholder="Email"
+                        name="email"
+                      />
+                    </div>
 
-                <div className="tbox">
-                  <input
-                    type="password"
-                    value={this.state["password"]}
-                    onChange={this.handleChange}
-                    placeholder="Password"
-                    name="password"
-                  />
-                </div>
-                {/* <div>
-                  <span>
-                    <a className="forgot">FORGOT PASSWORD?</a>
-                  </span>
-                </div> */}
-                <input
-                  className="loginbtn"
-                  type="submit"
-                  name="login-submit"
-                  value="Login"
-                />
-              </form>
-            )}
-          </ContextConsumer>
-          <Link to="/signup" className="new_member_text">
-            New Member?
-          </Link>
-        </div>
+                    <div className="tbox">
+                      <input
+                        type="password"
+                        value={this.state["password"]}
+                        onChange={this.handleChange}
+                        placeholder="Password"
+                        name="password"
+                      />
+                    </div>
+                    {/* <div>
+                    <span>
+                      <a className="forgot">FORGOT PASSWORD?</a>
+                    </span>
+                  </div> */}
+                    <input
+                      className="loginbtn"
+                      type="submit"
+                      name="login-submit"
+                      value="Login"
+                    />
+                  </form>
+                )}
+              </ContextConsumer>
+              <Link to="/signup" className="new_member_text">
+                New Member?
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

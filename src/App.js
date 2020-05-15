@@ -64,6 +64,9 @@ class App extends React.Component {
                   <Route path="/checkout/ticket">
                     <TicketCheckout context={context} />
                   </Route>
+                  <Route path="/signin">
+                    <SignIn context={context} />
+                  </Route>
                 </Switch>
               );
             }}
@@ -78,12 +81,6 @@ class App extends React.Component {
             </Route>
             <Route exact path="/merch">
               <Merchs />
-            </Route>
-            <Route path="/login">
-              <SignIn />
-            </Route>
-            <Route path="/signin">
-              <SignIn />
             </Route>
             <Route path="/signup">
               <SignUp />
