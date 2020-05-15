@@ -61,6 +61,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               <MainPage />
+              <Footer />
             </Route>
             {/* <Route path="/orders">
               <OrderHistory />
@@ -83,10 +84,20 @@ class App extends React.Component {
             </Route>
             <Route path="/webPlayer">
               <WebPlayer />
+              <Footer />
             </Route>
           </Switch>
         </div>
-        <Footer />
+        <footer style={{position:"revert",zIndex:1}}>
+          <div className="mainPagefooter">
+            <ul>
+              <li><a className="foot" href="/">Copyright HHH Records</a></li>
+              <li><a className="foot" href="/">Privacy Policy</a></li>
+              <li><a className="foot" href="/">Terms & Conditions</a></li>
+              <li><a className="foot" href="/">Do not sell my personal information</a></li>
+            </ul>
+          </div>
+      </footer>
       </div>
     );
   }
