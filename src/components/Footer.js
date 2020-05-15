@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div style={{ marginTop: 140 }}>
+    <div>
       <footer>
         <div className="foot">
           <a className="btn" href="/">
@@ -40,16 +40,17 @@ export default function Footer() {
           </a>
           <a className="btn" href="/">
             <img
-              src={require("./images/search_yellow.png")}
+              src={require("./images/spotify.png")}
               alt="google-logo"
               className="foot-head"
-              width="20px"
-              height="20px"
+              width="22px"
+              height="22px"
             />
             <img
-              src={require("./images/search.png")}
+              src={require("./images/spotify-black.png")}
               alt="google-logo"
               className="foot-cap"
+              style={{"margin":"10px"}}
               width="20px"
               height="20px"
             />

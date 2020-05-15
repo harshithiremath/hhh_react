@@ -420,6 +420,10 @@ class AudioPlayer extends PureComponent {
         </div>
       </div>
     );
+
+  }
+  componentWillUnmount(){
+    this.pause();
   }
 }
 

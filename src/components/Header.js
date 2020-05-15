@@ -11,7 +11,17 @@ export default function Header() {
         <ul>
           <li>
             <Link className="active" to="/">
-              Home
+              <img
+                src={require("./images/logo.png")}
+                style={{
+                  width:"50px",
+                  height:"50px",
+                  padding:"0px",
+                  marginTop:"-13px",
+                  marginBottom:"0px",
+                  marginRight:"-10px"
+                }}
+                />
             </Link>
           </li>
           <li>
@@ -21,7 +31,7 @@ export default function Header() {
           </li>
           <li>
             <Link className="non-active" to="/passes">
-              Tours/Passes
+              Tours
             </Link>
           </li>
 
@@ -57,7 +67,7 @@ export default function Header() {
                             className="account-head-item"
                             to="/signin"
                           >
-                            Log Out
+                            LogOut
                           </Link>
                         </li>
                       </ul>
@@ -69,7 +79,7 @@ export default function Header() {
                   <div>
                     <div className="signup-btn">
                       <Link to="/signin" className="signup-text">
-                        Log in
+                        Log In
                       </Link>
                     </div>
                   </div>
