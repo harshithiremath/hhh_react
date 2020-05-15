@@ -1,8 +1,6 @@
 import React from "react";
-import Footer from "./components/Footer";
 import { Route, Switch } from "react-router-dom";
 import { ContextConsumer } from "./components/Context";
-import Cloud from "./components/Cloud";
 import Header from "./components/Header";
 import WebPlayer from "./pages/WebPlayer";
 import SignIn from "./pages/signin";
@@ -96,16 +94,6 @@ class App extends React.Component {
             </Route>
           </Switch>
         </div>
-        <footer style={{position:"revert",zIndex:1}}>
-          <div className="mainPagefooter">
-            <ul>
-              <li><a className="foot" href="/">Copyright HHH Records</a></li>
-              <li><a className="foot" href="/">Privacy Policy</a></li>
-              <li><a className="foot" href="/">Terms & Conditions</a></li>
-              <li><a className="foot" href="/">Do not sell my personal information</a></li>
-            </ul>
-          </div>
-      </footer>
       </div>
     );
   }
