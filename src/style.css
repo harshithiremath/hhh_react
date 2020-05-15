@@ -120,6 +120,7 @@ body {
   margin: 12px 10px 0px;
   cursor: pointer;
   background: transparent;
+  padding-left: 40px;
 }
 
 .non-active {
@@ -136,7 +137,7 @@ body {
 .non-active:hover {
   border-top: 2px solid #fec325;
   transition-timing-function: linear;
-  transition: all 0.5s;
+  transition: all 0.1s;
 }
 
 .signup-btn {
@@ -147,7 +148,7 @@ body {
   background: transparent;
   border-radius: 3px;
   padding: 2px;
-  transition: all 0.5s;
+  transition: all 0.1s;
 }
 .signup-btn:hover {
   border-top: 2px solid #fec345;
@@ -162,7 +163,7 @@ body {
   font-weight: 300;
   text-transform: uppercase;
   font-family: "proxima_nova_rgregular";
-  transition: all 0.4s;
+  transition: all 0.1s;
 }
 .signup-text:hover {
   color: #fec345;
