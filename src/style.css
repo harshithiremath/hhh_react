@@ -95,17 +95,7 @@ body {
   cursor: pointer;
   background: transparent;
 }
-.active {
-  color: #292121;
-  text-decoration: none;
-  background: transparent;
-  border: 2px solid transparent;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  border-radius: 3px;
-}
+
 .non-active {
   color: #ffffff;
   text-decoration: none;
@@ -125,26 +115,31 @@ body {
 
 .signup-btn {
   right: 20px;
+  margin-top: 4px;
+  border: 2px solid transparent;
   position: absolute;
-  border: 1px solid #272626bd;
-  border-radius: 12px;
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  background: rgba(85, 85, 85, 0.253);
-  transition: 0.05s background;
+  background:transparent;
+  border-radius: 3px;
+  padding: 2px;
+  transition: all 0.5s;
 }
 .signup-btn:hover {
-  background: rgba(58, 57, 57, 0.664);
+    border-top: 2px solid #fec345;
 }
 .signup-text {
+  padding:3px;
   display: flex;
   align-items: center;
-  padding: 5px 20px 5px 20px;
   text-decoration: none;
-  color: rgb(245, 245, 245);
-  font-size: 30px;
-  background: transparent;
-  font-family: "ostrich_rounded";
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform:uppercase ;
+  font-family: "proxima_nova_rgregular";
+  transition: all 0.4s;
+}
+.signup-text:hover{
+  color: #fec345;
 }
 .account-header {
   position: absolute;
@@ -409,7 +404,7 @@ footer {
   text-shadow: 2px 2px #7977747d;
 }
 .tbox {
-  font-family: "Montserrat", sans-serif;
+  font-family: "proxima_nova_rgregular";
   margin-bottom: 3%;
   width: 80%;
   height: 40px;
@@ -601,6 +596,9 @@ footer {
   font-size: 15px;
   text-align: center;
 }
+.mainPagecontainer{
+  font-family: "proxima_nova_rgregular";
+}
 .Albums{
   margin-left: 20%;
   margin-top: 25.33%;
@@ -726,6 +724,7 @@ footer {
 }
 
 .card {
+  text-transform: uppercase;
   padding:10px 0px 10px 0px ;
   margin:20px;
   text-align: center;
@@ -787,4 +786,31 @@ footer {
 
   border: 2.5px solid #fec345;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mainPagefooter{
+  background-color: #000;
+  margin-bottom: -100px;
+  padding: 20px;
+  font-family:"proxima_nova_rgregular"
+}
+.mainPagefooter li{
+  text-transform: uppercase;
+  margin:0px;
+  color: #fff;
+  display: inline;
+  padding:10px 40px 0px 0px;
+}
+.mainPagefooter > p{
+  color:#fff;
+  padding: 10px 0px;
+  text-transform: capitalize;
+}
+.mainPagefooter > h3{
+  color:#fff;
+  padding: 10px 0px;
+  font-size: 13px;
+}
+.foot{
+ color:#fff;
+ text-decoration: none;
 }

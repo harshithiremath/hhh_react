@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Cloud from "../components/Cloud";
 import { Link } from "react-router-dom";
-export default function MainPage() {
+function MainPage() {
+  const [tours, setTours] = useState([]);
+  useEffect(() => {
+    axios.get("/tours").then((res) => {
+      const tour = res.data;
+      const tourData =tour.map((item)=>{
+        return  <div className="column">
+         <div className="card">
+           <h3>{item.tour_name},{item.location}</h3>
+           <h4>{item.date.slice(0,10)}</h4>
+           <p>{item.limit===0 ?"sold out":"fast selling"}</p>
+         </div>
+       </div>
+       })
+       setTours(tourData);
+      });
+    }, []);
+  
   return (
     <div className="mainPageContainer">
       <div className="app-text">
@@ -40,132 +58,16 @@ export default function MainPage() {
         <h1 >TICKETS</h1>
 
         <div class="row">
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
+          {tours.slice(0,4)}
         </div>
         <div class="row">
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
+          {tours.slice(4,8)}
         </div>
         <div class="row">
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEKKKKKK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
+          {tours.slice(8,12)}
         </div>
         <div class="row">
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <h3>TEK HOUSE, BLR</h3>
-              <h4>13/13/13</h4>
-              <p>SOLD OUT</p>
-            </div>
-          </div>
+          {tours.slice(12,16)}
         </div>
         <Link to="/passes" style={{'textDecoration':'none'}}>
           <button className="Ticketsbutton">BUY NOW</button>
@@ -179,6 +81,16 @@ export default function MainPage() {
           <button className="Merchbutton">MERCH</button>
         </Link>
       </div>
+      <div className="mainPagefooter">
+        <ul>
+          <li><a className="foot" href="/">Copyright HHH Records</a></li>
+          <li><a className="foot" href="/">Privacy Policy</a></li>
+          <li><a className="foot" href="/">Terms & Conditions</a></li>
+          <li><a className="foot" href="/">Do not sell my personal information</a></li>
+        </ul>
+      </div>
     </div>
   );
 }
+
+export default MainPage;
