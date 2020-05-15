@@ -49,19 +49,39 @@
 		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
 		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
 }
+@font-face {
+  font-family: "lato-thin";
+  src: url("./fonts/Lato-Hairline/Lato-Thin.woff") format("woff"),
+    url("./fonts/Lato-Hairline/Lato-Thin.svg") format("svg");
+}
+@font-face {
+  font-family: "lato-light";
+  src: url("./fonts/Lato-Light/Lato-Light.woff") format("woff"),
+    url("./fonts/Lato-Light/Lato-Light.svg") format("svg");
+}
+
+@font-face {
+  font-family: "lato-regular";
+  src: url("./fonts/Lato-Regular/Lato-Regular.woff") format("woff"),
+    url("./fonts/Lato-Regular/Lato-Regular.svg") format("svg");
+}
+@font-face {
+  font-family: "lato-Bold";
+  src: url("./fonts/Lato-Bold/Lato-Bold.woff") format("woff"),
+    url("./fonts/Lato-Bold/Lato-Bold.svg") format("svg");
+}
 
 ::-webkit-scrollbar {
   width: 12px;
   background: transparent;
-  background-color: #111;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  background: #42455a;
+  border-radius: 3px;
+  background: #29261e;
 }
 ::-webkit-scrollbar-thumb:hover {
   width: 15px;
-  background: #fec325aa;
+  background: #262833;
 }
 body {
   margin: 0;
@@ -496,7 +516,7 @@ footer {
   justify-content: center;
   text-transform: uppercase;
   font-size: 40px;
-  color: #ffa801;
+  color: #3b3830;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.596);
   user-select: none;
 }
@@ -506,11 +526,12 @@ footer {
   flex-direction: column;
   border: 2px solid transparent;
   border-radius: 8px;
-  width: 15%;
+  width: 16%;
   flex-wrap: wrap;
   margin-left: 20px;
-  padding: 50px 40px 45px 20px;
+  padding: 50px 40px 30px 20px;
   transition: transform 0.1s;
+  user-select: none;
 }
 .tour:hover {
   background: #7c7b6c36;
@@ -523,6 +544,7 @@ footer {
 }
 .buy-btn {
   margin-top: 10px;
+  font-family: lato-regular;
   justify-self: flex-end;
   font-size: 30px;
   background: transparent;
@@ -533,15 +555,42 @@ footer {
 .buy-btn:hover {
   background: rgba(73, 67, 67, 0.384);
 }
-
+.soldout:hover {
+  background: inherit !important;
+  cursor: not-allowed;
+}
 .orders {
   width: 60%;
   margin-left: 20%;
+  user-select: none;
 }
 
 .order {
   margin-top: 30px;
-  font-size: 280%;
+  font-size: 220%;
+}
+.merch-image-in-orders {
+  width: 7.5%;
+  margin: 1%;
+}
+.order-merch-name {
+  color: #1e272e;
+  text-decoration: none;
+  width: 60%;
+  display: inline-block;
+}
+.order-quantity {
+  right: 10%;
+  display: inline-block;
+  width: 20%;
+}
+.order-price {
+  color: rgb(170, 50, 19);
+  font-size: 70%;
+  padding-left: 11%;
+  width: 13%;
+  display: inline-block;
+  text-align: left;
 }
 .order h4 {
   font-size: 50%;
@@ -552,6 +601,41 @@ footer {
 .order h4:hover {
   color: #51535a;
   cursor: default;
+}
+.order-ticket-img {
+  width: 7.5%;
+  background: #ecb3159d;
+  border-radius: 4px;
+}
+.ticket-name {
+  padding-left: 3%;
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ticket-current-price {
+  display: inline-block;
+  width: 12%;
+  font-size: 80%;
+  vertical-align: top;
+  color: rgb(170, 50, 19);
+}
+.ticket-quantity {
+  display: inline-block;
+  width: 9%;
+  padding-right: 7%;
+  font-size: 80%;
+  vertical-align: top;
+}
+
+.ticket-price {
+  color: rgb(170, 50, 19);
+  font-size: 70%;
+  width: 12%;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
 }
 .cart-container {
   margin-top: 7%;

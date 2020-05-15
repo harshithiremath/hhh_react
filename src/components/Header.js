@@ -34,7 +34,6 @@ export default function Header() {
               Tours
             </Link>
           </li>
-
           <li>
             <Link className="non-active" to="/merch">
               Merch

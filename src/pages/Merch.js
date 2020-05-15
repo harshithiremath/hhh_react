@@ -1,21 +1,19 @@
 import React from "react";
 import { ContextConsumer } from "../components/Context";
-function Tour(props) {
+import { Link } from "react-router-dom";
+function Merch(props) {
   /*
-    This function will return single tour items in the tourslist
-    The props passed, should have an 'item'
-    This data will be queried from Tours Table
-    item object will have, 'tour_id', 'tour_name', 'location', 'time', 'price', 'tours_limit'
-    */
+
+  */
   //The function that determines if available/selling fast should be output
   let text1 = "";
   let fast = false;
   let soldOut = false;
-  if (props.item.tours_limit === 0) {
+  if (props.item.merch_limit === 0) {
     text1 = "Sold Out! :(";
     fast = true;
     soldOut = true;
-  } else if (props.item.tours_limit < 100) {
+  } else if (props.item.merch_limit < 10) {
     text1 = "Selling out fast!";
     fast = true;
   } else {
@@ -31,22 +29,29 @@ function Tour(props) {
   // }
   return (
     <div className="tour" style={{ fontSize: 25 }}>
-      <img
-        src={require("./images/pass.png")}
-        alt="pass"
-        style={{
-          width: 140,
-          background: "#ddd",
-          border: "1px solid #888",
-          borderRadius: 4,
-        }}
-      />
-      <h1 style={{ color: "#222f3e" }}>{props.item.tour_name}</h1>
+      <Link to={`/merch/${props.item.merch_id}`}>
+        <img
+          src={`${props.item.image_url}`}
+          alt="merch_image"
+          style={{
+            width: 180,
+            background: "#ddd",
+            borderRadius: 4,
+          }}
+        />
+      </Link>
+      <h1>
+        <Link
+          style={{ color: "#222f3e", textDecoration: "none" }}
+          to={`/merch/${props.item.merch_id}`}
+        >
+          {props.item.merch_name}
+        </Link>
+      </h1>
       <div className="tourLower">
-        <h3 style={{ color: "#222f3e", paddingTop: 20 }}>
-          {props.item.location}
-        </h3>
-        <h5 style={{ color: "#222f3e" }}>{props.item.time}</h5>
+        <h5 style={{ color: "#868787" }}>
+          {props.item.description.slice(0, 50)}...
+        </h5>
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
           Rs. {props.item.price}
         </h4>
@@ -56,19 +61,19 @@ function Tour(props) {
           <h6 style={{ color: "#a6a4a4" }}>{text1}</h6>
         )}
         {soldOut ? (
-          <button className="buy-btn soldout">BUY</button>
+          <button className="buy-btn soldout">Sold Out</button>
         ) : (
           <ContextConsumer>
             {(context) => (
               <button
                 onClick={() => {
                   context.signed_in
-                    ? props.buyTicket(props.item.tour_id)
+                    ? context.addToCart(props.item.merch_id)
                     : props.toggleRedirect();
                 }}
                 className="buy-btn"
               >
-                BUY
+                Add to Cart
               </button>
             )}
           </ContextConsumer>
@@ -78,4 +83,4 @@ function Tour(props) {
   );
 }
 
-export default Tour;
+export default Merch;
