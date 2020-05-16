@@ -41,7 +41,7 @@ class Tours extends React.Component {
     });
   }
   render() {
-    const items = this.state.tours.map((item) => {
+    let items = this.state.tours.map((item) => {
       return (
         <Tour
           buyTicket={this.buyTicket}
@@ -51,6 +51,9 @@ class Tours extends React.Component {
         />
       );
     });
+    if (items.length === 0) {
+      items = <h2>There seems to be an error in the backend!</h2>;
+    }
     return (
       <div>
         {this.renderRedirect()}

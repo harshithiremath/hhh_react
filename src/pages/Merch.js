@@ -49,8 +49,13 @@ function Merch(props) {
         </Link>
       </h1>
       <div className="tourLower">
-        <h5 style={{ color: "#868787" }}>
-          {props.item.description.slice(0, 50)}...
+        <h5>
+          <a
+            style={{ color: "#868787", textDecoration: "none" }}
+            href={`/merch/${props.item.merch_id}`}
+          >
+            {props.item.description.slice(0, 50)}...
+          </a>
         </h5>
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
           Rs. {props.item.price}

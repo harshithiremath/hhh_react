@@ -28,7 +28,7 @@ export default class Merchs extends Component {
   }
   render() {
     // // console.log("merchs in render", this.state.merchs);
-    const items = this.state.merchs.map((item) => {
+    let items = this.state.merchs.map((item) => {
       return (
         <Merch
           toggleRedirect={this.toggleRedirect}
@@ -37,6 +37,9 @@ export default class Merchs extends Component {
         />
       );
     });
+    if (items.length === 0) {
+      items = <h2>There seems to be an error in the backend!</h2>;
+    }
     return (
       <div>
         {this.renderRedirect()}
