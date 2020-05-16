@@ -21,14 +21,20 @@ function Tour(props) {
   } else {
     text1 = "Available";
   }
+  let time1 = new Date(props.item.time);
+  let date = time1.toDateString();
+  let time = time1.toTimeString();
+  // console.log("time", time);
 
-  // function handleClick(e) {
-  //   console.log(e);
+  // // function handleClick(e) {
 
-  //   return null;
+  // // console.log(e);
 
-  //   //props.func(e);
-  // }
+  // // return null;
+
+  // // props.func(e);
+
+  // // }
   return (
     <div className="tour" style={{ fontSize: 25 }}>
       <img
@@ -46,7 +52,8 @@ function Tour(props) {
         <h3 style={{ color: "#222f3e", paddingTop: 20 }}>
           {props.item.location}
         </h3>
-        <h5 style={{ color: "#222f3e" }}>{props.item.time}</h5>
+        <h5 style={{ color: "#222f3e" }}>{date}</h5>
+        <h5 style={{ color: "#222f3e" }}>{time.slice(0, 5)}</h5>
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
           Rs. {props.item.price}
         </h4>

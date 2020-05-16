@@ -584,6 +584,7 @@ footer {
 .order {
   margin-top: 30px;
   font-size: 220%;
+  border-bottom: 1px solid #ccc;
 }
 .merch-image-in-orders {
   width: 7.5%;

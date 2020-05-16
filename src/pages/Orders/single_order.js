@@ -17,6 +17,8 @@ export default class single_order extends React.Component {
   }
 
   render() {
+    let time1 = new Date(this.props.order.time_purchased);
+    let date = time1.toDateString();
     const order_arr = this.state.order;
     // console.log("in single_order order_arr", order_arr);
     return (
@@ -36,7 +38,7 @@ export default class single_order extends React.Component {
           <span className="order-quantity">{this.props.order.quantity} </span>
           <span className="order-price">₹ {this.props.order.price}</span>
         </div>
-        <h4> Ordered on: {this.props.order.time_purchased}</h4>
+        <h4> Ordered on: {date}</h4>
       </div>
     );
   }

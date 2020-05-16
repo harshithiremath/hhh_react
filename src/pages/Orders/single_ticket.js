@@ -16,6 +16,8 @@ export default class single_ticket extends React.Component {
   }
 
   render() {
+    let time = new Date(this.props.ticket.time_purchased);
+    let ordered_date = time.toDateString();
     const ticket_arr = this.state.ticket;
     // console.log("in single_ticket ticket_arr", ticket_arr);
     return (
@@ -46,9 +48,7 @@ export default class single_ticket extends React.Component {
         <h4>
           {" "}
           Ordered on:{" "}
-          {this.props.ticket.time_purchased
-            ? this.props.ticket.time_purchased
-            : "data unavailable"}
+          {this.props.ticket.time_purchased ? ordered_date : "data unavailable"}
         </h4>
       </div>
     );
