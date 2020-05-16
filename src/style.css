@@ -120,7 +120,6 @@ body {
   margin: 12px 10px 0px;
   cursor: pointer;
   background: transparent;
-  padding-left: 40px;
 }
 
 .non-active {
@@ -170,21 +169,25 @@ body {
 }
 .account-header {
   position: absolute;
-  /* margin-left: 87%; */
   right: 1%;
 }
 .account-head-wrapper {
   color: #fec325;
   transition: color 0.3s !important;
+  border:2px solid transparent;
+  padding: 5px;
+  border-radius: 3px;
+  transition: border 0.4s;
 }
 .account-head-wrapper ul {
   display: none;
 }
 .account-head-wrapper:hover {
+  border-top:2px solid #fec345;
   color: #fec345;
 }
 .account-head-wrapper:hover > ul {
-  background-color: #111010;
+  background-color: #000000;
   border-radius: 5px;
   display: flex;
   margin: 0px;
@@ -192,6 +195,7 @@ body {
   justify-content: space-around;
   position: absolute;
   transition: all 0.4s;
+  padding-top: 0px;
 }
 .account-head-wrapper .ul:hover {
   display: flex;
@@ -200,7 +204,9 @@ body {
   transition: all 0.4s;
 }
 .account-head-wrapper ul li {
-  margin: 5px 10px 5px 10px;
+  padding: 0px 15px 5px 15px;
+  margin-right: 0px;
+  margin-left: 0px;
   color: #dbdbdb;
 }
 .account-head-item {
