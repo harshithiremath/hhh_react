@@ -22,7 +22,7 @@ export default class single_ticket extends React.Component {
       <div className="order">
         <div>
           <img
-            src={require("./images/pass.png")}
+            src={require("../images/pass.png")}
             alt="pass"
             // style={{
             //   width: 20,

@@ -2,16 +2,16 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { ContextConsumer } from "./components/Context";
 import Header from "./components/Header";
-import WebPlayer from "./pages/WebPlayer";
+import WebPlayer from "./pages/WebPlayer/WebPlayer";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
-import OrderHistory from "./pages/OrderHistory";
-import Tours from "./pages/Tours";
+import OrderHistory from "./pages/Orders/OrderHistory";
+import Tours from "./pages/Tours/Tours";
 import MainPage from "./pages/MainPage";
-import Merchs from "./pages/Merchs";
-import Cart from "./pages/Cart";
+import Merchs from "./pages/Merch/Merchs";
+import Cart from "./pages/Cart/Cart";
 
-import SingleMerch from "./pages/SingleMerch";
+import SingleMerch from "./pages/SingleMerch/SingleMerch";
 import TicketCheckout from "./pages/TicketCheckout";
 import Footer from "./components/Footer";
 

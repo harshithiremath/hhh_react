@@ -1,5 +1,5 @@
 import React from "react";
-import { ContextConsumer } from "../components/Context";
+import { ContextConsumer } from "../../components/Context";
 function Tour(props) {
   /*
     This function will return single tour items in the tourslist
@@ -32,7 +32,7 @@ function Tour(props) {
   return (
     <div className="tour" style={{ fontSize: 25 }}>
       <img
-        src={require("./images/pass.png")}
+        src={require("../images/pass.png")}
         alt="pass"
         style={{
           width: 140,

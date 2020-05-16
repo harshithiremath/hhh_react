@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { ContextConsumer } from "../components/Context";
+import { ContextConsumer } from "../../components/Context";
 import { Link, Redirect } from "react-router-dom";
 function Merch(props) {
   /*

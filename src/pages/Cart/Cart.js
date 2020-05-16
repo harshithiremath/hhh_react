@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
-import MerchInCart from "./Cart/MerchInCart";
-import "./Cart/MerchInCartcss.css";
+import MerchInCart from "./MerchInCart";
+import "./MerchInCartcss.css";
 
 export default class Cart extends Component {
   state = {

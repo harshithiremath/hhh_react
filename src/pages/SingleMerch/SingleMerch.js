@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./SingleMerchcss.css";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
-import { ContextConsumer } from "../components/Context";
+import { ContextConsumer } from "../../components/Context";
 export default function SingleMerch(props) {
   const { product_id } = useParams();
   let [redirectstate, setredirectstate] = useState(false);
