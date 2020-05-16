@@ -10,7 +10,7 @@ import Tours from "./pages/Tours/Tours";
 import MainPage from "./pages/MainPage";
 import Merchs from "./pages/Merch/Merchs";
 import Cart from "./pages/Cart/Cart";
-
+import { Helmet } from "react-helmet";
 import SingleMerch from "./pages/SingleMerch/SingleMerch";
 import TicketCheckout from "./pages/TicketCheckout";
 import Footer from "./components/Footer";
@@ -49,6 +49,9 @@ class App extends React.Component {
                 <Switch>
                   <Route path="/orders">
                     <OrderHistory user={context.user} context={context} />
+                    <Helmet>
+                      <title>Orders | HHH</title>
+                    </Helmet>
                     {/* Because we always want the OrderHistory page to have the context*/}
                   </Route>
                   <Route path="/cart">
@@ -57,6 +60,9 @@ class App extends React.Component {
                       signed_in={context.signed_in}
                       context={context}
                     />
+                    <Helmet>
+                      <title>Cart | HHH</title>
+                    </Helmet>
                   </Route>
                   <Route path="/merch/:product_id">
                     <SingleMerch context={context} />
@@ -66,6 +72,9 @@ class App extends React.Component {
                   </Route>
                   <Route path="/signin">
                     <SignIn context={context} />
+                    <Helmet>
+                      <title>Sign In | HHH</title>
+                    </Helmet>
                   </Route>
                 </Switch>
               );
@@ -73,16 +82,29 @@ class App extends React.Component {
           </ContextConsumer>
           <Switch>
             <Route exact path="/">
+              <Helmet>
+                <title>HHH</title>
+              </Helmet>
               <MainPage />
               <Footer />
             </Route>
             <Route path="/passes">
+              <Helmet>
+                <title>Tours | HHH</title>
+              </Helmet>
               <Tours />
             </Route>
             <Route exact path="/merch">
+              <Helmet>
+                <title>Merch | HHH</title>
+              </Helmet>
               <Merchs />
             </Route>
             <Route path="/signup">
+              <Helmet>
+                <title>Sign Up | HHH</title>
+              </Helmet>
+              <Merchs />
               <SignUp />
             </Route>
             <Route path="/webPlayer">

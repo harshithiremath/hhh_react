@@ -5,6 +5,7 @@ import "./SingleMerchcss.css";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { ContextConsumer } from "../../components/Context";
+import { Helmet } from "react-helmet";
 export default function SingleMerch(props) {
   const { product_id } = useParams();
   let [redirectstate, setredirectstate] = useState(false);
@@ -84,6 +85,10 @@ export default function SingleMerch(props) {
     return (
       <div className="product-page-container">
         {redirectToSignIn()}
+        <Helmet>
+          <title>{state.merch.merch_name} | HHH</title>
+          <link rel="icon" href="../../../public/new_logo.png" />
+        </Helmet>
         <div className="product-page-image-container">
           <div className="product-page-thumbnail-container">
             <div
