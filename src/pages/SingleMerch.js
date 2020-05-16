@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import "./SingleMerchcss.css"; 
+import "./SingleMerchcss.css";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { ContextConsumer } from "../components/Context";
@@ -69,6 +69,7 @@ export default function SingleMerch(props) {
           context.addToCart({
             merch_id: state.merch.merch_id,
             quantity: formstate.quantity,
+            merch_limit: state.merch.merch_limit,
           });
         }
       } else {

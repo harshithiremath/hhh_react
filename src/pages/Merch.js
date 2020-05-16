@@ -27,6 +27,7 @@ function Merch(props) {
       context.addToCart({
         merch_id: props.item.merch_id,
         quantity: 1,
+        merch_limit: props.item.merch_limit,
       });
     } else {
       setredirectstate(true);

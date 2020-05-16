@@ -50,13 +50,6 @@ class ContextProvider extends React.Component {
     }
   };
   addToCart = (item) => {
-    // let currCart = this.state.cart.concat(item);
-    // console.log(item);
-    // this.setState({
-    //   cart: currCart,
-    // });
-    // console.log(this.state);
-    console.log(item);
     axios
       .post("http://localhost:5000/cart", {
         message: "insert",
@@ -64,10 +57,12 @@ class ContextProvider extends React.Component {
           user_id: this.state.user,
           merch_id: item.merch_id,
           quantity: item.quantity,
+          merch_limit: item.merch_limit,
         },
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
+        console.log(res.data);
       });
   };
   render() {

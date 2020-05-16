@@ -174,7 +174,7 @@ body {
 .account-head-wrapper {
   color: #fec325;
   transition: color 0.3s !important;
-  border:2px solid transparent;
+  border: 2px solid transparent;
   padding: 5px;
   border-radius: 3px;
   transition: border 0.4s;
@@ -183,7 +183,7 @@ body {
   display: none;
 }
 .account-head-wrapper:hover {
-  border-top:2px solid #fec345;
+  border-top: 2px solid #fec345;
   color: #fec345;
 }
 .account-head-wrapper:hover > ul {

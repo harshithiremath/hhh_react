@@ -8,16 +8,15 @@
 }
 .cart-merch-name {
   color: #1e272e;
-  font-family: lato-bold;
-  letter-spacing: 2px;
+  font-family: lato-light;
   text-decoration: none;
-  width: 47.5%;
+  width: 50%;
   display: inline-block;
   vertical-align: top;
   padding-left: 2%;
 }
 .cart-container {
-  margin-top: 4%;
+  margin-top: 1%;
   width: 65%;
   margin-left: 15%;
   line-height: 55px;
@@ -59,7 +58,7 @@
   border: none;
 }
 .cart-quantity--large .cart-quantity__Button {
-  padding: 10px 18px;
+  padding: 7px 15px;
   font-family: lato-light;
   font-size: 25px;
 }
