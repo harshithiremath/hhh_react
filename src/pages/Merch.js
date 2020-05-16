@@ -87,10 +87,13 @@ function Merch(props) {
                   onClick={() => {
                     context.signed_in
                       ? context.addToCart({
+                          user: context.user,
                           merch_id: props.item.merch_id,
                           quantity: 1,
+                          merch_limit: props.item.merch_limit,
                         })
-                      : handleAddToCart(context);
+                      : // ! This arguments are in accordance to the api call in addToCart in context
+                        handleAddToCart(context);
                   }}
                   className="buy-btn"
                 >

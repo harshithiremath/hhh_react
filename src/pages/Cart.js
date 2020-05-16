@@ -66,7 +66,6 @@ export default class Cart extends Component {
       },
     });
   };
-  updatePrice = (e) => {};
   render() {
     if (this.props.signed_in) {
       let itemsToDisplay = this.state.merchs.map((item) => (
@@ -82,10 +81,38 @@ export default class Cart extends Component {
           <h1 style={{ marginTop: 10 }} className="h2_upcoming_tours">
             Cart
           </h1>
-          <div className="cart-items-above-final-price">{itemsToDisplay}</div>
-          <span className="cart-container-right-price">
-            ₹ {this.state.totalPrice}
-          </span>
+
+          {this.state.totalPrice === 0 ? (
+            <h3 style={{ textAlign: "center", fontSize: 25, marginTop: 10 }}>
+              Your cart is empty!
+            </h3>
+          ) : (
+            <>
+              <div className="cart-items-above-final-price">
+                <div className="merch-in-cart">
+                  <div>
+                    <div className="cart-quantity-top-container">
+                      <span className="cart-quantity-top">Quantity</span>
+                    </div>
+                    <div className="cart-price-top-container">
+                      <span className="cart-price-top">Price</span>
+                    </div>
+                  </div>
+                </div>
+                {itemsToDisplay}
+              </div>
+              <div className="cart-bottom-container">
+                <div className="cart-bottom-subtotal-container">
+                  <span className="cart-bottom-subtotal">Subtotal</span>
+                </div>
+                <div className="cart-bottom-final-price-container">
+                  <span className="cart-container-final-price">
+                    ₹ {this.state.totalPrice}
+                  </span>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       );
     } else {

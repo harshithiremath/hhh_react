@@ -67,10 +67,11 @@ class OrderHistory extends React.Component {
       // console.log(orders_to_render);
       return (
         <div className="orders-page-container">
+          <h1 className="h2_upcoming_tours">Orders</h1>
           {tickets_to_render.length === 0 ? (
-            <h1 style={{ marginTop: 60 }} className="h2_upcoming_tours">
+            <h3 style={{ textAlign: "center", fontSize: 25, marginTop: 10 }}>
               You didn't purchase any tour passes yet! :)
-            </h1>
+            </h3>
           ) : (
             <div>
               <h1 className="h2_upcoming_tours">Your Tour passes</h1>
@@ -78,9 +79,9 @@ class OrderHistory extends React.Component {
             </div>
           )}
           {orders_to_render.length === 0 ? (
-            <h1 className="h2_upcoming_tours">
+            <h3 style={{ textAlign: "center", fontSize: 25, marginTop: 10 }}>
               You didn't purchase any merchandise yet! :)
-            </h1>
+            </h3>
           ) : (
             <div>
               <h1 className="h2_upcoming_tours">Your Merchandise orders</h1>
