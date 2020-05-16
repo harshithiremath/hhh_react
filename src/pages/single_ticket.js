@@ -17,7 +17,7 @@ export default class single_ticket extends React.Component {
 
   render() {
     const ticket_arr = this.state.ticket;
-    console.log("in single_ticket ticket_arr", ticket_arr);
+    // console.log("in single_ticket ticket_arr", ticket_arr);
     return (
       <div className="order">
         <div>

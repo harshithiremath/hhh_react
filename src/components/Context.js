@@ -10,7 +10,7 @@ class ContextProvider extends React.Component {
   // ! As cookies are implemented, the user won't need to log in again if he opens a new tab
 
   initialCheck = () => {
-    console.log("signed_in", localStorage.getItem("signed_in"));
+    // console.log("signed_in", localStorage.getItem("signed_in"));
     if (localStorage.getItem("signed_in")) {
       this.setState({
         user: localStorage.getItem("user"),

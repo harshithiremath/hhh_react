@@ -649,30 +649,7 @@ footer {
   text-align: left;
   vertical-align: top;
 }
-.cart-container {
-  margin-top: 7%;
-  width: 65%;
-  margin-left: 15%;
-  line-height: 55px;
-}
-.cart-container-left-ul {
-  width: 85%;
-  float: left;
-  list-style: none;
-  font-size: 40px;
-  margin-right: 5%;
-}
-.cart-container-right-price {
-  width: 10%;
-  float: right;
-  font-size: 20px;
-  color: #a52606;
-  text-align-last: right;
-}
-.cart-items-above-final-price {
-  border-bottom: 1px solid rgb(41, 41, 41);
-  overflow: auto;
-}
+
 .containerPlayer {
   box-sizing: border-box;
   color: #d2d5d6;

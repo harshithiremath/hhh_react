@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { ContextConsumer } from "../components/Context";
 import { Link, Redirect } from "react-router-dom";
 function Merch(props) {
@@ -6,6 +7,7 @@ function Merch(props) {
 
   */
   //The function that determines if available/selling fast should be output
+  let [redirectstate, setredirectstate] = useState(false);
   let text1 = "";
   let fast = false;
   let soldOut = false;
@@ -20,15 +22,24 @@ function Merch(props) {
     text1 = "Available";
   }
 
-  // function handleClick(e) {
-  //   console.log(e);
-
-  //   return null;
-
-  //   //props.func(e);
-  // }
+  function handleAddToCart(context) {
+    if (context.signed_in) {
+      context.addToCart({
+        merch_id: props.item.merch_id,
+        quantity: 1,
+      });
+    } else {
+      setredirectstate(true);
+    }
+  }
+  function redirectToSignIn() {
+    if (redirectstate) {
+      return <Redirect to="/signin" />;
+    }
+  }
   return (
     <div className="tour" style={{ fontSize: 25 }}>
+      {redirectToSignIn()}
       <Link to={`/merch/${props.item.merch_id}`}>
         <img
           src={`${props.item.image_url}`}
@@ -78,7 +89,7 @@ function Merch(props) {
                           merch_id: props.item.merch_id,
                           quantity: 1,
                         })
-                      : props.toggleRedirect();
+                      : handleAddToCart(context);
                   }}
                   className="buy-btn"
                 >
