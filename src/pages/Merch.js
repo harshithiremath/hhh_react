@@ -1,6 +1,6 @@
 import React from "react";
 import { ContextConsumer } from "../components/Context";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 function Merch(props) {
   /*
 
@@ -70,16 +70,31 @@ function Merch(props) {
         ) : (
           <ContextConsumer>
             {(context) => (
-              <button
-                onClick={() => {
-                  context.signed_in
-                    ? context.addToCart(props.item.merch_id)
-                    : props.toggleRedirect();
-                }}
-                className="buy-btn"
-              >
-                Add to Cart
-              </button>
+              <>
+                <button
+                  onClick={() => {
+                    context.signed_in
+                      ? context.addToCart({
+                          merch_id: props.item.merch_id,
+                          quantity: 1,
+                        })
+                      : props.toggleRedirect();
+                  }}
+                  className="buy-btn"
+                >
+                  Add to Cart
+                </button>
+                <button
+                  onClick={() => {
+                    context.signed_in
+                      ? console.log("clicked")
+                      : props.toggleRedirect();
+                  }}
+                  className="buy-btn"
+                >
+                  Buy Now
+                </button>
+              </>
             )}
           </ContextConsumer>
         )}

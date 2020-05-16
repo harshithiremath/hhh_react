@@ -3,8 +3,11 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import "./SingleMerchcss.css";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
+import { ContextConsumer } from "../components/Context";
 export default function SingleMerch(props) {
   const { product_id } = useParams();
+  let [redirectstate, setredirectstate] = useState(false);
   let [state, setstate] = useState({ gotData: false });
   let [formstate, setformstate] = useState({ quantity: 0 });
   // // console.log("props of SingleMerch", props);
@@ -60,8 +63,26 @@ export default function SingleMerch(props) {
         <span className="product-page-available-status">Available</span>
       );
     }
+    function handleAddToCart(context) {
+      if (context.signed_in) {
+        if (formstate.quantity > 0) {
+          context.addToCart({
+            merch_id: state.merch.merch_id,
+            quantity: formstate.quantity,
+          });
+        }
+      } else {
+        setredirectstate(true);
+      }
+    }
+    function redirectToSignIn() {
+      if (redirectstate) {
+        return <Redirect to="/signin" />;
+      }
+    }
     return (
       <div className="product-page-container">
+        {redirectToSignIn()}
         <div className="product-page-image-container">
           <div className="product-page-thumbnail-container">
             <div
@@ -123,14 +144,28 @@ export default function SingleMerch(props) {
                   </span>
                 </div>
               </div>
-              <div className="product-page-add-to-cart-div">
-                <button className="product-page-add-to-cart">
-                  ADD TO CART
-                </button>
-              </div>
-              <div className="product-page-add-to-cart-div">
-                <button className="product-page-buy-now">BUY NOW</button>
-              </div>
+
+              <ContextConsumer>
+                {(context) => {
+                  return (
+                    <>
+                      <div className="product-page-add-to-cart-div">
+                        <button
+                          className="product-page-add-to-cart"
+                          onClick={() => handleAddToCart(context)}
+                        >
+                          ADD TO CART
+                        </button>
+                      </div>
+                      <div className="product-page-add-to-cart-div">
+                        <button className="product-page-buy-now">
+                          BUY NOW
+                        </button>
+                      </div>
+                    </>
+                  );
+                }}
+              </ContextConsumer>
             </>
           ) : null}
         </div>

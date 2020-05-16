@@ -551,9 +551,9 @@ footer {
 }
 .buy-btn {
   margin-top: 10px;
-  font-family: lato-regular;
+  font-family: lato-light;
   justify-self: flex-end;
-  font-size: 30px;
+  font-size: 25px;
   background: transparent;
   color: #222f3e;
   border: none;

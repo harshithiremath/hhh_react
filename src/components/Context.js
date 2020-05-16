@@ -1,6 +1,6 @@
 import React from "react";
+import axios from "axios";
 const { Provider, Consumer } = React.createContext();
-
 class ContextProvider extends React.Component {
   state = {
     signed_in: false,
@@ -50,12 +50,25 @@ class ContextProvider extends React.Component {
     }
   };
   addToCart = (item) => {
-    let currCart = this.state.cart.concat(item);
+    // let currCart = this.state.cart.concat(item);
+    // console.log(item);
+    // this.setState({
+    //   cart: currCart,
+    // });
+    // console.log(this.state);
     console.log(item);
-    this.setState({
-      cart: currCart,
-    });
-    console.log(this.state);
+    axios
+      .post("http://localhost:5000/cart", {
+        message: "insert",
+        details: {
+          user_id: this.state.user,
+          merch_id: item.merch_id,
+          quantity: item.quantity,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
   render() {
     return (
