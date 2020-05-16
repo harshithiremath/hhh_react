@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import "./SingleMerchcss.css";
+import "./SingleMerchcss.css"; 
 import axios from "axios";
 export default function SingleMerch(props) {
   const { product_id } = useParams();
