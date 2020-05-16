@@ -134,6 +134,8 @@ class SignIn extends React.Component {
         {this.renderRedirect()}
         {signed_in ? (
           <Redirect to="/" />
+          // // If user is already signed in, he should be redirected to / 
+          // // This closes issue #3
         ) : (
           <div>
             <Particles className="particles" params={this.particlesOptions} />
