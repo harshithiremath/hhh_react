@@ -28,7 +28,7 @@ function MainPage() {
       });
       setTours(tourData);
     });
-  }, []);
+    }, []);
 
   return (
     <div className="mainPageContainer">
@@ -36,19 +36,19 @@ function MainPage() {
         <div className="app-text">
           <Cloud />
           <h1>
-            HEY!! Hope you have a great time looking through every detail of the
-            website!
+            Hey!! Welcome to HHH's official website, A one stop destination for everything.
+            Find out if he's coming to your hometown anytime soon!!  
           </h1>
-          <span className="scroll-btn">
-            <a href="/#albums">
-              <span className="mouse">
-                <span></span>
-              </span>
-            </a>
-            <p>SCROLL DOWN</p>
-          </span>
+          <p>SCROLL DOWN</p>
         </div>
+        <div class="scroll-downs">
+          <div class="mousey">
+            <div class="scroller"></div>
+          </div>
+        </div>
+        
       </div>
+      
       <div className="Albums">
         <h1>
           <a id="albums">Latest Release</a>
