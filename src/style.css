@@ -92,7 +92,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ecf0f1;
+  background-color: #fbfbfb;
   color: #1e272e;
 }
 * {
@@ -373,7 +373,7 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-family: 'proxima_nova_rgregular';
+  font-family: "proxima_nova_rgregular";
   transform: translate(-50%, -50%);
   text-align: center;
   color: #d6d3d3;
@@ -398,7 +398,7 @@ footer {
   }
 }
 .signin-box-container h1 {
-  font-family: 'lato-light';
+  font-family: "lato-light";
   text-transform: capitalize;
   font-size: 40px;
   margin-top: 13%;
@@ -486,7 +486,7 @@ footer {
   /* padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px; */
-  font-family: 'lato-light';
+  font-family: "lato-light";
   width: 90%;
   margin-left: 10%;
   margin-top: 1%;
@@ -495,7 +495,7 @@ footer {
   flex-direction: row;
 }
 .h2_upcoming_tours {
-  font-family: 'lato-light';
+  font-family: "lato-light";
   margin-top: 30px;
   display: flex;
   justify-content: center;
