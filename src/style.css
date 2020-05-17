@@ -373,13 +373,12 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-family: "ostrich_rounded";
+  font-family: 'proxima_nova_rgregular';
   transform: translate(-50%, -50%);
   text-align: center;
   color: #d6d3d3;
   border: 2px;
   border-style: solid;
-
   border-color: #fec345;
   border-radius: 20px;
   background: #000000;
@@ -399,10 +398,11 @@ footer {
   }
 }
 .signin-box-container h1 {
-  font-size: 50px;
+  font-family: 'lato-light';
+  text-transform: capitalize;
+  font-size: 40px;
   margin-top: 13%;
   margin-bottom: 30px;
-  text-shadow: 2px 2px #7977747d;
 }
 .tbox {
   font-family: "proxima_nova_rgregular";
@@ -465,7 +465,9 @@ footer {
 }
 .new_member_text {
   display: block;
-  font-family: "ostrich_thick";
+  font-family: "lato-light";
+  font-weight: bold;
+  text-transform: uppercase;
   width: 130px;
   text-decoration: none;
   color: #fec3257a;
@@ -484,6 +486,7 @@ footer {
   /* padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px; */
+  font-family: 'lato-light';
   width: 90%;
   margin-left: 10%;
   margin-top: 1%;
@@ -492,6 +495,7 @@ footer {
   flex-direction: row;
 }
 .h2_upcoming_tours {
+  font-family: 'lato-light';
   margin-top: 30px;
   display: flex;
   justify-content: center;

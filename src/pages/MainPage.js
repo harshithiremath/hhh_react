@@ -59,28 +59,28 @@ function MainPage() {
           </figure>
           <figure className="gallery__item gallery__item--2">
             <img
-              src="https://images.genius.com/f3f77222e1b615e0a10354ea6282ff22.1000x1000x1.png"
+              src="https://images.genius.com/1e570bd88b1224a42c23f6e2847972e3.1000x1000x1.png"
               className="gallery__img"
               alt="2"
             />
           </figure>
           <figure className="gallery__item gallery__item--3">
             <img
-              src="https://images.genius.com/4804ef2cdfcdb8cc79c9a68f8ce18422.500x500x1.jpg"
+              src="https://images.genius.com/cad09dd397954c2fd0534e5ea0c5a2e4.1000x1000x1.png"
               className="gallery__img"
               alt="3"
             />
           </figure>
           <figure className="gallery__item gallery__item--4">
             <img
-              src="https://images.genius.com/960edcb36156c3aed9cb70ede250780a.1000x1000x1.jpg"
+              src="https://images.genius.com/7cbd390528fb885a072f16226a7c0982.1000x1000x1.png"
               className="gallery__img"
               alt="4"
             />
           </figure>
           <figure className="gallery__item gallery__item--5">
             <img
-              src="https://images.genius.com/7cbd390528fb885a072f16226a7c0982.1000x1000x1.png"
+              src="https://images.genius.com/4e05a854d0bfdced65042c1efa8c504e.999x999x1.jpg"
               className="gallery__img"
               alt="5"
             />
