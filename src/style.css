@@ -644,200 +644,11 @@ footer {
   font-size: 15px;
   text-align: center;
 }
-.mainPagecontainer {
-  font-family: "proxima_nova_rgregular";
-}
-.Albums {
-  position: relative;
-  margin-top: -50px;
-  margin-left: 20%;
-  display: inline-block;
-  justify-content: center;
-  box-sizing: border-box;
-  font-family: "proxima_nova_rgregular";
-  text-transform: uppercase;
-}
-.Albums > h1 {
-  text-align: center;
-}
-.Albumbutton {
-  display: flex;
-  background-color: #000;
-  color: #fff;
-  border: 3px solid #000;
-  width: 33.33%;
-  height: 60px;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  font-size: 18px;
-  margin-top: 50px;
-  margin-left: 33.33%;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  transition-duration: 0.4s;
-}
-.Albumbutton:hover {
-  background-color: #fff;
-  color: #000;
-}
-.gallery {
-  margin-top: 20px;
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(12, 5vw);
-  grid-template-rows: repeat(8, 5vw);
-  grid-gap: 0px;
-}
-
-.gallery__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: inline-block;
-}
-.gallery__item--1 {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 5;
-}
-
-.gallery__item--2 {
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 1;
-  grid-row-end: 5;
-}
-
-.gallery__item--3 {
-  grid-column-start: 9;
-  grid-column-end: 13;
-  grid-row-start: 1;
-  grid-row-end: 5;
-}
-
-.gallery__item--4 {
-  grid-column-start: 1;
-  grid-column-end: 5;
-  grid-row-start: 5;
-  grid-row-end: 9;
-}
-.gallery__item--5 {
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 5;
-  grid-row-end: 9;
-}
-.gallery__item--6 {
-  grid-column-start: 9;
-  grid-column-end: 13;
-  grid-row-start: 5;
-  grid-row-end: 9;
-}
-
-.MainTours {
-  margin-top: 70px;
-  padding: 50px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  font-family: "proxima_nova_rgregular";
-  box-sizing: border-box;
-}
-.MainTours > h1 {
-  margin: -20px 0px 30px 0px;
-}
-.column {
-  float: left;
-  width: 25%;
-}
-
-.row {
-  margin: 0 -20px 0px -5px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 800px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-.card {
-  text-transform: uppercase;
-  padding: 10px 0px 10px 0px;
-  margin: 20px;
-  text-align: center;
-  background-color: #000000;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.Ticketsbutton {
-  display: flex;
-  background-color: #fff;
-  color: #000;
-  border: 3px solid #000;
-  width: 25%;
-  height: 60px;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  font-size: 18px;
-  margin-top: 40px;
-  margin-left: 38%;
-  cursor: pointer;
-  transition-duration: 0.1s;
-}
-.Ticketsbutton:hover {
-  background-color: #000;
-  color: #fff;
-  border: 2px solid rgb(255, 255, 255);
-  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2),
-    0 6px 20px 0 rgba(255, 255, 255, 0.048);
-}
-.Merch {
-  font-family: "proxima_nova_rgregular";
-  background-color: #fec325;
-  color: #000;
-  text-align: center;
-  padding: 30px;
-}
-.Merch > h1 {
-  padding-bottom: 30px;
-}
-.Merchbutton {
-  display: flex;
-  background-color: #000;
-  color: #fff;
-  border: 2.5px solid #000;
-  width: 25%;
-  height: 60px;
-  justify-content: center;
-  text-align: center;
-  font-size: 18px;
-  margin-top: 40px;
-  margin-left: 38%;
-  cursor: pointer;
-  transition-duration: 0.1s;
-}
-.Merchbutton:hover {
-  border: 1px solid #fec345;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 .mainPagefooter {
   background-color: #000;
   margin-bottom: -100px;
   padding: 20px;
-  font-family: "proxima-nova",sans-serif;
+  font-family: "proxima-nova", sans-serif;
 }
 .mainPagefooter li {
   text-transform: uppercase;
@@ -897,113 +708,113 @@ footer {
   color: #a1a1a1;
 }
 @-webkit-keyframes ani-mouse {
-	0% {
-	opacity: 1;
-	top: 29%;
-	}
-	15% {
-	opacity: 1;
-	top: 50%;
-	}
-	50% {
-	opacity: 0;
-	top: 50%;
-	}
-	100% {
-	opacity: 0;
-	top: 29%;
-	}
+  0% {
+    opacity: 1;
+    top: 29%;
+  }
+  15% {
+    opacity: 1;
+    top: 50%;
+  }
+  50% {
+    opacity: 0;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+    top: 29%;
+  }
 }
 @-moz-keyframes ani-mouse {
-	0% {
-	opacity: 1;
-	top: 29%;
-	}
-	15% {
-	opacity: 1;
-	top: 50%;
-	}
-	50% {
-	opacity: 0;
-	top: 50%;
-	}
-	100% {
-	opacity: 0;
-	top: 29%;
-	}
+  0% {
+    opacity: 1;
+    top: 29%;
+  }
+  15% {
+    opacity: 1;
+    top: 50%;
+  }
+  50% {
+    opacity: 0;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+    top: 29%;
+  }
 }
 @keyframes ani-mouse {
-	0% {
-	opacity: 1;
-	top: 29%;
-	}
-	15% {
-	opacity: 1;
-	top: 50%;
-	}
-	50% {
-	opacity: 0;
-	top: 50%;
-	}
-	100% {
-	opacity: 0;
-	top: 29%;
-	}
+  0% {
+    opacity: 1;
+    top: 29%;
+  }
+  15% {
+    opacity: 1;
+    top: 50%;
+  }
+  50% {
+    opacity: 0;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+    top: 29%;
+  }
 }
- .scroll-btn {
-	display: block;
+.scroll-btn {
+  display: block;
   position: relative;
   height: 50%;
-	left: 50%;
-	right: 0;
-	text-align: center;
+  left: 50%;
+  right: 0;
+  text-align: center;
 }
 .scroll-btn > * {
-	display: inline-block;
-	line-height: 18px;
-	font-size: 13px;
-	font-weight: normal;
-	color: #7f8c8d;
-	color: #ffffff;
-	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	letter-spacing: 2px;
+  display: inline-block;
+  line-height: 18px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #7f8c8d;
+  color: #ffffff;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
 }
 .scroll-btn > *:hover,
 .scroll-btn > *:focus,
 .scroll-btn > *.active {
-	color: #ffffff;
+  color: #ffffff;
 }
 .scroll-btn > *:hover,
 .scroll-btn > *:focus,
 .scroll-btn > *:active,
 .scroll-btn > *.active {
-	opacity: 0.8;
-	filter: alpha(opacity=80);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
 .scroll-btn .mouse {
-	position: relative;
-	display: block;
-	width: 32px;
+  position: relative;
+  display: block;
+  width: 32px;
   height: 50px;
   left: 55px;
-	margin: 0 0px 0px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	border: 3px solid #e7e2e2;
-	border-radius: 23px;
+  margin: 0 0px 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid #e7e2e2;
+  border-radius: 23px;
 }
 .scroll-btn .mouse > * {
-	position: absolute;
-	display: block;
-	top: 100%;
-	left: 50%;
-	width: 8px;
-	height: 8px;
-	margin: -4px 0 0 -4px;
-	background: white;
-	border-radius: 50%;
-	-webkit-animation: ani-mouse 2.5s linear infinite;
-	-moz-animation: ani-mouse 2.5s linear infinite;
-	animation: ani-mouse 2.5s linear infinite;
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: white;
+  border-radius: 50%;
+  -webkit-animation: ani-mouse 2.5s linear infinite;
+  -moz-animation: ani-mouse 2.5s linear infinite;
+  animation: ani-mouse 2.5s linear infinite;
 }
