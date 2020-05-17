@@ -227,40 +227,7 @@ body {
   color: rgb(170, 169, 169);
   background: transparent;
 }
-.app-text {
-  width: 50%;
-  float: left;
-}
-.app-text h1 {
-  font-family: "ostrich_bold";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 60px;
-  width: 640px;
-  position: relative;
-  margin-left: 130px;
-  margin-top: 120px;
-  color: #a19d9d;
-  background: transparent;
-  text-shadow: 4px 4px 10px #4d5068;
-}
 
-.app-text p {
-  font-family: "ostrich_reg";
-  width: 650px;
-  font-size: 45px;
-  line-height: 37px;
-  color: #a1a1a1;
-  padding-bottom: 50%;
-}
-.app-text span {
-  font-family: "ostrich_rounded";
-  width: 650px;
-  font-size: 20px;
-  margin: 30px 0 30px 70px;
-  line-height: 37px;
-  color: #a1a1a1;
-}
 .app-picture {
   width: 50%;
   float: right;
@@ -681,7 +648,7 @@ footer {
 }
 .Albums {
   position: relative;
-  margin-top: 375px;
+  margin-top: 180px;
   margin-left: 20%;
   display: inline-block;
   justify-content: center;
@@ -892,6 +859,40 @@ footer {
   color: #fff;
   text-decoration: none;
 }
+.app-text {
+  width: 50%;
+  float: left;
+}
+.app-text h1 {
+  font-family: "ostrich_bold";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 60px;
+  width: 640px;
+  position: relative;
+  margin-left: 10%;
+  margin-top: 120px;
+  color: #a19d9d;
+  background: transparent;
+  text-shadow: 4px 4px 10px #4d5068;
+}
+
+.app-text p {
+  font-family: "ostrich_reg";
+  width: 650px;
+  font-size: 45px;
+  line-height: 37px;
+  color: #e2dfdf;
+  padding-bottom: 10px;
+}
+.app-text span {
+  font-family: "ostrich_rounded";
+  width: 650px;
+  font-size: 20px;
+  margin: 30px 0px 30px 0px;
+  line-height: 37px;
+  color: #a1a1a1;
+}
 @-webkit-keyframes ani-mouse {
 	0% {
 	opacity: 1;
@@ -948,8 +949,9 @@ footer {
 }
  .scroll-btn {
 	display: block;
-	position: absolute;
-	left: 0;
+  position: relative;
+  top: 200px;
+	left: 50%;
 	right: 0;
 	text-align: center;
 }
@@ -984,13 +986,13 @@ footer {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	border: 3px solid white;
+	border: 3px solid #e7e2e2;
 	border-radius: 23px;
 }
 .scroll-btn .mouse > * {
 	position: absolute;
 	display: block;
-	top: 29%;
+	top: 80%;
 	left: 50%;
 	width: 8px;
 	height: 8px;

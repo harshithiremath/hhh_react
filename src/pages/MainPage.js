@@ -38,7 +38,7 @@ function MainPage() {
           website!
         </h1>
         <span className="scroll-btn">
-        	<a href="/">
+        	<a href="/#albums">
         		<span className="mouse">
         			<span>
         			</span>
@@ -48,7 +48,7 @@ function MainPage() {
         </span>
       </div>
       <div className="Albums">
-        <h1>Latest Releases</h1>
+        <h1><a id="albums">Latest Release</a></h1>
         <div className="gallery">
           <figure className="gallery__item gallery__item--1">
             <img
