@@ -13,7 +13,7 @@ function MainPage() {
           <div className="column" key={item.tour_id}>
             <div className="card">
               <h3>
-                {item.tour_name},{item.location}
+                {item.tour_name}, {item.location}
               </h3>
               <h4>{item.date}</h4>
               {/* {console.log(item.merch_limit)} */}
