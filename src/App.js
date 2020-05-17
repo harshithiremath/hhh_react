@@ -104,7 +104,6 @@ class App extends React.Component {
               <Helmet>
                 <title>Sign Up | HHH</title>
               </Helmet>
-              <Merchs />
               <SignUp />
             </Route>
             <Route path="/webPlayer">
