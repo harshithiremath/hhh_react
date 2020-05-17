@@ -37,6 +37,15 @@ function MainPage() {
           HEY!! Hope you have a great time looking through every detail of the
           website!
         </h1>
+        <span className="scroll-btn">
+        	<a href="/">
+        		<span className="mouse">
+        			<span>
+        			</span>
+        		</span>
+        	</a>
+          <p>SCROLL DOWN</p>
+        </span>
       </div>
       <div className="Albums">
         <h1>Latest Releases</h1>
