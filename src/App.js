@@ -12,7 +12,8 @@ import Merchs from "./pages/Merch/Merchs";
 import Cart from "./pages/Cart/Cart";
 import { Helmet } from "react-helmet";
 import SingleMerch from "./pages/SingleMerch/SingleMerch";
-import TicketCheckout from "./pages/TicketCheckout";
+import TicketCheckout from "./pages/Checkout/TicketCheckout";
+import MerchCheckout from "./pages/Checkout/MerchCheckout";
 import Footer from "./components/Footer";
 
 /*
@@ -67,14 +68,17 @@ class App extends React.Component {
                   <Route path="/merch/:product_id">
                     <SingleMerch context={context} />
                   </Route>
-                  <Route path="/checkout/ticket">
-                    <TicketCheckout context={context} />
-                  </Route>
                   <Route path="/signin">
                     <SignIn context={context} />
                     <Helmet>
                       <title>Sign In | HHH</title>
                     </Helmet>
+                  </Route>
+                  <Route path="/checkout/merch">
+                    <MerchCheckout context={context} />
+                  </Route>
+                  <Route path="/checkout/ticket">
+                    <TicketCheckout context={context} />
                   </Route>
                 </Switch>
               );

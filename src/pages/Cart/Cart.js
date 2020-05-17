@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import MerchInCart from "./MerchInCart";
-import "./MerchInCartcss.css";
+import { Link } from "react-router-dom";
+import "./Cartcss.css";
 export default class Cart extends Component {
   state = {
     merchs: [],
@@ -83,9 +84,24 @@ export default class Cart extends Component {
           </h1>
 
           {this.state.totalPrice === 0 ? (
-            <h3 style={{ textAlign: "center", fontSize: 25, marginTop: 10 }}>
-              Your cart is empty!
-            </h3>
+            <div>
+              <h3 style={{ textAlign: "center", fontSize: 25, marginTop: 10 }}>
+                Your cart is empty!
+              </h3>
+              <div
+                className="cart-bottom-buttons-container"
+                style={{ justifyContent: "center" }}
+              >
+                <div
+                  className="cart-bottom-buttons-div"
+                  style={{ marginLeft: 0 }}
+                >
+                  <Link className="cart-bottom-buttons" to="/merch">
+                    Back to Merch
+                  </Link>
+                </div>
+              </div>
+            </div>
           ) : (
             <>
               <div className="cart-items-above-final-price">
@@ -109,6 +125,18 @@ export default class Cart extends Component {
                   <span className="cart-container-final-price">
                     ₹ {this.state.totalPrice}
                   </span>
+                </div>
+              </div>
+              <div className="cart-bottom-buttons-container">
+                <div className="cart-bottom-buttons-div">
+                  <Link className="cart-bottom-buttons" to="/merch">
+                    Back to Merch
+                  </Link>
+                </div>
+                <div className="cart-bottom-buttons-div">
+                  <Link className="cart-bottom-buttons" to="/checkout/merch">
+                    Checkout
+                  </Link>
                 </div>
               </div>
             </>

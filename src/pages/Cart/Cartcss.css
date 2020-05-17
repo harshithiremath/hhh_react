@@ -132,3 +132,28 @@
   color: #a52606;
   text-align-last: right;
 }
+.cart-bottom-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+.cart-bottom-buttons-div {
+  border-bottom: 1px solid #ccc;
+  /* border-radius: 1px; */
+  line-height: 35px;
+  margin-left: 35px;
+}
+.cart-bottom-buttons-div:hover {
+  border-bottom: 1px solid #f4d078;
+}
+.cart-bottom-buttons {
+  text-decoration: none;
+  font-family: lato-regular;
+  font-size: 25px;
+  color: #68696b;
+}
+.cart-bottom-buttons:hover {
+  color: #292929;
+}
