@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cloud from "../components/Cloud";
 import { Link } from "react-router-dom";
+import "./MainPagecss.css";
 function MainPage() {
   const [tours, setTours] = useState([]);
   useEffect(() => {
@@ -12,7 +13,7 @@ function MainPage() {
           <div className="column" key={item.tour_id}>
             <div className="card">
               <h3>
-                {item.tour_name},{item.location}
+                {item.tour_name}, {item.location}
               </h3>
               <h4>{item.date}</h4>
               {/* {console.log(item.merch_limit)} */}
@@ -31,24 +32,27 @@ function MainPage() {
 
   return (
     <div className="mainPageContainer">
-      <div className="app-text">
-        <Cloud />
-        <h1>
-          HEY!! Hope you have a great time looking through every detail of the
-          website!
-        </h1>
-        <span className="scroll-btn">
-        	<a href="/#albums">
-        		<span className="mouse">
-        			<span>
-        			</span>
-        		</span>
-        	</a>
-          <p>SCROLL DOWN</p>
-        </span>
+      <div className="mainPageContainer-first">
+        <div className="app-text">
+          <Cloud />
+          <h1>
+            HEY!! Hope you have a great time looking through every detail of the
+            website!
+          </h1>
+          <span className="scroll-btn">
+            <a href="/#albums">
+              <span className="mouse">
+                <span></span>
+              </span>
+            </a>
+            <p>SCROLL DOWN</p>
+          </span>
+        </div>
       </div>
       <div className="Albums">
-        <h1><a id="albums">Latest Release</a></h1>
+        <h1>
+          <a id="albums">Latest Release</a>
+        </h1>
         <div className="gallery">
           <figure className="gallery__item gallery__item--1">
             <img
