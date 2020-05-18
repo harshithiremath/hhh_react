@@ -112,7 +112,7 @@ export default class MerchCheckout extends Component {
               </div>
             </div>
             <div className="ticket-checkout-page-right-container">
-              <div className="order">
+              <div className="ticket-checkout-details">
                 <div>
                   <img
                     src={require("../images/pass.png")}
