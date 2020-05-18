@@ -15,6 +15,7 @@ import SingleMerch from "./pages/SingleMerch/SingleMerch";
 import TicketCheckout from "./pages/Checkout/TicketCheckout";
 import MerchCheckout from "./pages/Checkout/MerchCheckout";
 import Footer from "./components/Footer";
+import Wallet from "./pages/wallet";
 
 /*
 class AppProvider extends React.Component {
@@ -79,6 +80,9 @@ class App extends React.Component {
                   </Route>
                   <Route path="/checkout/ticket">
                     <TicketCheckout context={context} />
+                  </Route>
+                  <Route exact path="/wallet">
+                    <Wallet context={context}/>
                   </Route>
                 </Switch>
               );

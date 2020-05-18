@@ -67,6 +67,11 @@ export default function Header() {
                       <li className="account-head-wrapper">
                         Account
                         <ul>
+                        <li>
+                            <Link className="account-head-item" to="/wallet">
+                              Wallet
+                            </Link>
+                          </li>
                           <li>
                             <Link className="account-head-item" to="/cart">
                               Cart
