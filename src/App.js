@@ -12,6 +12,7 @@ import Merchs from "./pages/Merch/Merchs";
 import Cart from "./pages/Cart/Cart";
 import { Helmet } from "react-helmet";
 import SingleMerch from "./pages/SingleMerch/SingleMerch";
+import WalletRecharge from "./pages/Wallet/WalletRecharge";
 import TicketCheckout from "./pages/Checkout/TicketCheckout";
 import MerchCheckout from "./pages/Checkout/MerchCheckout";
 import Footer from "./components/Footer";
@@ -83,6 +84,9 @@ class App extends React.Component {
                   </Route>
                   <Route exact path="/wallet">
                     <Wallet context={context} />
+                  </Route>
+                  <Route path="/wallet/addToWallet">
+                    <WalletRecharge context={context} />
                   </Route>
                 </Switch>
               );

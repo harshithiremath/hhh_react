@@ -35,44 +35,51 @@ export default class MerchCheckout extends Component {
   }
 
   decrementQuantity(e) {
-    if (this.state.quantity > 1) {
+    if ((this.state.quantity > 1) & !this.state.redirectToOrders) {
       this.setState({ quantity: this.state.quantity - 1 });
     }
   }
   incrementQuantity(e) {
-    if (this.state.quantity < this.state.ticket.tours_limit) {
+    if (
+      (this.state.quantity < this.state.ticket.tours_limit) &
+      !this.state.redirectToOrders
+    ) {
       this.setState({ quantity: this.state.quantity + 1 });
     }
   }
 
   handleClick(e) {
-    // if (!this.state.redirectToOrders) {
-    //   console.log("called /confirmMetch");
-    //   axios
-    //     .post("http://localhost:5000/checkout/confirmMerch", {
-    //       user_id: this.props.context.user,
-    //     })
-    //     .then((res) => {
-    //       if (res) {
-    //         if (res.status === 200) {
-    //           this.setState({ redirectToOrders: true });
-    //         } else {
-    //           this.setState({ showError1: true });
-    //         }
-    //       } else {
-    //         this.setState({ showError1: true });
-    //       }
-    //     });
-    // } else {
-    //   this.setState({ showError1: true });
-    // }
+    if (!this.state.redirectToOrders) {
+      console.log("called /confirmMetch");
+      axios
+        .post("http://localhost:5000/checkoutconfirmTicket", {
+          tour_id: this.state.ticket_id,
+          user_email: this.props.context.user,
+          quantity: this.state.quantity,
+        })
+        .then((res) => {
+          if (res) {
+            if (res.status === 200) {
+              this.setState({ redirectToOrders: true });
+            } else if (res.status === 500) {
+              this.setState({ showError1: true });
+            } else {
+              this.setState({ showError1: true });
+            }
+          } else {
+            this.setState({ showError1: true });
+          }
+        });
+    } else {
+      this.setState({ showError1: true });
+    }
 
-    this.setState({ redirectToOrders: true });
+    // this.setState({ redirectToOrders: true });
   }
   render() {
     // {this.props.context.signed_in}
     // console.log(this.state);
-    console.log("state", this.state);
+    // console.log("state", this.state);
     let date1 = new Date(this.state.wallet.expiry);
     let date_to_display = date1.toDateString();
     let balance_after_payment =
@@ -163,7 +170,7 @@ export default class MerchCheckout extends Component {
                   <span className="ticket-quantity">
                     x {this.state.quantity}
                   </span>
-                  <span className="ticket-price">
+                  <span className="ticket-checkout-price">
                     ₹ {this.state.ticket.price * this.state.quantity}
                   </span>
                 </div>

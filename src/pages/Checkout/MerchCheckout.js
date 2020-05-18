@@ -144,21 +144,21 @@ export default class MerchCheckout extends Component {
                   </div>
                 )}
               </div>
+              {this.state.showError1 ? (
+                <div className="checkout-page-alert-message">
+                  <h4>There was some error!</h4>
+                </div>
+              ) : null}
+              {this.state.redirectToOrders ? (
+                <div className="checkout-page-alert-message">
+                  <h4>Order was successfully placed</h4>
+                  <Link className="cart-bottom-buttons" to="/orders">
+                    Back to orders
+                  </Link>
+                </div>
+              ) : null}
             </div>
           </div>
-          {this.state.showError1 ? (
-            <div className="checkout-page-alert-message">
-              <h4>There was some error!</h4>
-            </div>
-          ) : null}
-          {this.state.redirectToOrders ? (
-            <div className="checkout-page-alert-message">
-              <h4>Order was successfully placed</h4>
-              <Link className="cart-bottom-buttons" to="/orders">
-                Back to orders
-              </Link>
-            </div>
-          ) : null}
         </>
       );
     } else {

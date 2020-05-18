@@ -167,11 +167,11 @@ body {
 .signup-text:hover {
   color: #fec345;
 }
-.wallet{
+.wallet {
   position: absolute;
   right: 130px;
   top: 7px;
-  color:#fec345;
+  color: #fec345;
 }
 .account-header {
   position: absolute;
@@ -583,11 +583,11 @@ footer {
 }
 .order-price {
   color: rgb(170, 50, 19);
-  font-size: 70%;
-  padding-left: 11%;
-  width: 13%;
+  font-size: 99%;
+  padding-left: 5%;
+  width: 23%;
   display: inline-block;
-  text-align: left;
+  text-align: right;
 }
 .order h4 {
   font-size: 50%;
@@ -628,10 +628,10 @@ footer {
 
 .ticket-price {
   color: rgb(170, 50, 19);
-  font-size: 70%;
-  width: 12%;
+  font-size: 100%;
+  width: 28.5%;
   display: inline-block;
-  text-align: left;
+  text-align: right;
   vertical-align: top;
 }
 
@@ -715,7 +715,7 @@ footer {
   bottom: -80%;
   left: 0;
   margin: auto;
-  width :34px;
+  width: 34px;
   height: 55px;
 }
 .mousey {
@@ -734,11 +734,19 @@ footer {
   background-color: #fff;
   animation-name: scroll;
   animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
 }
 @keyframes scroll {
-  0% { opacity: 0; }
-  10% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(15px); opacity: 0;}
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 }

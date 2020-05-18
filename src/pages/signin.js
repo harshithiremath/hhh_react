@@ -3,7 +3,7 @@ import Particles from "react-particles-js";
 import { ContextConsumer } from "../components/Context";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 class SignIn extends React.Component {
   particlesOptions = {
     particles: {
@@ -67,6 +67,7 @@ class SignIn extends React.Component {
       redirect: false,
       email: "",
       password: "",
+      showError: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -78,6 +79,7 @@ class SignIn extends React.Component {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
+      showError: false,
     });
   }
   renderRedirect = () => {
@@ -87,24 +89,32 @@ class SignIn extends React.Component {
   };
   handleSubmit = (e, context) => {
     e.preventDefault();
-    // let user = {
-    //   email: this.state.email,
-    //   password: this.state.password,
-    // };
+    let user = {
+      email: this.state.email,
+      password: this.state.password,
+    };
     if (this.validate()) {
-      console.log("logged_in");
-      context.SignIn(this.state.email);
-      this.setState({ redirect: true });
-      // axios.post("http://localhost:5000/signin", { user }).then((res) => {
-      //   console.log(res);
-      //   if(res.status === 500){
-      //     console.log("w")
-      //   }
-      // });
+      // console.log("logged_in");
+      // context.SignIn(this.state.email);
+      axios.post("http://localhost:5000/signin", { user }).then((res) => {
+        // console.log(res.data);
+        if (res.data.done) {
+          // console.log("w");
+          context.SignIn(this.state.email);
+          this.setState({ redirect: true });
+        } else {
+          this.setState({
+            password: "",
+            showError: true,
+          });
+        }
+        // if()
+      });
     } else {
       console.log("sign_in_failed");
       this.setState({
         password: "",
+        showError: true,
       });
     }
   };
@@ -134,9 +144,9 @@ class SignIn extends React.Component {
         {this.renderRedirect()}
         {signed_in ? (
           <Redirect to="/" />
-          // // If user is already signed in, he should be redirected to / 
-          // // This closes issue #3
         ) : (
+          // // If user is already signed in, he should be redirected to /
+          // // This closes issue #3
           <div>
             <Particles className="particles" params={this.particlesOptions} />
             <div className="signin-box-container">
@@ -171,12 +181,25 @@ class SignIn extends React.Component {
                       <a className="forgot">FORGOT PASSWORD?</a>
                     </span>
                   </div> */}
-                    <input
-                      className="loginbtn"
-                      type="submit"
-                      name="login-submit"
-                      value="Login"
-                    />
+                    {this.state.showError ? (
+                      <span
+                        style={{
+                          color: "#bd3131",
+                          fontStyle: "italic",
+                          cursor: "default",
+                        }}
+                      >
+                        Error in Username/Password
+                      </span>
+                    ) : null}
+                    <div>
+                      <input
+                        className="loginbtn"
+                        type="submit"
+                        name="login-submit"
+                        value="Login"
+                      />
+                    </div>
                   </form>
                 )}
               </ContextConsumer>
