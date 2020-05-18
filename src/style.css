@@ -117,7 +117,7 @@ body {
   font-family: "proxima_nova_rgregular", sans-serif;
   font-size: 19px;
   list-style: none;
-  margin: 12px 10px 0px;
+  margin: 10px 10px 5px;
   cursor: pointer;
   background: transparent;
 }
@@ -128,7 +128,7 @@ body {
   background: transparent;
   padding-left: 4px;
   padding-right: 2px;
-  padding-top: 2px;
+  padding-top: 4px;
   padding-bottom: 2px;
   border: 2px solid transparent;
   border-radius: 3px;
@@ -167,10 +167,16 @@ body {
 .signup-text:hover {
   color: #fec345;
 }
+.wallet{
+  position: absolute;
+  right: 130px;
+  top: 7px;
+  color:#fec345;
+}
 .account-header {
   position: absolute;
   right: 1%;
-  top: 2px;
+  top: 4px;
 }
 .account-head-wrapper {
   color: #fec325;
@@ -681,10 +687,8 @@ footer {
 }
 .app-text h1 {
   font-family: "ostrich_bold";
-  font-weight: normal;
-  font-style: normal;
   font-size: 60px;
-  width: 45%;
+  width: 60%;
   position: absolute;
   margin-left: 5%;
   margin-top: 120px;
@@ -694,131 +698,47 @@ footer {
 }
 
 .app-text p {
-  font-family: "ostrich_reg";
-  width: 170px;
-  height: 100px;
+  font-family: "ostrich_bold";
   font-size: 35px;
-  line-height: 37px;
-  color: #e2dfdf;
-  text-align: center;
-}
-.app-text span {
-  font-family: "ostrich_rounded";
-  width: 50px;
-  left: 49%;
-  font-size: 20px;
-  margin: 550px 0px 4% 40%;
-  line-height: 37px;
-  color: #a1a1a1;
-}
-@-webkit-keyframes ani-mouse {
-  0% {
-    opacity: 1;
-    top: 29%;
-  }
-  15% {
-    opacity: 1;
-    top: 50%;
-  }
-  50% {
-    opacity: 0;
-    top: 50%;
-  }
-  100% {
-    opacity: 0;
-    top: 29%;
-  }
-}
-@-moz-keyframes ani-mouse {
-  0% {
-    opacity: 1;
-    top: 29%;
-  }
-  15% {
-    opacity: 1;
-    top: 50%;
-  }
-  50% {
-    opacity: 0;
-    top: 50%;
-  }
-  100% {
-    opacity: 0;
-    top: 29%;
-  }
-}
-@keyframes ani-mouse {
-  0% {
-    opacity: 1;
-    top: 29%;
-  }
-  15% {
-    opacity: 1;
-    top: 50%;
-  }
-  50% {
-    opacity: 0;
-    top: 50%;
-  }
-  100% {
-    opacity: 0;
-    top: 29%;
-  }
-}
-.scroll-btn {
-  display: block;
-  position: relative;
-  height: 50%;
-  left: 50%;
-  right: 0;
-  text-align: center;
-}
-.scroll-btn > * {
-  display: inline-block;
-  line-height: 18px;
-  font-size: 13px;
-  font-weight: normal;
-  color: #7f8c8d;
-  color: #ffffff;
-  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: 2px;
-}
-.scroll-btn > *:hover,
-.scroll-btn > *:focus,
-.scroll-btn > *.active {
-  color: #ffffff;
-}
-.scroll-btn > *:hover,
-.scroll-btn > *:focus,
-.scroll-btn > *:active,
-.scroll-btn > *.active {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-.scroll-btn .mouse {
-  position: relative;
-  display: block;
-  width: 32px;
-  height: 50px;
-  left: 55px;
-  margin: 0 0px 0px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 3px solid #e7e2e2;
-  border-radius: 23px;
-}
-.scroll-btn .mouse > * {
+  width: 30%;
   position: absolute;
-  display: block;
-  top: 100%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  margin: -4px 0 0 -4px;
-  background: white;
-  border-radius: 50%;
-  -webkit-animation: ani-mouse 2.5s linear infinite;
-  -moz-animation: ani-mouse 2.5s linear infinite;
-  animation: ani-mouse 2.5s linear infinite;
+  margin-left: 45%;
+  bottom: -0.5%;
+  color: #a19d9d;
+  background: transparent;
+  text-shadow: 4px 4px 10px #4d5068;
+}
+.scroll-downs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -80%;
+  left: 0;
+  margin: auto;
+  width :34px;
+  height: 55px;
+}
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
 }
