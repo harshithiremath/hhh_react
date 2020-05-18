@@ -32,20 +32,27 @@ export default class MerchCheckout extends Component {
     }
   }
   handleClick(e) {
-    console.log("called /confirmMetch");
-    axios
-      .post("http://localhost:5000/checkout/confirmMerch", {
-        user_id: this.props.context.user,
-      })
-      .then((res) => {
-        if (res) {
-          if (res.status == 200) {
-            this.setState({ redirectToOrders: true });
+    if (!this.state.redirectToOrders) {
+      console.log("called /confirmMetch");
+      axios
+        .post("http://localhost:5000/checkout/confirmMerch", {
+          user_id: this.props.context.user,
+        })
+        .then((res) => {
+          if (res) {
+            if (res.status === 200) {
+              this.setState({ redirectToOrders: true });
+            } else {
+              this.setState({ showError1: true });
+            }
           } else {
-            this.setState({ showError: true });
+            this.setState({ showError1: true });
           }
-        }
-      });
+        });
+    } else {
+      this.setState({ showError1: true });
+    }
+
     // this.setState({ redirectToOrders: true });
   }
   render() {
@@ -116,14 +123,16 @@ export default class MerchCheckout extends Component {
                   </div>
                 </div>
                 {balance_after_payment > 0 ? (
-                  <div style={{ float: "right" }}>
-                    <button
-                      onClick={(e) => this.handleClick(e)}
-                      className="checkout-page-confirm-button"
-                    >
-                      Confirm
-                    </button>
-                  </div>
+                  !this.state.redirectToOrders ? (
+                    <div style={{ float: "right" }}>
+                      <button
+                        onClick={(e) => this.handleClick(e)}
+                        className="checkout-page-confirm-button"
+                      >
+                        Confirm
+                      </button>
+                    </div>
+                  ) : null
                 ) : (
                   <div>
                     <Link
@@ -135,19 +144,21 @@ export default class MerchCheckout extends Component {
                   </div>
                 )}
               </div>
-              {this.state.showError ? (
-                <div>
-                  <h4>There was some error</h4>
-                </div>
-              ) : null}
             </div>
-            {this.state.redirectToOrders ? (
-              <div className="checkout-page-alert-message">
-                <h4>Order was successful</h4>
-                <Link to="/orders">Back to orders</Link>
-              </div>
-            ) : null}
           </div>
+          {this.state.showError1 ? (
+            <div className="checkout-page-alert-message">
+              <h4>There was some error!</h4>
+            </div>
+          ) : null}
+          {this.state.redirectToOrders ? (
+            <div className="checkout-page-alert-message">
+              <h4>Order was successfully placed</h4>
+              <Link className="cart-bottom-buttons" to="/orders">
+                Back to orders
+              </Link>
+            </div>
+          ) : null}
         </>
       );
     } else {
