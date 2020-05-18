@@ -46,28 +46,28 @@ export default class MerchCheckout extends Component {
   }
 
   handleClick(e) {
-    if (!this.state.redirectToOrders) {
-      console.log("called /confirmMetch");
-      axios
-        .post("http://localhost:5000/checkout/confirmMerch", {
-          user_id: this.props.context.user,
-        })
-        .then((res) => {
-          if (res) {
-            if (res.status === 200) {
-              this.setState({ redirectToOrders: true });
-            } else {
-              this.setState({ showError1: true });
-            }
-          } else {
-            this.setState({ showError1: true });
-          }
-        });
-    } else {
-      this.setState({ showError1: true });
-    }
+    // if (!this.state.redirectToOrders) {
+    //   console.log("called /confirmMetch");
+    //   axios
+    //     .post("http://localhost:5000/checkout/confirmMerch", {
+    //       user_id: this.props.context.user,
+    //     })
+    //     .then((res) => {
+    //       if (res) {
+    //         if (res.status === 200) {
+    //           this.setState({ redirectToOrders: true });
+    //         } else {
+    //           this.setState({ showError1: true });
+    //         }
+    //       } else {
+    //         this.setState({ showError1: true });
+    //       }
+    //     });
+    // } else {
+    //   this.setState({ showError1: true });
+    // }
 
-    // this.setState({ redirectToOrders: true });
+    this.setState({ redirectToOrders: true });
   }
   render() {
     // {this.props.context.signed_in}
@@ -167,7 +167,9 @@ export default class MerchCheckout extends Component {
                     ₹ {this.state.ticket.price * this.state.quantity}
                   </span>
                 </div>
-                <h4>Event on : {time.toString()}</h4>
+                <h4 className="ticket-checkout-event-time">
+                  Event on : {time.toString()}
+                </h4>
               </div>
 
               <div className="checkout-page-above-final-price">

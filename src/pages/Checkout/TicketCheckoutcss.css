@@ -84,6 +84,16 @@
   width: 35px;
   font-size: 20px;
 }
+.ticket-checkout-event-time {
+  font-size: 50%;
+  margin-top: 5px;
+  color: #838591c5;
+  user-select: none;
+}
+.ticket-checkout-event-time:hover {
+  color: #51535a;
+  cursor: default;
+}
 
 .ticket-checkout-page-alert-message {
   margin-top: 3%;
