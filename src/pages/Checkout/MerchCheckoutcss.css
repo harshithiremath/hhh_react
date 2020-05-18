@@ -9,6 +9,7 @@
   text-align: center;
   /* margin-top: 40px; */
   margin-bottom: 30px;
+  font-family: lato-bold;
 }
 .checkout-page-container {
   display: flex;
@@ -31,10 +32,13 @@
   display: inline-block;
   width: 35%;
   text-align: right;
+  font-family: lato-thin;
+  color: black;
 }
 .checkout-page-left-wallet-right {
   display: inline-block;
   margin-left: 10px;
+  font-family: lato-light;
 }
 .checkout-page-right-container {
   display: inline-block;
@@ -55,12 +59,14 @@
   width: 65%;
   text-align: right;
   padding-right: 5%;
+  font-family: lato-light;
 }
 .checkout-page-above-fp-right {
   display: inline-block;
   width: 30%;
   text-align: right;
   color: #a52606;
+  font-family: lato-regular;
 }
 
 .checkout-page-confirm-button {
@@ -81,5 +87,13 @@
 }
 .checkout-page-alert-message {
   display: block;
-  width: 100%;
+  width: 56%;
+  margin-left: 21.5%;
+  text-align: right;
+  font-size: 30px;
+  font-family: lato-bold;
+}
+.checkout-page-alert-message a {
+  border-bottom: 1px solid #f4d078;
+  font-size: 28px;
 }
