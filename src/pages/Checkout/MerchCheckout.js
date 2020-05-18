@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import "./MerchCheckoutcss.css";
 export default class MerchCheckout extends Component {
   state = {
     wallet: [],
@@ -32,6 +32,7 @@ export default class MerchCheckout extends Component {
     }
   }
   handleClick(e) {
+    console.log("called /confirmMetch");
     axios
       .post("http://localhost:5000/checkout/confirmMerch", {
         user_id: this.props.context.user,
@@ -57,51 +58,80 @@ export default class MerchCheckout extends Component {
     if (this.props.context.signed_in) {
       return (
         <>
+          <h1 className="checkout-page-h1">Checkout</h1>
           <div className="checkout-page-container">
             <div className="checkout-page-left-wallet-container">
-              <h1>Your Wallet Details</h1>
+              <h3 className="checkout-page-h3">Your Wallet Details</h3>
               <div>
-                <span>User ID: </span>
-                <span>{this.state.wallet.user_id}</span>
+                <div className="checkout-page-left-wallet-left">
+                  <span>User ID: </span>
+                </div>
+                <div className="checkout-page-left-wallet-right">
+                  <span>{this.state.wallet.user_id}</span>
+                </div>
               </div>
               <div>
-                <span>Wallet ID: </span>
-                <span>{this.state.wallet.wallet_id}</span>
+                <div className="checkout-page-left-wallet-left">
+                  <span>Wallet ID: </span>
+                </div>
+                <div className="checkout-page-left-wallet-right">
+                  <span>{this.state.wallet.wallet_id}</span>
+                </div>
               </div>
               <div>
-                <span>Expiry: </span>
-                <span>{date_to_display.slice(4, 15)}</span>
+                <div className="checkout-page-left-wallet-left">
+                  <span>Expiry: </span>
+                </div>
+                <div className="checkout-page-left-wallet-right">
+                  <span>{date_to_display.slice(4, 15)}</span>
+                </div>
               </div>
             </div>
             <div className="checkout-page-right-container">
               <div className="checkout-page-above-final-price">
                 <div>
-                  <span>Available balance</span>
-                  <span>{this.state.wallet.balance}</span>
+                  <div className="checkout-page-above-fp-left">
+                    <span>Available balance</span>
+                  </div>
+                  <div className="checkout-page-above-fp-right">
+                    <span>₹ {this.state.wallet.balance}</span>
+                  </div>
                 </div>
                 <div>
-                  <span>Subtotal</span>
-                  <span>{this.state.cartSubTotal}</span>
+                  <div className="checkout-page-above-fp-left">
+                    <span>Subtotal</span>
+                  </div>
+                  <div className="checkout-page-above-fp-right">
+                    <span>₹ {this.state.cartSubTotal}</span>
+                  </div>
                 </div>
               </div>
               <div className="checkout-page-below-final-price">
                 <div>
-                  <div>
+                  <div className="checkout-page-above-fp-left">
                     <span>Balance after payment</span>
                   </div>
-                  <div>
-                    <span>{balance_after_payment.toString()}</span>
+                  <div className="checkout-page-above-fp-right">
+                    <span>₹ {balance_after_payment.toString()}</span>
                   </div>
                 </div>
                 {balance_after_payment > 0 ? (
-                  <div>
-                    <button onClick={(e) => this.handleClick(e)}>
+                  <div style={{ float: "right" }}>
+                    <button
+                      onClick={(e) => this.handleClick(e)}
+                      className="checkout-page-confirm-button"
+                    >
                       Confirm
                     </button>
                   </div>
                 ) : (
                   <div>
-                    <Link to="/wallet/addToWallet">Add money to wallet</Link>
+                    <Link
+                      to="/wallet/addToWallet"
+                      className="checkout-page-confirm-button"
+                    >
+                      Add money to wallet
+                    </Link>
                   </div>
                 )}
               </div>
@@ -112,7 +142,7 @@ export default class MerchCheckout extends Component {
               ) : null}
             </div>
             {this.state.redirectToOrders ? (
-              <div>
+              <div className="checkout-page-alert-message">
                 <h4>Order was successful</h4>
                 <Link to="/orders">Back to orders</Link>
               </div>
