@@ -65,6 +65,12 @@ class ContextProvider extends React.Component {
         console.log(res.data);
       });
   };
+  choseTicketToBuy = (tour_id) => {
+    if (this.state.signed_in) {
+      this.setState({ tourPassToBuy: tour_id });
+      console.log("added to tour_id to context state");
+    }
+  };
   render() {
     return (
       <Provider
@@ -75,6 +81,8 @@ class ContextProvider extends React.Component {
           addToCart: this.addToCart,
           SignIn: this.SignIn,
           SignOut: this.SignOut,
+          choseTicketToBuy: this.choseTicketToBuy,
+          ticket_id: this.state.tourPassToBuy,
         }}
       >
         {this.props.children}

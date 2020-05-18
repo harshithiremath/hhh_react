@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import { ContextConsumer } from "../../components/Context";
+import { Redirect } from "react-router-dom";
 function Tour(props) {
   /*
     This function will return single tour items in the tourslist
@@ -8,6 +10,10 @@ function Tour(props) {
     item object will have, 'tour_id', 'tour_name', 'location', 'time', 'price', 'tours_limit'
     */
   //The function that determines if available/selling fast should be output
+
+  const [redirect, setredirect] = useState(false);
+  // redirect is used to redirect to checkout/ticket
+
   let text1 = "";
   let fast = false;
   let soldOut = false;
@@ -35,8 +41,18 @@ function Tour(props) {
   // // props.func(e);
 
   // // }
+
+  function redirectToCheckout(tour_id, context) {
+    // if(redirect){
+    //   return <Redirect to='/checkout/ticket' />
+    // }
+    context.choseTicketToBuy(tour_id);
+    setredirect(true);
+  }
   return (
     <div className="tour" style={{ fontSize: 25 }}>
+      {/* {redirectToCheckout()} */}
+      {redirect ? <Redirect to="/checkout/ticket" /> : null}
       <img
         src={require("../images/pass.png")}
         alt="pass"
@@ -70,7 +86,7 @@ function Tour(props) {
               <button
                 onClick={() => {
                   context.signed_in
-                    ? props.buyTicket(props.item.tour_id)
+                    ? redirectToCheckout(props.item.tour_id, context)
                     : props.toggleRedirect();
                 }}
                 className="buy-btn"
