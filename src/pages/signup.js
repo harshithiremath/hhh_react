@@ -95,7 +95,8 @@ export default class Signup extends Component {
         .then((res) => {
           console.log(res.status);
           if (res.status === 200) {
-            props.SignIn();
+            // props.SignIn();
+            this.setState({ redirect: true });
           }
         })
         .catch((err) => {
@@ -112,6 +113,7 @@ export default class Signup extends Component {
       console.log("register fail");
       this.setState({
         password: "",
+        repassword: "",
       });
     }
   };
