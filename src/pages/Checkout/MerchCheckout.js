@@ -32,18 +32,20 @@ export default class MerchCheckout extends Component {
     }
   }
   handleClick(e) {
-    // axios
-    //   .post("/checkout/confirmMerch", { user_id: this.props.context.user })
-    //   .then((res) => {
-    //     if (res) {
-    //       if (res.status == 200) {
-    //         this.setState({ redirectToOrders: true });
-    //       } else {
-    //         this.setState({ showError: true });
-    //       }
-    //     }
-    //   });
-    this.setState({ redirectToOrders: true });
+    axios
+      .post("http://localhost:5000/checkout/confirmMerch", {
+        user_id: this.props.context.user,
+      })
+      .then((res) => {
+        if (res) {
+          if (res.status == 200) {
+            this.setState({ redirectToOrders: true });
+          } else {
+            this.setState({ showError: true });
+          }
+        }
+      });
+    // this.setState({ redirectToOrders: true });
   }
   render() {
     // {this.props.context.signed_in}
