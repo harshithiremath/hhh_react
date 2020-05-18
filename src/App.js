@@ -82,7 +82,7 @@ class App extends React.Component {
                     <TicketCheckout context={context} />
                   </Route>
                   <Route exact path="/wallet">
-                    <Wallet context={context}/>
+                    <Wallet context={context} />
                   </Route>
                 </Switch>
               );

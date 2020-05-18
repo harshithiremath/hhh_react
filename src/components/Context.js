@@ -5,6 +5,7 @@ class ContextProvider extends React.Component {
   state = {
     signed_in: false,
     cart: [],
+    tourPassToBuy: "",
   };
 
   // ! As cookies are implemented, the user won't need to log in again if he opens a new tab
@@ -68,7 +69,7 @@ class ContextProvider extends React.Component {
   choseTicketToBuy = (tour_id) => {
     if (this.state.signed_in) {
       this.setState({ tourPassToBuy: tour_id });
-      console.log("added to tour_id to context state");
+      console.log("added tour_id to context state");
     }
   };
   render() {
