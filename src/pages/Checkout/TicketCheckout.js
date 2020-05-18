@@ -73,8 +73,6 @@ export default class MerchCheckout extends Component {
     } else {
       this.setState({ showError1: true });
     }
-
-    // this.setState({ redirectToOrders: true });
   }
   render() {
     // {this.props.context.signed_in}
