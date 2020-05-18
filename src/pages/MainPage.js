@@ -41,9 +41,9 @@ function MainPage() {
           </h1>
           <p>SCROLL DOWN</p>
         </div>
-        <div class="scroll-downs">
-          <div class="mousey">
-            <div class="scroller"></div>
+        <div className="scroll-downs">
+          <div className="mousey">
+            <div className="scroller"></div>
           </div>
         </div>
         
