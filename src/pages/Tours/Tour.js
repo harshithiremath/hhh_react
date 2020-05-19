@@ -79,7 +79,7 @@ function Tour(props) {
           <h6 style={{ color: "#a6a4a4" }}>{text1}</h6>
         )}
         {soldOut ? (
-          <button className="buy-btn soldout">BUY</button>
+          <button className="buy-btn soldout">SOLD OUT</button>
         ) : (
           <ContextConsumer>
             {(context) => (

@@ -1,135 +1,137 @@
 @font-face {
-    font-family: "proxima_nova_rgregular";
-    src: url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot");
-    src: url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix")
-        format("embedded-opentype"),
-      url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff")
-        format("woff"),
-      url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf")
-        format("truetype"),
-      url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular")
-        format("svg");
-  }
-  @font-face {
-    font-family: "proxima_nova_rgbold";
-    src: url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot");
-    src: url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix")
-        format("embedded-opentype"),
-      url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff")
-        format("woff"),
-      url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf")
-        format("truetype"),
-      url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold")
-        format("svg");
-  }
-  @font-face {
-    font-family: "lato-thin";
-    src: url("../fonts/Lato-Hairline/Lato-Thin.woff") format("woff"),
-      url("../fonts/Lato-Hairline/Lato-Thin.svg") format("svg");
-  }
-  @font-face {
-    font-family: "lato-light";
-    src: url("../fonts/Lato-Light/Lato-Light.woff") format("woff"),
-      url("../fonts/Lato-Light/Lato-Light.svg") format("svg");
-  }
-  
-  @font-face {
-    font-family: "lato-regular";
-    src: url("../fonts/Lato-Regular/Lato-Regular.woff") format("woff"),
-      url("../fonts/Lato-Regular/Lato-Regular.svg") format("svg");
-  }
-  @font-face {
-    font-family: "lato-Bold";
-    src: url("../fonts/Lato-Bold/Lato-Bold.woff") format("woff"),
-      url("../fonts/Lato-Bold/Lato-Bold.svg") format("svg");
-  }
-body{
-    font-family: 'proxima_nova_rgregular',sans-serif;
-
+  font-family: "proxima_nova_rgregular";
+  src: url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot");
+  src: url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff")
+      format("woff"),
+    url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf")
+      format("truetype"),
+    url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular")
+      format("svg");
 }
-.checkout-page-h1 {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 50px;
-    font-size: 45px;
-    font-family: lato-bold;
-  }
-  .checkout-page-h3 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .checkout-page-container {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-  .checkout-page-left-wallet-container {
-    display: inline-table;
-    color: #000;
-    width: 24%;
-    border: 3px solid #fec345;
-    border-radius: 2px;
-    line-height: 40px;
-    font-size: 30px;
-    padding: 15px 0px 15px 0px;
-    margin-right: 20px;
-  }
-  .checkout-page-left-wallet-left {
-    padding-left:20px ;
-    color: #000;
-    font-weight: 600 ;
-    display: inline-block;
-    width: 35%;
-    text-align: center;
-  }
-  .checkout-page-left-wallet-right {
-    display: inline-block;
-    margin-left: 10px;
-  }
-  .checkout-page-right-container {
-    display: inline-block;
-    margin-left: 7%;
-    width: 45%;
-    line-height: 8vh;
-    font-size: 35px;
-    padding: 0 0px 15px 0px;
-  }
-  .checkout-page-above-final-price {
-    display: block;
-    border-bottom: 1px solid rgb(218, 216, 216);
-  }
-  .checkout-page-above-fp-left {
-    display: inline-block;
-    width: 65%;
-    text-align: right;
-    padding-right: 5%;
-  }
-  .checkout-page-above-fp-right {
-    display: inline-block;
-    width: 30%;
-    text-align: right;
-    color: #a52606;
-  }
-  
-  .checkout-page-confirm-button {
-    text-decoration: none;
-    font-family: lato-regular;
-    font-size: 35px;
-    color: #68696b;
-    background: transparent;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 1px solid #ccc;
-  }
-  .checkout-page-confirm-button:hover {
-    border-bottom: 1px solid #f4d078;
-    color: #2f2f30;
-    cursor: pointer;
-  }
-  .checkout-page-alert-message {
-    display: block;
-    width: 100%;
-  }
-  
+@font-face {
+  font-family: "proxima_nova_rgbold";
+  src: url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot");
+  src: url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff")
+      format("woff"),
+    url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf")
+      format("truetype"),
+    url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold")
+      format("svg");
+}
+@font-face {
+  font-family: "lato-thin";
+  src: url("../fonts/Lato-Hairline/Lato-Thin.woff") format("woff"),
+    url("../fonts/Lato-Hairline/Lato-Thin.svg") format("svg");
+}
+@font-face {
+  font-family: "lato-light";
+  src: url("../fonts/Lato-Light/Lato-Light.woff") format("woff"),
+    url("../fonts/Lato-Light/Lato-Light.svg") format("svg");
+}
+
+@font-face {
+  font-family: "lato-regular";
+  src: url("../fonts/Lato-Regular/Lato-Regular.woff") format("woff"),
+    url("../fonts/Lato-Regular/Lato-Regular.svg") format("svg");
+}
+@font-face {
+  font-family: "lato-Bold";
+  src: url("../fonts/Lato-Bold/Lato-Bold.woff") format("woff"),
+    url("../fonts/Lato-Bold/Lato-Bold.svg") format("svg");
+}
+body {
+  font-family: "proxima_nova_rgregular", sans-serif;
+}
+/* .checkout-page-h1 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-size: 45px;
+  font-family: lato-bold;
+}
+.checkout-page-h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.checkout-page-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.checkout-page-left-wallet-container {
+  display: inline-table;
+  color: #000;
+  width: 24%;
+  border: 3px solid #fec345;
+  border-radius: 2px;
+  line-height: 40px;
+  font-size: 30px;
+  padding: 15px 0px 15px 0px;
+  margin-right: 20px;
+}
+.checkout-page-left-wallet-left {
+  padding-left: 20px;
+  color: #000;
+  font-weight: 600;
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+}
+.checkout-page-left-wallet-right {
+  display: inline-block;
+  margin-left: 10px;
+}
+.checkout-page-right-container {
+  display: inline-block;
+  margin-left: 7%;
+  width: 45%;
+  line-height: 8vh;
+  font-size: 35px;
+  padding: 0 0px 15px 0px;
+}
+.checkout-page-above-final-price {
+  display: block;
+  border-bottom: 1px solid rgb(218, 216, 216);
+}
+.checkout-page-above-fp-left {
+  display: inline-block;
+  width: 65%;
+  text-align: right;
+  padding-right: 5%;
+}
+.checkout-page-above-fp-right {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+  color: #a52606;
+}
+
+.checkout-page-confirm-button {
+  text-decoration: none;
+  font-family: lato-regular;
+  font-size: 35px;
+  color: #68696b;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #ccc;
+}
+.checkout-page-confirm-button:hover {
+  border-bottom: 1px solid #f4d078;
+  color: #2f2f30;
+  cursor: pointer;
+}
+.checkout-page-alert-message {
+  display: block;
+  width: 100%; */
+/* } */
+.moneytowallet {
+  text-align: right;
+  margin-top: 20px;
+}

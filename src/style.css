@@ -496,6 +496,7 @@ footer {
   width: 90%;
   margin-left: 10%;
   margin-top: 1%;
+  margin-bottom: 10%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
