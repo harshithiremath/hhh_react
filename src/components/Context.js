@@ -26,8 +26,8 @@ class ContextProvider extends React.Component {
   SignIn = (email) => {
     console.log("called sign in");
     if (!this.state.signed_in) {
-      localStorage.setItem("signed_in", true);
-      localStorage.setItem("user", email);
+      // localStorage.setItem("signed_in", true);
+      // localStorage.setItem("user", email);
       this.setState(() => {
         console.log("called toggle sign in");
         return {
@@ -41,8 +41,8 @@ class ContextProvider extends React.Component {
     console.log("called sign out");
     if (this.state.signed_in) {
       this.setState(() => {
-        localStorage.removeItem("signed_in");
-        localStorage.removeItem("user");
+        // localStorage.removeItem("signed_in");
+        // localStorage.removeItem("user");
         console.log("called toggle sign out");
         return {
           signed_in: false,
