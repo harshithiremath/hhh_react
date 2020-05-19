@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import "./walletrecharge.css"
 export default class WalletRecharge extends Component {
   state = {
     cardnum: "",
@@ -37,17 +38,21 @@ export default class WalletRecharge extends Component {
       <>
         {this.renderRedirect()}
         {this.props.context.signed_in ? (
-          <div>
-            <div>
-              <input
-                name="cardnum"
-                value={this.state.cardnum}
-                onChange={this.handleChange}
-                placeholder="Card number"
-                type="number"
-              />
+          <div className="walletrecharge">
+            
+            <div className="recharge-container">
+             <h1>Wallet Recharge</h1>
+              <div className="row">
+                <input
+                  name="cardnum"
+                  value={this.state.cardnum}
+                  onChange={this.handleChange}
+                  placeholder="Card number"
+                  type="number"
+                />
+              </div>
               <br />
-
+              <div className="row">
               <input
                 name="expiry"
                 value={this.state.expiry}
@@ -55,8 +60,10 @@ export default class WalletRecharge extends Component {
                 placeholder="MMYY"
                 type="number"
               />
-              <br />
+              </div>
 
+              <br />
+              <div className="row">
               <input
                 name="pin"
                 value={this.state.cvv}
@@ -64,7 +71,9 @@ export default class WalletRecharge extends Component {
                 placeholder="Pin"
                 type="password"
               />
+              </div>
               <br />
+              <div className="row">
               <input
                 name="amount"
                 value={this.state.amount}
@@ -72,6 +81,7 @@ export default class WalletRecharge extends Component {
                 placeholder="Amount"
                 type="number"
               />
+              </div>
               <br />
               <button onClick={this.handleSubmit}>Continue</button>
             </div>

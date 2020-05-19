@@ -77,6 +77,8 @@ body{
   }
   .checkout-page-left-wallet-left {
     padding-left:20px ;
+    color: #000;
+    font-weight: 600 ;
     display: inline-block;
     width: 35%;
     text-align: center;

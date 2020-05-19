@@ -1,24 +1,10 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ContextConsumer } from "../components/Context";
 export default function Header() {
   const signOut = (props) => {
     console.log(props);
     props.SignOut();
-  };
-  const [wallet, setWallet] = useState(0);
-  const FindBlanace = (email) => {
-    axios
-      .post("http://localhost:5000/wallet", {
-        user: {
-          email: email,
-        },
-      })
-      .then((res) => {
-        const balance = res.data.balance.balance;
-        setWallet(balance);
-      });
   };
   return (
     <header>
@@ -67,14 +53,14 @@ export default function Header() {
                       <li className="account-head-wrapper">
                         Account
                         <ul>
-                        <li>
-                            <Link className="account-head-item" to="/wallet">
-                              Wallet
+                          <li >
+                            <Link className="account-head-item" to="/cart">
+                              Cart
                             </Link>
                           </li>
                           <li>
-                            <Link className="account-head-item" to="/cart">
-                              Cart
+                            <Link className="account-head-item" to="/wallet">
+                              Wallet
                             </Link>
                           </li>
                           <li>

@@ -1,0 +1,53 @@
+.walletrecharge{
+    font-family: "proxima_nova_rgregular";
+    background-color: #fff;
+}
+h1{
+    font-size: 40px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    color: #000;
+}
+.recharge-container button{
+    font-size: 15px;
+    border: 1.5px solid #46454562;
+    padding:10px 20px 10px 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    color:rgba(0, 0, 0, 0.513);
+}
+.recharge-container button:hover{
+    border: 1.5px solid rgba(0, 0, 0, 0.801);
+    padding:10px 20px 10px 20px;
+    border-radius: 12px;
+    background-color: #000;
+    color:#fff;
+    box-shadow: 0 8px 16px 0 #5050500c,
+    0 6px 20px 0 #5050500c;
+}
+.recharge-container{
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding:20px 50px 30px 30px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #d6d3d3;
+    border: 2px;
+    border-style: solid;
+    border-color: #ffffff;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 5px #c5c5c5;
+}
+.recharge-container input{
+  background: #f6f5f5e7;
+  border:none;
+  text-align: center;
+  outline: none;
+  width: 100%;
+  height: 40px;
+  color: black;
+  border-radius: 15px;
+}

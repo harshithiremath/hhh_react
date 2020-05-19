@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
 import "../css/wallet.css"
 export default class Wallet extends Component {
   state = {
@@ -26,8 +25,6 @@ export default class Wallet extends Component {
     // console.log(this.state);
     let date1 = new Date(this.state.wallet.expiry);
     let date_to_display = date1.toDateString();
-    let balance_after_payment =this.state.wallet.balance - this.state.cartSubTotal;
-    console.log(this.props.context.signed_in)
     if(this.props.context.signed_in){
     return(
       <>
@@ -87,9 +84,7 @@ export default class Wallet extends Component {
       );
     }
     else{
-      return(
-        <h1>afasf</h1>
-      )
+      return <Redirect to="/signin" />;
     }
     // return <Redirect to="/signin" />;
   }
