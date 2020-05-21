@@ -6,6 +6,7 @@ class ContextProvider extends React.Component {
     signed_in: false,
     cart: [],
     tourPassToBuy: "",
+    SingleMerchToBuy:"",
   };
 
   // ! As cookies are implemented, the user won't need to log in again if he opens a new tab
@@ -72,6 +73,13 @@ class ContextProvider extends React.Component {
       console.log("added tour_id to context state");
     }
   };
+  
+  chooseMerchToBuy=(merch_id)=>{
+    if(this.state.signed_in){
+      this.setState({ SingleMerchToBuy: merch_id});
+      console.log("added merch_id to context state")
+    }
+  }
   render() {
     return (
       <Provider
@@ -83,7 +91,9 @@ class ContextProvider extends React.Component {
           SignIn: this.SignIn,
           SignOut: this.SignOut,
           choseTicketToBuy: this.choseTicketToBuy,
+          chooseMerchToBuy:this.chooseMerchToBuy,
           ticket_id: this.state.tourPassToBuy,
+          SingleMerch_id:this.state.SingleMerchToBuy,
         }}
       >
         {this.props.children}

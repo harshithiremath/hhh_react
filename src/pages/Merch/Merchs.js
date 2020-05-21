@@ -14,6 +14,19 @@ export default class Merchs extends Component {
     if (this.state.redirectToSignin) {
       return <Redirect to="/signin" />;
     }
+    else if (this.state.redirectToCheckout) {
+      return (
+        <Redirect
+          to={{
+            pathname: "/checkout/singlemerch",
+            state: { merch_id: this.state.merch_id_to_be_purchased },
+          }}
+        />
+      );
+    }
+  }
+  buyMerch(merch_id) {
+    this.setState({ redirectToCheckout: true, merch_id_to_be_purchased: merch_id });
   }
   toggleRedirect() {
     this.setState({ redirectToSignin: true });
@@ -31,6 +44,7 @@ export default class Merchs extends Component {
     let items = this.state.merchs.map((item) => {
       return (
         <Merch
+          buyMerch={this.buyMerch}
           toggleRedirect={this.toggleRedirect}
           key={item.merch_id}
           item={item}

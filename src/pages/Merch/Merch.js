@@ -8,6 +8,9 @@ function Merch(props) {
   */
   //The function that determines if available/selling fast should be output
   let [redirectstate, setredirectstate] = useState(false);
+  //redirect used to redirect to /signin page
+  let [redirect,setredirect]=useState(false);
+  //re
   let text1 = "";
   let fast = false;
   let soldOut = false;
@@ -38,9 +41,14 @@ function Merch(props) {
       return <Redirect to="/signin" />;
     }
   }
+  function redirectToCheckout(merch_id, context) {
+    context.chooseMerchToBuy(merch_id);
+    setredirect(true);
+  }
   return (
     <div className="tour" style={{ fontSize: 25 }}>
       {redirectToSignIn()}
+      {redirect ? <Redirect to="/checkout/singlemerch" /> : null}
       <Link to={`/merch/${props.item.merch_id}`}>
         <img
           src={`${props.item.image_url}`}
@@ -102,7 +110,7 @@ function Merch(props) {
                 <button
                   onClick={() => {
                     context.signed_in
-                      ? console.log("clicked")
+                      ? redirectToCheckout(props.item.merch_id, context)
                       : props.toggleRedirect();
                   }}
                   className="buy-btn"
