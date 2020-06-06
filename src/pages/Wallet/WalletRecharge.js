@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "./walletrecharge.css";
+import StripeCheckout from "react-stripe-checkout";
 export default class WalletRecharge extends Component {
   state = {
     cardnum: "",
@@ -31,6 +32,20 @@ export default class WalletRecharge extends Component {
   renderRedirect() {
     if (this.state.redirect) {
       return <Redirect to="/wallet" />;
+    }
+  }
+  async handleToken(token){
+    console.log(token);
+    const response = await axios.post("http://localhost:5000/rechargeStripe",{
+      token
+    })
+    console.log(response)
+    if(response.status === 200){
+      console.log("Success")
+      alert("Success")
+    }
+    else{
+      console.log(response.status)
     }
   }
   render() {
@@ -96,6 +111,17 @@ export default class WalletRecharge extends Component {
               </div>
               <br />
               <button onClick={this.handleSubmit}>Continue</button>
+            </div>
+            <div className="stripe">
+              <StripeCheckout 
+                stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
+                name="Harsh"
+                description="Pay HHH"
+                amount={1000*100}
+                token={this.handleToken}
+                currency={'INR'}
+                email
+              />
             </div>
           </div>
         ) : (

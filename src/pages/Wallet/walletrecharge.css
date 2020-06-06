@@ -61,3 +61,8 @@ input::-webkit-inner-spin-button {
 input:invalid {
   color: rgb(175, 21, 21);
 }
+.stripe button{
+  position: relative;
+  left:46%;
+  top:500px;
+}
