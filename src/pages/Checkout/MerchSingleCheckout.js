@@ -15,11 +15,13 @@ export default class MerchCheckout extends Component {
   componentDidMount() {
     if (this.props.context.signed_in) {
       axios
-        .get("http://localhost:5000/getWalletInfo", {
-          params: {
-            user_id: this.props.context.user,
-          },
-        })
+        .get("http://localhost:5000/getWalletInfo", 
+        {
+          headers:{
+            authorization:"Bearer "+this.props.context.user
+          }
+        }
+        )
         .then((res) => {
           // console.log(res.data);
           this.setState({ wallet: res.data[0] });
@@ -58,6 +60,11 @@ export default class MerchCheckout extends Component {
           merch_id: this.state.merch_id,
           user_email: this.props.context.user,
           quantity: this.state.quantity,
+        },
+        {
+          headers:{
+            authorization:"Bearer "+this.props.context.user
+          }
         })
         .then((res) => {
           if (res) {

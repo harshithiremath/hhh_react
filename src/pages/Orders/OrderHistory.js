@@ -14,10 +14,11 @@ class OrderHistory extends React.Component {
       const user = this.props.user;
       // // console.log("user from context", user);
       axios
-        .get("http://localhost:5000/orders", {
-          params: {
-            user: user,
-          },
+        .get("http://localhost:5000/orders", 
+        {
+          headers:{
+            authorization:"Bearer "+user
+          }
         })
         .then((res) => {
           // // console.log(res);
@@ -29,10 +30,11 @@ class OrderHistory extends React.Component {
           // // this.orders = orders;
         });
       axios
-        .get("http://localhost:5000/bought_tickets", {
-          params: {
-            user: user,
-          },
+        .get("http://localhost:5000/bought_tickets", 
+        {
+          headers:{
+            authorization:"Bearer "+user
+          }
         })
         .then((res) => {
           const tickets = res.data;

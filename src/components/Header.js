@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ContextConsumer } from "../components/Context";
 export default function Header() {
   const signOut = (props) => {
-    console.log(props);
     props.SignOut();
   };
   return (

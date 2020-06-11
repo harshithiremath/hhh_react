@@ -8,11 +8,13 @@ export default class Wallet extends Component {
   };
   componentDidMount() {
     if (this.props.context.signed_in) {
+  
       axios
-        .get("http://localhost:5000/getWalletInfo", {
-          params: {
-            user_id: this.props.context.user,
-          },
+        .get("http://localhost:5000/getWalletInfo", 
+        {
+          headers:{
+            authorization:"Bearer "+this.props.context.user
+          }
         })
         .then((res) => {
           console.log(res.data);

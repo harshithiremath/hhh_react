@@ -26,7 +26,6 @@ class ContextProvider extends React.Component {
 
   SignIn = (token) => {
     console.log("called sign in");
-    console.log(token)
     if (!this.state.signed_in) {
       // localStorage.setItem("signed_in", true);
       // localStorage.setItem("user", email);

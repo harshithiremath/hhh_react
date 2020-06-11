@@ -19,7 +19,8 @@ export default class Cart extends Component {
           details: {
             email: this.props.context.user,
           },
-        },{
+        },
+        {
           headers:{
             authorization:"Bearer "+this.props.context.user
           }

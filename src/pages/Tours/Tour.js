@@ -71,7 +71,7 @@ function Tour(props) {
         <h5 style={{ color: "#222f3e" }}>{date}</h5>
         <h5 style={{ color: "#222f3e" }}>{time.slice(0, 5)}</h5>
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
-          Rs. {props.item.price}
+        ₹ {props.item.price}
         </h4>
         {fast ? (
           <h6 style={{ color: "red" }}>{text1}</h6>

@@ -4,6 +4,7 @@ import axios from "axios";
 import "./walletrecharge.css";
 import StripeCheckout from "react-stripe-checkout";
 export default class WalletRecharge extends Component {
+  
   state = {
     cardnum: "",
     expiry: "",
@@ -17,11 +18,18 @@ export default class WalletRecharge extends Component {
       [name]: value,
     });
   };
+  
   handleSubmit = (e) => {
+
     axios
       .post("http://localhost:5000/rechargeWallet", {
         user_email: this.props.context.user,
         amount: this.state.amount,
+      },
+      {
+        headers:{
+          authorization:"Bearer "+this.props.context.user
+        }
       })
       .then((res) => {
         if (res.status === 200) {
@@ -35,10 +43,10 @@ export default class WalletRecharge extends Component {
     }
   }
   async handleToken(token){
-    console.log(token);
     const response = await axios.post("http://localhost:5000/rechargeStripe",{
-      token
-    })
+      token:token
+    }
+    )
     console.log(response)
     if(response.status === 200){
       console.log("Success")
