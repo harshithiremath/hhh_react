@@ -24,8 +24,9 @@ class ContextProvider extends React.Component {
   //   this.initialCheck();
   // }
 
-  SignIn = (email) => {
+  SignIn = (token) => {
     console.log("called sign in");
+    console.log(token)
     if (!this.state.signed_in) {
       // localStorage.setItem("signed_in", true);
       // localStorage.setItem("user", email);
@@ -33,7 +34,7 @@ class ContextProvider extends React.Component {
         console.log("called toggle sign in");
         return {
           signed_in: true,
-          user: email,
+          user: token,
         };
       });
     }
@@ -61,6 +62,10 @@ class ContextProvider extends React.Component {
           quantity: item.quantity,
           merch_limit: item.merch_limit,
         },
+      },{
+        headers:{
+          authorization:"Bearer "+this.state.user
+        }
       })
       .then((res) => {
         // console.log(res);

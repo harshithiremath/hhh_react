@@ -19,6 +19,10 @@ export default class Cart extends Component {
           details: {
             email: this.props.context.user,
           },
+        },{
+          headers:{
+            authorization:"Bearer "+this.props.context.user
+          }
         })
         .then((res) => {
           // this.setState({ merchs: res.data });
@@ -51,8 +55,12 @@ export default class Cart extends Component {
     axios.post("http://localhost:5000/decrementCart", {
       body: {
         email: this.props.user,
-        merch_id: id,
+        merch_id: id
       },
+    },{
+      headers:{
+        authorization:"Bearer "+this.props.user
+      }
     });
   };
   incrementTotalPrice = (id, price) => {
@@ -64,7 +72,11 @@ export default class Cart extends Component {
       body: {
         email: this.props.user,
         merch_id: id,
-      },
+      }
+    },{
+      headers:{
+        authorization:"Bearer "+this.props.user
+      }
     });
   };
   render() {
