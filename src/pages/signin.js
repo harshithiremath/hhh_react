@@ -152,6 +152,7 @@ class SignIn extends React.Component {
               <h1>Log In</h1>
               <ContextConsumer>
                 {(context) => (
+                  <>
                   <form
                     className="forms"
                     onSubmit={(e) => this.handleSubmit(e, context)}
@@ -200,6 +201,31 @@ class SignIn extends React.Component {
                       />
                     </div>
                   </form>
+                  <img
+                  src={require("../components/images/google-logo.png")}
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    padding: "0px",
+                    marginTop: "-13px",
+                    marginBottom: "0px",
+                    marginRight: "-10px",
+                  }}
+                  alt="google-logo"
+                  />
+                  <img
+                  src={require("../components/images/spotify-logo.png")}
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    padding: "0px",
+                    marginTop: "-13px",
+                    marginBottom: "0px",
+                    marginRight: "-10px",
+                  }}
+                  alt="spotify-logo"
+                  />
+                </>
                 )}
               </ContextConsumer>
               <Link to="/signup" className="new_member_text">

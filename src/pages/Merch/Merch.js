@@ -69,21 +69,14 @@ function Merch(props) {
         </Link>
       </h1>
       <div className="tourLower">
-        <h5>
-          <a
-            style={{ color: "#868787", textDecoration: "none" }}
-            href={`/merch/${props.item.merch_id}`}
-          >
-            {props.item.description.slice(0, 50)}...
-          </a>
-        </h5>
+        
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
           Rs. {props.item.price}
         </h4>
         {fast ? (
           <h6 style={{ color: "red" }}>{text1}</h6>
         ) : (
-          <h6 style={{ color: "#a6a4a4" }}>{text1}</h6>
+        <h6 style={{ color: "#fbfbfb" }}>{text1}</h6>
         )}
         {soldOut ? (
           <button className="buy-btn soldout">Sold Out</button>

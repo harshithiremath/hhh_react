@@ -7,7 +7,7 @@ export default function WebPlayer() {
   return (
     <div className="containerPlayer">
       <Helmet>
-        <title>HHH AudioPlayer</title>
+        <title>AudioPlayer | HHH</title>
       </Helmet>
       <link
         rel="stylesheet"

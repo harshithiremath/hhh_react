@@ -15,7 +15,7 @@ function MainPage() {
               <h3>
                 {item.tour_name}, {item.location}
               </h3>
-              <h4>{item.date}</h4>
+              <h4>{item.time.slice(0,10)}</h4>
               {/* {console.log(item.merch_limit)} */}
               {item.tours_limit === 0 ? <p>sold out</p> : null}
               {(item.tours_limit > 0) & (item.tours_limit <= 20) ? (
@@ -117,30 +117,6 @@ function MainPage() {
         <Link to="/merch" style={{ textDecoration: "none" }}>
           <button className="Merchbutton">MERCH</button>
         </Link>
-      </div>
-      <div className="mainPagefooter">
-        <ul>
-          <li>
-            <a className="foot" href="/">
-              Copyright HHH Records
-            </a>
-          </li>
-          <li>
-            <a className="foot" href="/">
-              Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a className="foot" href="/">
-              Terms & Conditions
-            </a>
-          </li>
-          <li>
-            <a className="foot" href="/">
-              Do not sell my personal information
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
   );

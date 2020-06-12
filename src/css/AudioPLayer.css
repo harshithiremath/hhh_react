@@ -4,6 +4,7 @@
 }
 .particlesPlayer {
   background: #111010;
+  width: 100%;
   position: fixed;
   top: 0;
   right: 0;
@@ -13,7 +14,7 @@
 }
 .player-container {
   width: 470px;
-  margin: 0 auto;
+  margin: 0px 30% 0px 30%;
   overflow: hidden;
   background-color: #000000;
   border-radius: 20px;

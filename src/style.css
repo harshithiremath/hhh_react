@@ -92,7 +92,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fbfbfb;
+  background-color: #fbfbfb38;
   color: #1e272e;
 }
 * {
@@ -121,7 +121,9 @@ body {
   cursor: pointer;
   background: transparent;
 }
-
+.menu ul li img{
+  margin-top: -13px;
+}
 .non-active {
   color: #ffffff;
   text-decoration: none;
@@ -164,8 +166,32 @@ body {
   font-family: "proxima_nova_rgregular";
   transition: all 0.1s;
 }
-.signup-text:hover {
-  color: #fec345;
+
+@media screen and (max-width: 500px) {
+  .menu ul li {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  .non-active {
+    top:5%;
+    margin-top: 20px;
+    padding-left: 2px;
+    padding-right: 1px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+  }
+  .signup-text{
+    padding:3px;
+    font-size: 14px;
+  }
+  .signup-btn {
+    padding: 1px;
+  }
+  .menu ul li img{
+    top: -10px;
+    margin-top:-17px;
+  }
 }
 .wallet {
   position: absolute;
@@ -493,16 +519,13 @@ footer {
   padding-left: 30px;
   padding-right: 30px; */
   font-family: "lato-light";
-  width: 90%;
-  margin-left: 10%;
-  margin-top: 1%;
-  margin-bottom: 10%;
+  margin: 3% 2% 0% 2%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   flex-direction: row;
 }
 .h2_upcoming_tours {
-  font-family: "lato-light";
+  font-family: "lato-Bold";
   margin-top: 30px;
   display: flex;
   justify-content: center;
@@ -513,21 +536,59 @@ footer {
   user-select: none;
 }
 .tour {
-  color: rgba(255, 255, 255, 0.733);
-  display: grid;
+  background: #fbfbfb;
+  display: block;
   flex-direction: column;
   border: 2px solid transparent;
-  border-radius: 8px;
-  width: 16%;
-  flex-wrap: wrap;
-  margin-left: 20px;
-  padding: 50px 40px 30px 20px;
+  border-radius: 10px;
+  width: 20%;
+  margin-left: 1%;  
+  padding: 40px 20px 30px 15px;
+  margin-bottom: 75px;
   transition: transform 0.1s;
   user-select: none;
+  margin-right: 1%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 1350px) {
+  .tours_list{
+    margin:4% 0%;
+  }
+  .tour {
+    width:  300px ;
+    padding: 30px 20px 10px 20px;
+    display: block;
+    margin-left: 2%;
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 1175px) {
+  .tours_list{
+    margin:4% 0%;
+  }
+  .tour {
+    width:  35% ;
+    padding: 30px 20px 10px 20px;
+    display: block;
+    margin-left: 7%;
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .tours_list{
+    margin:4% 0%;
+  }
+  .tour {
+    width: 75%;
+    display: inline-block;
+    margin:7%;
+  }
 }
 .tour:hover {
-  background: #7c7b6c36;
-  transform: scale(1.01);
+  
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }
 .tourLower {
   display: flex;
@@ -535,20 +596,33 @@ footer {
   flex-direction: column;
 }
 .buy-btn {
-  margin-top: 10px;
-  font-family: lato-light;
-  justify-self: flex-end;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  justify-content: center;
+  margin-left: 25%;
+  width: 50%;
+  margin-top: 15px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Proxima Nova",sans-serif;
   font-size: 25px;
-  background: transparent;
-  color: #222f3e;
-  border: none;
+  background-color: #fbfbfb;
+  color: #000000;
+  border: 1.5px solid #00000060;
+  border-radius: 5px;
   cursor: pointer;
 }
 .buy-btn:hover {
-  background: rgba(73, 67, 67, 0.384);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1.5px solid #00000060;
+  color: rgb(24, 24, 24);
+}
+.soldout{
+  border: 1.5px solid transparent;
 }
 .soldout:hover {
-  background: inherit !important;
+  background:inherit !important;
+  border: 1.5px solid transparent;
   cursor: not-allowed;
 }
 .orders-page-container {
@@ -637,10 +711,10 @@ footer {
 }
 
 .containerPlayer {
+  width: 90%;
   box-sizing: border-box;
   color: #d2d5d6;
   font-size: 18px;
-  user-select: none;
 }
 .containerPlayer > h1 {
   text-align: center;
@@ -698,6 +772,7 @@ footer {
   text-shadow: 4px 4px 10px #4d5068;
 }
 
+
 .app-text p {
   font-family: "ostrich_bold";
   font-size: 35px;
@@ -727,6 +802,27 @@ footer {
   border-radius: 25px;
   opacity: 0.75;
   box-sizing: content-box;
+}
+@media screen and (max-width: 1080px) {
+  .app-text h1{
+    font-size: 60px;
+  }
+  .app-text p{
+    top:96%;
+    margin-left: 40%;
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .app-text h1{
+    margin-top: 80px;
+    font-size: 42px;
+  }
+  .app-text p{
+    top:96%;
+    margin-left: 38%;
+    font-size: 24px;
+  }
 }
 .scroller {
   width: 3px;

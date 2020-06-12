@@ -16,7 +16,8 @@ import WalletRecharge from "./pages/Wallet/WalletRecharge";
 import TicketCheckout from "./pages/Checkout/TicketCheckout";
 import MerchSingleCheckout from "./pages/Checkout/MerchSingleCheckout";
 import MerchCheckout from "./pages/Checkout/MerchCheckout";
-import Footer from "./components/Footer";
+import FloatingFooter from "./components/FloatingFooter";
+import Footer from "./components/Footer"
 import Wallet from "./pages/wallet";
 
 /*
@@ -102,19 +103,22 @@ class App extends React.Component {
                 <title>HHH</title>
               </Helmet>
               <MainPage />
-              <Footer />
+              <Footer/>
+              <FloatingFooter />
             </Route>
             <Route path="/passes">
               <Helmet>
                 <title>Tours | HHH</title>
               </Helmet>
               <Tours />
+              <Footer/>
             </Route>
             <Route exact path="/merch">
               <Helmet>
                 <title>Merch | HHH</title>
               </Helmet>
               <Merchs />
+              <Footer/>
             </Route>
             <Route path="/signup">
               <Helmet>
@@ -124,7 +128,8 @@ class App extends React.Component {
             </Route>
             <Route path="/webPlayer">
               <WebPlayer />
-              <Footer />
+              <Footer/>
+              <FloatingFooter />
             </Route>
           </Switch>
         </div>
