@@ -41,7 +41,7 @@ function Tour(props) {
   // // props.func(e);
 
   // // }
-
+  const colors=["#fff"]
   function redirectToCheckout(tour_id, context) {
     // if(redirect){
     //   return <Redirect to='/checkout/ticket' />

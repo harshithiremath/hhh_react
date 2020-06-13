@@ -337,8 +337,9 @@ class AudioPlayer extends PureComponent {
       active: repeat,
     });
     return (
-      <div>
+      <div className="containerPlayer">
         <Particles className="particlesPlayer" params={this.particlesOptions} />
+        <h1>HHH AUDIOPLAYER</h1>
         <div className="player-container">
           <div
             className={coverClass}

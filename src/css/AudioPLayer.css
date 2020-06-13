@@ -12,9 +12,30 @@
   left: 0;
   z-index: -1;
 }
+.containerPlayer{
+  position: relative;
+  left: 0%;
+  right: 100%;
+  width: 30%;
+}
+.containerPlayer > h1 {
+  width: 85%;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #fec345;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  margin-left: 110px; 
+}
 .player-container {
-  width: 470px;
-  margin: 0px 30% 0px 30%;
+  position: relative;
+  left: 36%;
+  margin-right: 30%;
+  color: #d2d5d6;
+  width: 430px;
+  margin-bottom: 20px;
   overflow: hidden;
   background-color: #000000;
   border-radius: 20px;

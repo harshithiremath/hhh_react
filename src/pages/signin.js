@@ -197,34 +197,25 @@ class SignIn extends React.Component {
                         className="loginbtn"
                         type="submit"
                         name="login-submit"
-                        value="Login"
+                        value="Log In"
                       />
                     </div>
                   </form>
+                  <h3 style={{margin:"5px auto 5px auto", color:"#fff",fontWeight:"350"}}>Or Log In with</h3>
+                  <div className="google-login">
                   <img
                   src={require("../components/images/google-logo.png")}
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    padding: "0px",
-                    marginTop: "-13px",
-                    marginBottom: "0px",
-                    marginRight: "-10px",
-                  }}
                   alt="google-logo"
                   />
+                  <h4>Google</h4>
+                  </div>
+                  <div className="spotify-login">
                   <img
                   src={require("../components/images/spotify-logo.png")}
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    padding: "0px",
-                    marginTop: "-13px",
-                    marginBottom: "0px",
-                    marginRight: "-10px",
-                  }}
                   alt="spotify-logo"
                   />
+                  <h4> Spotify</h4>
+                  </div>
                 </>
                 )}
               </ContextConsumer>
