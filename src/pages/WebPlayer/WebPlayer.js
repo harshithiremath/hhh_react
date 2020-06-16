@@ -2,9 +2,10 @@ import React from "react";
 import AudioPlayer from "../../components/AudioPlayer";
 import { Helmet } from "react-helmet";
 import songs from "./SongsData";
-
+import FloatingFooter from "../../components/FloatingFooter" 
 export default function WebPlayer() {
   return (
+    <>
     <div >
       <Helmet>
         <title>AudioPlayer | HHH</title>
@@ -16,5 +17,7 @@ export default function WebPlayer() {
      
       <AudioPlayer songs={songs} />
     </div>
+   
+    </>
   );
 }

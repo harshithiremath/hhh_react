@@ -12,14 +12,7 @@
   left: 0;
   z-index: -1;
 }
-.containerPlayer{
-  position: relative;
-  left: 0%;
-  right: 100%;
-  width: 30%;
-}
 .containerPlayer > h1 {
-  width: 85%;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -27,12 +20,12 @@
   font-size: 30px;
   text-align: center;
   padding: 10px;
-  margin-left: 110px; 
+  margin-left: auto; 
 }
 .player-container {
   position: relative;
-  left: 36%;
-  margin-right: 30%;
+  margin-left: auto;
+  margin-right: auto;
   color: #d2d5d6;
   width: 430px;
   margin-bottom: 20px;
@@ -227,4 +220,21 @@
   border-bottom-right-radius: 0.25px;
   transition: all 0.2s;
   cursor: pointer;
+}
+@media screen and (max-width: 475px) {
+  .player-container{
+    width: 90%;
+  }
+  .player-cover{
+    height: 280px;
+  }
+  .player-progress-container {
+    width: 80%;
+  }
+  .player-options{
+    width: fit-content;
+  }
+  footer{
+    right: 0px;
+  }
 }

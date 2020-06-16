@@ -129,7 +129,7 @@ class App extends React.Component {
             <Route path="/webPlayer">
               <WebPlayer />
               <Footer/>
-              <FloatingFooter />
+              <FloatingFooter/>
             </Route>
           </Switch>
         </div>
