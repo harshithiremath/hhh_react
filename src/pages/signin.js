@@ -62,7 +62,6 @@ class SignIn extends React.Component {
   };
   constructor() {
     super();
-
     this.state = {
       redirect: false,
       email: "",
@@ -87,6 +86,51 @@ class SignIn extends React.Component {
       return <Redirect to="/" />;
     }
   };
+  handleGoogleSubmit=(e,context)=>{
+    e.preventDefault();
+    console.log("sdad")
+    axios.get("http://localhost:5000/auth/google").then((res)=>{
+      if (res.data.done) {
+         console.log("w");
+        context.SignIn(res.data.token);
+        this.setState({ redirect: true });
+      } else {
+        this.setState({
+          password: "",
+          showError: true,
+        });
+      }
+    });
+    axios.get("http://localhost:5000/auth/google/callback").then((res)=>{
+      if (res.data.done) {
+         console.log("w");
+        context.SignIn(res.data.token);
+        this.setState({ redirect: true });
+      } else {
+        this.setState({
+          password: "",
+          showError: true,
+        });
+      }
+    });
+    window.open("http://localhost:5000/auth/google", "_self");
+  }
+  handleSpotifySubmit=(e,context)=>{
+    e.preventDefault();
+    axios.get("http://localhost:5000/auth/spotify").then((res)=>{
+      if (res.data.done) {
+        // console.log("w");
+        context.SignIn(res.data.token);
+        this.setState({ redirect: true });
+      } else {
+        this.setState({
+          password: "",
+          showError: true,
+        });
+      }
+    });
+  }
+
   handleSubmit = (e, context) => {
     e.preventDefault();
     let user = {
@@ -202,14 +246,15 @@ class SignIn extends React.Component {
                     </div>
                   </form>
                   <h3 style={{margin:"5px auto 5px auto", color:"#fff",fontWeight:"350"}}>Or Log In with</h3>
-                  <div className="google-login">
+                  
+                  <div className="google-login" onClick={(e) => this.handleGoogleSubmit(e, context)}>
                   <img
                   src={require("../components/images/google-logo.png")}
                   alt="google-logo"
                   />
                   <h4>Google</h4>
                   </div>
-                  <div className="spotify-login">
+                  <div className="spotify-login" onClick={(e) => this.handleSpotifySubmit(e, context)}>
                   <img
                   src={require("../components/images/spotify-logo.png")}
                   alt="spotify-logo"

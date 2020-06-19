@@ -775,7 +775,7 @@ footer {
   text-transform: uppercase;
   margin: 0px;
   color: #fff;
-  display: inline;
+  display: inline-flex;
   padding: 10px 40px 0px 0px;
 }
 .mainPagefooter > p {
@@ -814,7 +814,9 @@ footer {
   font-size: 35px;
   width: 30%;
   position: absolute;
-  margin-left: 45%;
+  text-align: center;
+  justify-content: center;
+  margin-left: 35%;
   bottom: -0.5%;
   color: #a19d9d;
   background: transparent;
@@ -822,13 +824,12 @@ footer {
 }
 .scroll-downs {
   position: absolute;
-  top: 0;
+  top: 86%;
   right: 0;
   bottom: -80%;
   left: 0;
   margin: auto;
-  width: 34px;
-  height: 55px;
+  width: fit-content;
 }
 .mousey {
   width: 3px;
@@ -839,27 +840,6 @@ footer {
   opacity: 0.75;
   box-sizing: content-box;
 }
-@media screen and (max-width: 1080px) {
-  .app-text h1{
-    font-size: 60px;
-  }
-  .app-text p{
-    top:96%;
-    margin-left: 40%;
-    font-size: 40px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .app-text h1{
-    margin-top: 80px;
-    font-size: 42px;
-  }
-  .app-text p{
-    top:96%;
-    margin-left: 38%;
-    font-size: 24px;
-  }
-}
 .scroller {
   width: 3px;
   height: 10px;
@@ -869,6 +849,92 @@ footer {
   animation-duration: 2.2s;
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
+}
+@media screen and (max-width: 1000px) {
+  .app-text h1{
+    margin-top: 60px;
+    font-size: 60px;
+  }
+  .app-text p{
+    top:96%;
+    margin-left: 35%;
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-height: 1024px) {
+  .app-text h1{
+    font-size: 80px;
+    width: 70%;
+  }
+  .app-text p{
+    font-size: 50px;
+    padding-bottom: 30px;
+  }
+  .scroll-downs {
+    top: 86%;
+  }
+  .mousey {
+    width: 20px;
+    height: 60px;
+    border: 2.5px solid #fff;
+  }
+  .scroller {
+    position: relative;
+    width: 3px;
+    height: 15px;
+    left: 45%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .app-text h1{
+    margin-top: 70px;
+    font-size: 42px;
+  }
+  .app-text p{
+    top:96%;
+    margin-left: 33%;
+    width: fit-content;
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .app-text h1{
+    margin-top: 30px;
+    font-size: 40px;
+    width: 80%;
+  }
+  .app-text p{
+    padding-top: 0px;
+    top:96%;
+    width: fit-content;
+    margin-left: 33%;
+    font-size: 25px;
+  }
+  .scroll-downs {
+    top: 84%;
+  }
+  .mousey {
+    width: 1.5px;
+    height: 30px;
+    border: 1.5px solid #fff;
+  }
+  .scroller {
+    width: 2px;
+    height: 8px;
+  }
+}
+@media screen and (max-height: 700px) {
+  .app-text h1{
+    margin-top: 20px;
+    font-size: 40px;
+  }
+  .app-text p{
+    top:96%;
+    margin-left: 31%;
+    width: fit-content;
+    font-size: 30px;
+  }
 }
 @keyframes scroll {
   0% {
