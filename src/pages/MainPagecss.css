@@ -27,6 +27,8 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
+  font-weight: 300;
+  font-family: "proxima_nova_regular",sans-serif;
   font-size: 18px;
   margin-top: 50px;
   margin-left: 33.33%;
@@ -152,6 +154,8 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
+  font-weight: 300;
+  font-family: "proxima_nova_regular",sans-serif;
   font-size: 18px;
   margin-top: 40px;
   margin-left: 38%;
@@ -185,6 +189,8 @@
   justify-content: center;
   text-align: center;
   font-size: 18px;
+  font-weight: 300;
+  font-family: "proxima_nova_regular",sans-serif;
   margin-top: 40px;
   margin-left: 38%;
   cursor: pointer;

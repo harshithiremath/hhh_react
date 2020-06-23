@@ -17,7 +17,6 @@ export default function Header() {
                   width: "50px",
                   height: "50px",
                   padding: "0px",
-                  marginTop: "-13px",
                   marginBottom: "0px",
                   marginRight: "-10px",
                 }}

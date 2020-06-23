@@ -88,7 +88,6 @@ class SignIn extends React.Component {
   };
   handleGoogleSubmit=(e,context)=>{
     e.preventDefault();
-    console.log("sdad")
     axios.get("http://localhost:5000/auth/google").then((res)=>{
       if (res.data.done) {
          console.log("w");
