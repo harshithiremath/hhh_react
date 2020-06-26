@@ -32,7 +32,7 @@ export default class Merchs extends Component {
     this.setState({ redirectToSignin: true });
   }
   componentDidMount() {
-    axios.get("http://localhost:5000/merch").then((res) => {
+    axios.get("/merch").then((res) => {
       let merchs = res.data;
       // // console.log("res.data", res.data);
       this.setState({ merchs: merchs });

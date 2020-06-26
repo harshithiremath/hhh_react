@@ -6,7 +6,7 @@ export default class single_ticket extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost:5000/singleTour", {
+      .get("/singleTour", {
         params: { tour_id: this.props.ticket.tour_id },
       })
       .then((res) => {

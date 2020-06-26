@@ -91,7 +91,7 @@ export default class Signup extends Component {
     e.preventDefault();
     if (this.validate()) {
       axios
-        .post("http://localhost:5000/users", { user })
+        .post("/users", { user })
         .then((res) => {
           console.log(res.status);
           if (res.status === 200) {

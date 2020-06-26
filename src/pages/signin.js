@@ -88,7 +88,7 @@ class SignIn extends React.Component {
   };
   handleGoogleSubmit=(e,context)=>{
     e.preventDefault();
-    axios.get("http://localhost:5000/auth/google").then((res)=>{
+    axios.get("/auth/google").then((res)=>{
       if (res.data.done) {
          console.log("w");
         context.SignIn(res.data.token);
@@ -100,7 +100,7 @@ class SignIn extends React.Component {
         });
       }
     });
-    axios.get("http://localhost:5000/auth/google/callback").then((res)=>{
+    axios.get("/auth/google/callback").then((res)=>{
       if (res.data.done) {
          console.log("w");
         context.SignIn(res.data.token);
@@ -112,11 +112,11 @@ class SignIn extends React.Component {
         });
       }
     });
-    window.open("http://localhost:5000/auth/google", "_self");
+    window.open("/auth/google", "_self");
   }
   handleSpotifySubmit=(e,context)=>{
     e.preventDefault();
-    axios.get("http://localhost:5000/auth/spotify").then((res)=>{
+    axios.get("/auth/spotify").then((res)=>{
       if (res.data.done) {
         // console.log("w");
         context.SignIn(res.data.token);
@@ -139,7 +139,7 @@ class SignIn extends React.Component {
     if (this.validate()) {
       // console.log("logged_in");
       // context.SignIn(this.state.email);
-      axios.post("http://localhost:5000/signin", { user }).then((res) => {
+      axios.post("/signin", { user }).then((res) => {
         if (res.data.done) {
           // console.log("w");
           context.SignIn(res.data.token);

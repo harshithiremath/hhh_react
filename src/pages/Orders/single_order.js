@@ -7,7 +7,7 @@ export default class single_order extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost:5000/merch", {
+      .get("/merch", {
         params: { merch_id: this.props.order.merch_id },
       })
       .then((res) => {

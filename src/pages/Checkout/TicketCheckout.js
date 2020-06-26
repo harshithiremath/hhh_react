@@ -14,7 +14,7 @@ export default class MerchCheckout extends Component {
   componentDidMount() {
     if (this.props.context.signed_in) {
       axios
-        .get("http://localhost:5000/getWalletInfo", 
+        .get("/getWalletInfo", 
         {
           headers:{
             authorization:"Bearer "+this.props.context.user
@@ -25,7 +25,7 @@ export default class MerchCheckout extends Component {
           this.setState({ wallet: res.data[0] });
         });
       axios
-        .get("http://localhost:5000/singleTour", {
+        .get("/singleTour", {
           params: { tour_id: this.state.ticket_id },
         })
         .then((res) => {
@@ -53,7 +53,7 @@ export default class MerchCheckout extends Component {
     if (!this.state.redirectToOrders) {
       console.log("called /confirmMetch");
       axios
-        .post("http://localhost:5000/checkoutconfirmTicket", {
+        .post("/checkoutconfirmTicket", {
           tour_id: this.state.ticket_id,
           user_email: this.props.context.user,
           quantity: this.state.quantity,

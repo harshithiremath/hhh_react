@@ -14,7 +14,7 @@ export default class Cart extends Component {
   componentDidMount() {
     if (this.props.signed_in) {
       axios
-        .post("http://localhost:5000/cart", {
+        .post("/cart", {
           message: "view",
           details: {
             email: this.props.context.user,
@@ -53,7 +53,7 @@ export default class Cart extends Component {
     prices[id] = prices[id] - price;
     let tempTotal = this.state.totalPrice - price;
     this.setState({ prices: prices, totalPrice: tempTotal });
-    axios.post("http://localhost:5000/decrementCart", {
+    axios.post("/decrementCart", {
       body: {
         email: this.props.user,
         merch_id: id
@@ -69,7 +69,7 @@ export default class Cart extends Component {
     prices[id] = prices[id] + price;
     let tempTotal = this.state.totalPrice + price;
     this.setState({ prices: prices, totalPrice: tempTotal });
-    axios.post("http://localhost:5000/incrementCart", {
+    axios.post("/incrementCart", {
       body: {
         email: this.props.user,
         merch_id: id,

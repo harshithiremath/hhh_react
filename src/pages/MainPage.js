@@ -6,7 +6,7 @@ import "./MainPagecss.css";
 function MainPage() {
   const [tours, setTours] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/tours").then((res) => {
+    axios.get("/tours").then((res) => {
       const tour = res.data;
       const tourData = tour.map((item) => {
         return (

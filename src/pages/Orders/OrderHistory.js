@@ -14,7 +14,7 @@ class OrderHistory extends React.Component {
       const user = this.props.user;
       // // console.log("user from context", user);
       axios
-        .get("http://localhost:5000/orders", 
+        .get("/orders", 
         {
           headers:{
             authorization:"Bearer "+user
@@ -30,7 +30,7 @@ class OrderHistory extends React.Component {
           // // this.orders = orders;
         });
       axios
-        .get("http://localhost:5000/bought_tickets", 
+        .get("/bought_tickets", 
         {
           headers:{
             authorization:"Bearer "+user

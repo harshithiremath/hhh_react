@@ -53,7 +53,7 @@ class ContextProvider extends React.Component {
   };
   addToCart = (item) => {
     axios
-      .post("http://localhost:5000/cart", {
+      .post("/cart", {
         message: "insert",
         details: {
           user_id: this.state.user,

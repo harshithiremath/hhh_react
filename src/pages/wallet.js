@@ -10,7 +10,7 @@ export default class Wallet extends Component {
     if (this.props.context.signed_in) {
   
       axios
-        .get("http://localhost:5000/getWalletInfo", 
+        .get("/getWalletInfo", 
         {
           headers:{
             authorization:"Bearer "+this.props.context.user
