@@ -16,7 +16,7 @@ export default function SingleMerch(props) {
   async function getData() {
     if (!state.gotData) {
       await axios
-        .get("http://localhost:5000/merch", {
+        .get("/merch", {
           params: { merch_id: product_id },
         })
         .then((res) => {

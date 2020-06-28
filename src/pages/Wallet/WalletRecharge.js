@@ -22,7 +22,7 @@ export default class WalletRecharge extends Component {
   handleSubmit = (e) => {
 
     axios
-      .post("http://localhost:5000/rechargeWallet", {
+      .post("/rechargeWallet", {
         user_email: this.props.context.user,
         amount: this.state.amount,
       },
@@ -43,7 +43,7 @@ export default class WalletRecharge extends Component {
     }
   }
   async handleToken(token){
-    const response = await axios.post("http://localhost:5000/rechargeStripe",{
+    const response = await axios.post("/rechargeStripe",{
       token:token
     }
     )
