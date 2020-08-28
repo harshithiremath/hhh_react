@@ -114,21 +114,6 @@ class SignIn extends React.Component {
     });
     window.open("http://localhost:5000/auth/google", "_self");
   };
-  handleSpotifySubmit = (e, context) => {
-    e.preventDefault();
-    axios.get("http://localhost:5000/auth/auth/spotify").then((res) => {
-      if (res.data.done) {
-        // console.log("w");
-        context.SignIn(res.data.token);
-        this.setState({ redirect: true });
-      } else {
-        this.setState({
-          password: "",
-          showError: true,
-        });
-      }
-    });
-  };
 
   handleSubmit = (e, context) => {
     e.preventDefault();
@@ -258,21 +243,13 @@ class SignIn extends React.Component {
                       className="google-login"
                       onClick={(e) => this.handleGoogleSubmit(e, context)}
                     >
-                      <img
-                        src={require("../components/images/google-logo.png")}
-                        alt="google-logo"
-                      />
-                      <h4>Google</h4>
-                    </div>
-                    <div
-                      className="spotify-login"
-                      onClick={(e) => this.handleSpotifySubmit(e, context)}
-                    >
-                      <img
-                        src={require("../components/images/spotify-logo.png")}
-                        alt="spotify-logo"
-                      />
-                      <h4> Spotify</h4>
+                      <>
+                        <img
+                          src={require("../components/images/google-logo.png")}
+                          alt="google-logo"
+                        />
+                        <h4>Google</h4>
+                      </>
                     </div>
                   </>
                 )}

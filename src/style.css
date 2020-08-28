@@ -401,6 +401,8 @@ footer {
   text-decoration: none;
 }
 .signin-box-container {
+  display: flex;
+  flex-direction: column;
   width: 350px;
   position: absolute;
   top: 400px;
@@ -493,13 +495,13 @@ footer {
   color: black;
 }
 .google-login {
-  border-right: 1.5px solid #fec345;
+  /* border-right: 1.5px solid #fec345; */
   margin-top: 10px;
   width: 35%;
-  padding: 3px 5px 10px 50px;
+  /* padding: 3px 5px 10px 50px; */
   text-align: center;
+  align-self: center;
   cursor: pointer;
-  float: left;
   color: #c8c8c8c8;
   margin-bottom: 20px;
 }
@@ -561,7 +563,7 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 20px;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 .new_member_text:hover {
   color: #fec325;
