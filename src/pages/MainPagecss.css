@@ -17,24 +17,30 @@
 .Albums > h1 {
   text-align: center;
 }
-.Albumbutton {
+.mainPageButton {
   display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: "proxima_nova_regular", sans-serif;
+  font-size: 18px;
+  height: 60px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  margin-top: 40px;
+  margin-left: 38%;
+}
+.Albumbutton {
   background-color: #000;
   color: #fff;
   border: 3px solid #000;
   width: 33.33%;
-  height: 60px;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 300;
-  font-family: "proxima_nova_regular",sans-serif;
-  font-size: 18px;
-  margin-top: 50px;
-  margin-left: 33.33%;
+
+  margin-top: 50px !important;
+  margin-left: 33.33% !important;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  transition-duration: 0.4s;
 }
 .Albumbutton:hover {
   background-color: #fff;
@@ -145,22 +151,11 @@
 }
 
 .Ticketsbutton {
-  display: flex;
   background-color: #fff;
   color: #000;
   border: 3px solid #000;
   width: 25%;
   height: 60px;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 300;
-  font-family: "proxima_nova_regular",sans-serif;
-  font-size: 18px;
-  margin-top: 40px;
-  margin-left: 38%;
-  cursor: pointer;
-  transition-duration: 0.1s;
 }
 .Ticketsbutton:hover {
   background-color: #000;
@@ -180,28 +175,18 @@
   padding-bottom: 30px;
 }
 .Merchbutton {
-  display: flex;
   background-color: #000;
   color: #fff;
   border: 2.5px solid #000;
   width: 25%;
   height: 60px;
-  justify-content: center;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 300;
-  font-family: "proxima_nova_regular",sans-serif;
-  margin-top: 40px;
-  margin-left: 38%;
-  cursor: pointer;
-  transition-duration: 0.1s;
 }
 .Merchbutton:hover {
   border: 1px solid #fec345;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 500px) {
-  .Albums{
+  .Albums {
     margin-left: 40px;
   }
   .Albumbutton {
@@ -210,14 +195,14 @@
   }
   .gallery {
     margin-top: 20px;
-    margin-left:0px;
+    margin-left: 0px;
     display: grid;
     position: relative;
     grid-template-columns: repeat(8, 10vw);
     grid-template-rows: repeat(12, 10vw);
     grid-gap: 0px;
   }
-  
+
   .gallery__img {
     width: 100%;
     height: 100%;
@@ -230,21 +215,21 @@
     grid-row-start: 1;
     grid-row-end: 5;
   }
-  
+
   .gallery__item--2 {
     grid-column-start: 5;
     grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 5;
   }
-  
+
   .gallery__item--3 {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 9;
     grid-row-end: 13;
   }
-  
+
   .gallery__item--4 {
     grid-column-start: 1;
     grid-column-end: 5;
@@ -267,7 +252,7 @@
     width: 70%;
     margin-left: 15%;
   }
-  .Merchbutton{
+  .Merchbutton {
     width: 70%;
     margin-left: 15%;
   }

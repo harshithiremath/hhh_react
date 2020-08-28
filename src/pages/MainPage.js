@@ -97,7 +97,7 @@ function MainPage() {
           </figure>
         </div>
         <Link to="/webPlayer" style={{ textDecoration: "none" }}>
-          <button className="Albumbutton">LISTEN NOW</button>
+          <button className="Albumbutton mainPageButton">LISTEN NOW</button>
         </Link>
       </div>
       <div className="MainTours">
@@ -108,14 +108,14 @@ function MainPage() {
         <div className="row">{tours.slice(8, 12)}</div>
         <div className="row">{tours.slice(12, 16)}</div>
         <Link to="/passes" style={{ textDecoration: "none" }}>
-          <button className="Ticketsbutton">BUY NOW</button>
+          <button className="Ticketsbutton mainPageButton">BUY NOW</button>
         </Link>
       </div>
       <div className="Merch">
         <h1>MERCH</h1>
         <p>Why not we have you redirected there directly?</p>
         <Link to="/merch" style={{ textDecoration: "none" }}>
-          <button className="Merchbutton">MERCH</button>
+          <button className="Merchbutton mainPageButton">MERCH</button>
         </Link>
       </div>
     </div>

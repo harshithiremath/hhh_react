@@ -86,11 +86,11 @@ class SignIn extends React.Component {
       return <Redirect to="/" />;
     }
   };
-  handleGoogleSubmit=(e,context)=>{
+  handleGoogleSubmit = (e, context) => {
     e.preventDefault();
-    axios.get("/auth/google").then((res)=>{
+    axios.get("http://localhost:5000/auth/google").then((res) => {
       if (res.data.done) {
-         console.log("w");
+        console.log("w");
         context.SignIn(res.data.token);
         this.setState({ redirect: true });
       } else {
@@ -100,9 +100,9 @@ class SignIn extends React.Component {
         });
       }
     });
-    axios.get("/auth/google/callback").then((res)=>{
+    axios.get("http://localhost:5000/auth/google/callback").then((res) => {
       if (res.data.done) {
-         console.log("w");
+        console.log("w");
         context.SignIn(res.data.token);
         this.setState({ redirect: true });
       } else {
@@ -112,11 +112,11 @@ class SignIn extends React.Component {
         });
       }
     });
-    window.open("/auth/google", "_self");
-  }
-  handleSpotifySubmit=(e,context)=>{
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
+  handleSpotifySubmit = (e, context) => {
     e.preventDefault();
-    axios.get("/auth/spotify").then((res)=>{
+    axios.get("http://localhost:5000/auth/auth/spotify").then((res) => {
       if (res.data.done) {
         // console.log("w");
         context.SignIn(res.data.token);
@@ -128,7 +128,7 @@ class SignIn extends React.Component {
         });
       }
     });
-  }
+  };
 
   handleSubmit = (e, context) => {
     e.preventDefault();
@@ -139,7 +139,7 @@ class SignIn extends React.Component {
     if (this.validate()) {
       // console.log("logged_in");
       // context.SignIn(this.state.email);
-      axios.post("/signin", { user }).then((res) => {
+      axios.post("http://localhost:5000/signin", { user }).then((res) => {
         if (res.data.done) {
           // console.log("w");
           context.SignIn(res.data.token);
@@ -196,71 +196,85 @@ class SignIn extends React.Component {
               <ContextConsumer>
                 {(context) => (
                   <>
-                  <form
-                    className="forms"
-                    onSubmit={(e) => this.handleSubmit(e, context)}
-                  >
-                    <div className="tbox">
-                      <input
-                        type="email"
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                        placeholder="Email"
-                        name="email"
-                      />
-                    </div>
+                    <form
+                      className="forms"
+                      onSubmit={(e) => this.handleSubmit(e, context)}
+                    >
+                      <div className="tbox">
+                        <input
+                          type="email"
+                          value={this.state.email}
+                          onChange={this.handleChange}
+                          placeholder="Email"
+                          name="email"
+                        />
+                      </div>
 
-                    <div className="tbox">
-                      <input
-                        type="password"
-                        value={this.state["password"]}
-                        onChange={this.handleChange}
-                        placeholder="Password"
-                        name="password"
-                      />
-                    </div>
-                    {/* <div>
+                      <div className="tbox">
+                        <input
+                          type="password"
+                          value={this.state["password"]}
+                          onChange={this.handleChange}
+                          placeholder="Password"
+                          name="password"
+                        />
+                      </div>
+                      {/* <div>
                     <span>
                       <a className="forgot">FORGOT PASSWORD?</a>
                     </span>
                   </div> */}
-                    {this.state.showError ? (
-                      <span
-                        style={{
-                          color: "#bd3131",
-                          fontStyle: "italic",
-                          cursor: "default",
-                        }}
-                      >
-                        Error in Username/Password
-                      </span>
-                    ) : null}
-                    <div>
-                      <input
-                        className="loginbtn"
-                        type="submit"
-                        name="login-submit"
-                        value="Log In"
+                      {this.state.showError ? (
+                        <span
+                          style={{
+                            color: "#bd3131",
+                            fontStyle: "italic",
+                            cursor: "default",
+                          }}
+                        >
+                          Error in Username/Password
+                        </span>
+                      ) : null}
+                      <div>
+                        <input
+                          className="loginbtn"
+                          type="submit"
+                          name="login-submit"
+                          value="Log In"
+                        />
+                      </div>
+                    </form>
+                    <h3
+                      style={{
+                        margin: "5px auto 5px auto",
+                        color: "#fff",
+                        fontWeight: "350",
+                      }}
+                    >
+                      Or Log In with
+                    </h3>
+
+                    <div
+                      className="google-login"
+                      onClick={(e) => this.handleGoogleSubmit(e, context)}
+                    >
+                      <img
+                        src={require("../components/images/google-logo.png")}
+                        alt="google-logo"
                       />
+                      <h4>Google</h4>
                     </div>
-                  </form>
-                  <h3 style={{margin:"5px auto 5px auto", color:"#fff",fontWeight:"350"}}>Or Log In with</h3>
-                  
-                  <div className="google-login" onClick={(e) => this.handleGoogleSubmit(e, context)}>
-                  <img
-                  src={require("../components/images/google-logo.png")}
-                  alt="google-logo"
-                  />
-                  <h4>Google</h4>
-                  </div>
-                  <div className="spotify-login" onClick={(e) => this.handleSpotifySubmit(e, context)}>
-                  <img
-                  src={require("../components/images/spotify-logo.png")}
-                  alt="spotify-logo"
-                  />
-                  <h4> Spotify</h4>
-                  </div>
-                </>
+                    <div
+                      className="spotify-login"
+                      onClick={(e) => this.handleSpotifySubmit(e, context)}
+                    >
+                      <img
+                        src={require("../components/images/spotify-logo.png")}
+                        alt="spotify-logo"
+                      />
+                      <h4> Spotify</h4>
+                    </div>
+                  </>
                 )}
               </ContextConsumer>
               <Link to="/signup" className="new_member_text">
