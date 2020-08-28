@@ -153,16 +153,13 @@
 .Ticketsbutton {
   background-color: #fff;
   color: #000;
-  border: 3px solid #000;
+  border: 3px solid #fff;
   width: 25%;
-  height: 60px;
 }
 .Ticketsbutton:hover {
   background-color: #000;
   color: #fff;
   border: 2px solid rgb(255, 255, 255);
-  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2),
-    0 6px 20px 0 rgba(255, 255, 255, 0.048);
 }
 .Merch {
   font-family: "proxima_nova_rgregular";
@@ -179,7 +176,6 @@
   color: #fff;
   border: 2.5px solid #000;
   width: 25%;
-  height: 60px;
 }
 .Merchbutton:hover {
   border: 1px solid #fec345;
