@@ -438,25 +438,80 @@ footer {
   margin-top: 10%;
   margin-bottom: 30px;
 }
-.tbox {
-  font-family: "proxima_nova_rgregular";
-
-  width: 80%;
-  height: 40px;
-  background: #b1b1b1b3;
-  border-radius: 5px;
-  margin: 10px auto 12px;
-  background: #b0b1b138;
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.tbox input {
-  background: none;
+
+.form {
+  -webkit-appearance: none;
+  /* The main div */
+  width: 70%;
+  background: transparent;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.form input {
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  background: black;
   border: none;
-  text-align: center;
-  outline: none;
-  width: 90%;
-  height: 40px;
   color: white;
 }
+.form label {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+  border-bottom: 1px solid #adadad;
+}
+.form label::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid rgb(141, 199, 32);
+  transform: translateX(-100%);
+  transition: all 0.2s ease;
+}
+.form input:focus {
+  outline: none;
+}
+.form input:focus + .tbox .spanInLabel,
+.form input:valid + .tbox .spanInLabel {
+  transform: translateY(-150%);
+  font-size: 13px;
+  color: #8a8a8a;
+}
+.form input:not(:placeholder-shown) + .tbox .spanInLabel {
+  transform: translateY(-150%);
+  font-size: 13px;
+  color: #a5a5a5;
+}
+.form input:not(:placeholder-shown) + label {
+  border-bottom: 1px solid red;
+}
+.form input:focus + .tbox::after,
+.form input:valid + .tbox::after {
+  transform: translateX(0%);
+}
+
+.spanInLabel {
+  /* the span */
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.1s ease;
+}
+
 .forgot {
   display: block;
   font-family: "Montserrat", sans-serif;
@@ -518,7 +573,7 @@ footer {
   padding: 2px 5px 4px 5px;
   margin-left: -70%;
 }
-.google-login :hover {
+.google-login:hover {
   color: #fbfbfb;
 }
 .spotify-login {

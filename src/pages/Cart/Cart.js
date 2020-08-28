@@ -14,23 +14,26 @@ export default class Cart extends Component {
   componentDidMount() {
     if (this.props.signed_in) {
       axios
-        .post("/cart", {
-          message: "view",
-          details: {
-            email: this.props.context.user,
+        .post(
+          "/cart",
+          {
+            message: "view",
+            details: {
+              email: this.props.context.user,
+            },
           },
-        },
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
+          {
+            headers: {
+              authorization: "Bearer " + this.props.context.user,
+            },
           }
-        })
+        )
         .then((res) => {
           // this.setState({ merchs: res.data });
           let quantities = { main: {} };
           let prices = { main: {} };
           let totalPrice = 0;
-          res.data.map((item) => {
+          res.data.forEach((item) => {
             let temp = { [item.merch_id]: item.quantity };
             let temp1 = { [item.merch_id]: item.price };
 
@@ -53,32 +56,40 @@ export default class Cart extends Component {
     prices[id] = prices[id] - price;
     let tempTotal = this.state.totalPrice - price;
     this.setState({ prices: prices, totalPrice: tempTotal });
-    axios.post("/decrementCart", {
-      body: {
-        email: this.props.user,
-        merch_id: id
+    axios.post(
+      "/decrementCart",
+      {
+        body: {
+          email: this.props.user,
+          merch_id: id,
+        },
       },
-    },{
-      headers:{
-        authorization:"Bearer "+this.props.user
+      {
+        headers: {
+          authorization: "Bearer " + this.props.user,
+        },
       }
-    });
+    );
   };
   incrementTotalPrice = (id, price) => {
     let { prices } = this.state;
     prices[id] = prices[id] + price;
     let tempTotal = this.state.totalPrice + price;
     this.setState({ prices: prices, totalPrice: tempTotal });
-    axios.post("/incrementCart", {
-      body: {
-        email: this.props.user,
-        merch_id: id,
+    axios.post(
+      "/incrementCart",
+      {
+        body: {
+          email: this.props.user,
+          merch_id: id,
+        },
+      },
+      {
+        headers: {
+          authorization: "Bearer " + this.props.user,
+        },
       }
-    },{
-      headers:{
-        authorization:"Bearer "+this.props.user
-      }
-    });
+    );
   };
   render() {
     if (this.props.signed_in) {

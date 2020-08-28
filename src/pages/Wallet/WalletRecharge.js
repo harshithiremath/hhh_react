@@ -70,6 +70,7 @@ export default class WalletRecharge extends Component {
               <div className="wallet_input_fields">
                 <input
                   name="cardnum"
+                  className="cardNumberInput"
                   value={this.state.cardnum}
                   onChange={this.handleChange}
                   placeholder="Card number"

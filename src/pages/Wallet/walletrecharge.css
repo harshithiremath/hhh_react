@@ -58,11 +58,11 @@ input::-webkit-inner-spin-button {
   border-radius: 15px;
 }
 
-input:invalid {
+.cardNumberInput:invalid {
   color: rgb(175, 21, 21);
 }
-.stripe button{
+.stripe button {
   position: relative;
-  left:46%;
-  top:500px;
+  left: 46%;
+  top: 500px;
 }

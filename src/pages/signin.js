@@ -67,6 +67,7 @@ class SignIn extends React.Component {
       email: "",
       password: "",
       showError: false,
+      showServerErr: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -79,6 +80,7 @@ class SignIn extends React.Component {
     this.setState({
       [name]: value,
       showError: false,
+      showServerErr: false,
     });
   }
   renderRedirect = () => {
@@ -124,19 +126,25 @@ class SignIn extends React.Component {
     if (this.validate()) {
       // console.log("logged_in");
       // context.SignIn(this.state.email);
-      axios.post("http://localhost:5000/signin", { user }).then((res) => {
-        if (res.data.done) {
-          // console.log("w");
-          context.SignIn(res.data.token);
-          this.setState({ redirect: true });
-        } else {
+      axios
+        .post("http://localhost:5000/signin", { user })
+        .then((res) => {
+          if (res.data.done) {
+            // console.log("w");
+            context.SignIn(res.data.token);
+            this.setState({ redirect: true });
+          } else {
+            this.setState({
+              password: "",
+              showError: true,
+            });
+          }
+        })
+        .catch(() => {
           this.setState({
-            password: "",
-            showError: true,
+            showServerErr: true,
           });
-        }
-        // if()
-      });
+        });
     } else {
       console.log("sign_in_failed");
       this.setState({
@@ -185,24 +193,31 @@ class SignIn extends React.Component {
                       className="forms"
                       onSubmit={(e) => this.handleSubmit(e, context)}
                     >
-                      <div className="tbox">
+                      <div className="form">
                         <input
                           type="email"
                           value={this.state.email}
                           onChange={this.handleChange}
-                          placeholder="Email"
                           name="email"
+                          placeholder=" "
+                          required
                         />
+                        <label htmlFor="email" className="tbox">
+                          <span className="spanInLabel">Email</span>
+                        </label>
                       </div>
-
-                      <div className="tbox">
+                      <div className="form">
                         <input
                           type="password"
                           value={this.state["password"]}
                           onChange={this.handleChange}
-                          placeholder="Password"
                           name="password"
+                          placeholder=" "
+                          required
                         />
+                        <label htmlFor="password" className="tbox">
+                          <span className="spanInLabel">Password</span>
+                        </label>
                       </div>
                       {/* <div>
                     <span>
@@ -217,7 +232,18 @@ class SignIn extends React.Component {
                             cursor: "default",
                           }}
                         >
-                          Error in Username/Password
+                          Invalid Username/Password
+                        </span>
+                      ) : null}
+                      {this.state.showServerErr ? (
+                        <span
+                          style={{
+                            color: "#bd3131",
+                            fontStyle: "italic",
+                            cursor: "default",
+                          }}
+                        >
+                          Server Error!
                         </span>
                       ) : null}
                       <div>

@@ -41,7 +41,6 @@ function Tour(props) {
   // // props.func(e);
 
   // // }
-  const colors=["#fff"]
   function redirectToCheckout(tour_id, context) {
     // if(redirect){
     //   return <Redirect to='/checkout/ticket' />
@@ -63,19 +62,21 @@ function Tour(props) {
           borderRadius: 4,
         }}
       />
-      <h1 style={{ color: "#000",paddingTop:10,textAlign:"left" }}>{props.item.tour_name.slice(0,11).toUpperCase()}</h1>
+      <h1 style={{ color: "#000", paddingTop: 10, textAlign: "left" }}>
+        {props.item.tour_name.slice(0, 11).toUpperCase()}
+      </h1>
       <div className="tourLower">
         <h3 style={{ color: "#000", paddingTop: 20 }}>
           {props.item.location.toUpperCase()}
-        <span>
-          <h4 style={{ color: "#000" ,float:"right"}}>
-          ₹ {props.item.price}
-          </h4>
-        </span>
+          <span>
+            <h4 style={{ color: "#000", float: "right" }}>
+              ₹ {props.item.price}
+            </h4>
+          </span>
         </h3>
         <h5 style={{ color: "#000" }}>{date.slice(4)}</h5>
         <h5 style={{ color: "#000" }}>{time.slice(0, 5)}</h5>
-        
+
         {fast ? (
           <h6 style={{ color: "red" }}>{text1}</h6>
         ) : (
