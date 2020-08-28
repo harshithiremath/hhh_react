@@ -6,7 +6,7 @@ import "./MainPagecss.css";
 function MainPage() {
   const [tours, setTours] = useState([]);
   useEffect(() => {
-    axios.get("/tours").then((res) => {
+    axios.get("http://localhost:5000/tours").then((res) => {
       const tour = res.data;
       const tourData = tour.map((item) => {
         return (
@@ -15,7 +15,7 @@ function MainPage() {
               <h3>
                 {item.tour_name}, {item.location}
               </h3>
-              <h4>{item.time.slice(0,10)}</h4>
+              <h4>{item.time.slice(0, 10)}</h4>
               {/* {console.log(item.merch_limit)} */}
               {item.tours_limit === 0 ? <p>sold out</p> : null}
               {(item.tours_limit > 0) & (item.tours_limit <= 20) ? (

@@ -13,8 +13,7 @@ export default class Merchs extends Component {
   renderRedirect() {
     if (this.state.redirectToSignin) {
       return <Redirect to="/signin" />;
-    }
-    else if (this.state.redirectToCheckout) {
+    } else if (this.state.redirectToCheckout) {
       return (
         <Redirect
           to={{
@@ -26,13 +25,16 @@ export default class Merchs extends Component {
     }
   }
   buyMerch(merch_id) {
-    this.setState({ redirectToCheckout: true, merch_id_to_be_purchased: merch_id });
+    this.setState({
+      redirectToCheckout: true,
+      merch_id_to_be_purchased: merch_id,
+    });
   }
   toggleRedirect() {
     this.setState({ redirectToSignin: true });
   }
   componentDidMount() {
-    axios.get("/merch").then((res) => {
+    axios.get("http://localhost:5000/merch").then((res) => {
       let merchs = res.data;
       // // console.log("res.data", res.data);
       this.setState({ merchs: merchs });

@@ -11,12 +11,12 @@ export default function SingleMerch(props) {
   let [redirectstate, setredirectstate] = useState(false);
   let [state, setstate] = useState({ gotData: false });
   let [formstate, setformstate] = useState({ quantity: 1 });
-  let [redirectcheckout,setredirectcheckout]=useState(false)
+  let [redirectcheckout, setredirectcheckout] = useState(false);
   // // console.log("props of SingleMerch", props);
   async function getData() {
     if (!state.gotData) {
       await axios
-        .get("/merch", {
+        .get("http://localhost:5000/merch", {
           params: { merch_id: product_id },
         })
         .then((res) => {
@@ -78,25 +78,21 @@ export default function SingleMerch(props) {
         setredirectstate(true);
       }
     }
-    function handleBuyNow(context){
-      
-      if(context.signed_in){
-        if(formstate.quantity > 0){
-          context.chooseMerchToBuy(state.merch.merch_id)
+    function handleBuyNow(context) {
+      if (context.signed_in) {
+        if (formstate.quantity > 0) {
+          context.chooseMerchToBuy(state.merch.merch_id);
           setredirectcheckout(true);
         }
-        
-      }
-      else {
+      } else {
         setredirectstate(true);
-    }
+      }
     }
     function redirect() {
       if (redirectstate) {
         return <Redirect to="/signin" />;
-      }
-      else if(redirectcheckout){
-        return <Redirect to="/checkout/singlemerch" />
+      } else if (redirectcheckout) {
+        return <Redirect to="/checkout/singlemerch" />;
       }
     }
     return (
@@ -181,10 +177,11 @@ export default function SingleMerch(props) {
                         </button>
                       </div>
                       <div className="product-page-add-to-cart-div">
-                        <button 
+                        <button
                           className="product-page-buy-now"
-                          onClick={ () =>{ 
-                           handleBuyNow(context)}}
+                          onClick={() => {
+                            handleBuyNow(context);
+                          }}
                         >
                           BUY NOW
                         </button>

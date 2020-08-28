@@ -4,7 +4,6 @@ import axios from "axios";
 import "./walletrecharge.css";
 import StripeCheckout from "react-stripe-checkout";
 export default class WalletRecharge extends Component {
-  
   state = {
     cardnum: "",
     expiry: "",
@@ -18,19 +17,21 @@ export default class WalletRecharge extends Component {
       [name]: value,
     });
   };
-  
-  handleSubmit = (e) => {
 
+  handleSubmit = (e) => {
     axios
-      .post("/rechargeWallet", {
-        user_email: this.props.context.user,
-        amount: this.state.amount,
-      },
-      {
-        headers:{
-          authorization:"Bearer "+this.props.context.user
+      .post(
+        "http://localhost:5000/rechargeWallet",
+        {
+          user_email: this.props.context.user,
+          amount: this.state.amount,
+        },
+        {
+          headers: {
+            authorization: "Bearer " + this.props.context.user,
+          },
         }
-      })
+      )
       .then((res) => {
         if (res.status === 200) {
           this.setState({ redirect: true });
@@ -42,18 +43,16 @@ export default class WalletRecharge extends Component {
       return <Redirect to="/wallet" />;
     }
   }
-  async handleToken(token){
-    const response = await axios.post("/rechargeStripe",{
-      token:token
-    }
-    )
-    console.log(response)
-    if(response.status === 200){
-      console.log("Success")
-      alert("Success")
-    }
-    else{
-      console.log(response.status)
+  async handleToken(token) {
+    const response = await axios.post("http://localhost:5000/rechargeStripe", {
+      token: token,
+    });
+    console.log(response);
+    if (response.status === 200) {
+      console.log("Success");
+      alert("Success");
+    } else {
+      console.log(response.status);
     }
   }
   render() {
@@ -121,13 +120,13 @@ export default class WalletRecharge extends Component {
               <button onClick={this.handleSubmit}>Continue</button>
             </div>
             <div className="stripe">
-              <StripeCheckout 
+              <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
                 name="Harsh"
                 description="Pay HHH"
-                amount={1000*100}
+                amount={1000 * 100}
                 token={this.handleToken}
-                currency={'INR'}
+                currency={"INR"}
                 email
               />
             </div>

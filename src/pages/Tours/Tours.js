@@ -33,7 +33,7 @@ class Tours extends React.Component {
     this.setState({ redirectToSignin: true });
   }
   componentDidMount() {
-    axios.get("/tours").then((res) => {
+    axios.get("http://localhost:5000/tours").then((res) => {
       const tours = res.data;
       // console.log(res.data);
       this.setState({ tours: tours });

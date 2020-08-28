@@ -121,7 +121,7 @@ body {
   cursor: pointer;
   background: transparent;
 }
-.menu ul li img{
+.menu ul li img {
   margin-top: -13px;
 }
 .non-active {
@@ -174,23 +174,23 @@ body {
     margin-bottom: 0px;
   }
   .non-active {
-    top:5%;
+    top: 5%;
     margin-top: 20px;
     padding-left: 2px;
     padding-right: 1px;
     padding-top: 4px;
     padding-bottom: 2px;
   }
-  .signup-text{
-    padding:3px;
+  .signup-text {
+    padding: 3px;
     font-size: 14px;
   }
   .signup-btn {
     padding: 1px;
   }
-  .menu ul li img{
+  .menu ul li img {
     top: -20px;
-    margin-top:-17px;
+    margin-top: -17px;
   }
 }
 .wallet {
@@ -438,7 +438,7 @@ footer {
 }
 .tbox {
   font-family: "proxima_nova_rgregular";
-  
+
   width: 80%;
   height: 40px;
   background: #b1b1b1b3;
@@ -492,7 +492,7 @@ footer {
   background: #fec325;
   color: black;
 }
-.google-login{
+.google-login {
   border-right: 1.5px solid #fec345;
   margin-top: 10px;
   width: 35%;
@@ -503,24 +503,23 @@ footer {
   color: #c8c8c8c8;
   margin-bottom: 20px;
 }
-.google-login > h4{
+.google-login > h4 {
   margin-top: -45px;
   margin-left: 40px;
   font-size: 22px;
   font-weight: 300;
   padding: 4px 6px 6px 0px;
-  
 }
-.google-login img{
+.google-login img {
   width: 40px;
-  height:  40px ;
+  height: 40px;
   padding: 2px 5px 4px 5px;
-  margin-left:-70%;
+  margin-left: -70%;
 }
-.google-login :hover{
+.google-login :hover {
   color: #fbfbfb;
 }
-.spotify-login{
+.spotify-login {
   color: #c8c8c8c8;
   border-radius: 10px;
   margin-top: 10px;
@@ -533,20 +532,20 @@ footer {
   float: right;
   margin-bottom: 20px;
 }
-.spotify-login > h4{
+.spotify-login > h4 {
   font-weight: 300;
   margin-top: -45px;
   margin-left: 33px;
   font-size: 22px;
   padding: 4px 6px 6px 0px;
 }
-.spotify-login img{
+.spotify-login img {
   width: 40px;
-  height:  40px ;
+  height: 40px;
   padding: 2px 5px 4px 5px;
-  margin-left:-60%;
+  margin-left: -60%;
 }
-.spotify-login :hover{
+.spotify-login :hover {
   color: #fff;
 }
 .new_member_text {
@@ -575,7 +574,7 @@ footer {
   font-family: "lato-light";
   margin: 3% 2% 0% 2%;
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   flex-direction: row;
 }
 .h2_upcoming_tours {
@@ -597,7 +596,7 @@ footer {
   border: 2px solid transparent;
   border-radius: 10px;
   width: 20%;
-  margin-left: 1%;  
+  margin-left: 1%;
   padding: 40px 20px 30px 15px;
   margin-bottom: 75px;
   transition: transform 0.1s;
@@ -607,11 +606,11 @@ footer {
 }
 
 @media screen and (max-width: 1350px) {
-  .tours_list{
-    margin:4% 0%;
+  .tours_list {
+    margin: 4% 0%;
   }
   .tour {
-    width:  300px ;
+    width: 300px;
     padding: 30px 20px 10px 20px;
     display: block;
     margin-left: 2%;
@@ -619,11 +618,11 @@ footer {
   }
 }
 @media screen and (max-width: 1175px) {
-  .tours_list{
-    margin:4% 0%;
+  .tours_list {
+    margin: 4% 0%;
   }
   .tour {
-    width:  35% ;
+    width: 35%;
     padding: 30px 20px 10px 20px;
     display: block;
     margin-left: 7%;
@@ -631,17 +630,16 @@ footer {
   }
 }
 @media screen and (max-width: 450px) {
-  .tours_list{
-    margin:4% 0%;
+  .tours_list {
+    margin: 4% 0%;
   }
   .tour {
     width: 75%;
     display: inline-block;
-    margin:7%;
+    margin: 7%;
   }
 }
 .tour:hover {
-  
   transform: scale(1.05);
   transition: transform 0.3s;
 }
@@ -659,7 +657,7 @@ footer {
   margin-top: 15px;
   text-decoration: none;
   display: inline-block;
-  font-family: "proxima_nova_regular",sans-serif;
+  font-family: "proxima_nova_regular", sans-serif;
   font-size: 25px;
   background-color: #fbfbfb;
   color: #000000;
@@ -672,11 +670,11 @@ footer {
   border: 1.5px solid #00000060;
   color: rgb(24, 24, 24);
 }
-.soldout{
+.soldout {
   border: 1.5px solid transparent;
 }
 .soldout:hover {
-  background:inherit !important;
+  background: inherit !important;
   border: 1.5px solid transparent;
   cursor: not-allowed;
 }
@@ -807,7 +805,6 @@ footer {
   text-shadow: 4px 4px 10px #4d5068;
 }
 
-
 .app-text p {
   font-family: "ostrich_bold";
   font-size: 35px;
@@ -850,23 +847,23 @@ footer {
   animation-iteration-count: infinite;
 }
 @media screen and (max-width: 1000px) {
-  .app-text h1{
+  .app-text h1 {
     margin-top: 60px;
     font-size: 60px;
   }
-  .app-text p{
-    top:96%;
+  .app-text p {
+    top: 96%;
     margin-left: 35%;
     font-size: 40px;
   }
 }
 
 @media screen and (min-height: 1024px) {
-  .app-text h1{
+  .app-text h1 {
     font-size: 80px;
     width: 70%;
   }
-  .app-text p{
+  .app-text p {
     font-size: 50px;
     padding-bottom: 30px;
   }
@@ -886,26 +883,26 @@ footer {
   }
 }
 @media screen and (max-width: 600px) {
-  .app-text h1{
+  .app-text h1 {
     margin-top: 70px;
     font-size: 42px;
   }
-  .app-text p{
-    top:96%;
+  .app-text p {
+    top: 96%;
     margin-left: 33%;
     width: fit-content;
     font-size: 30px;
   }
 }
 @media screen and (max-width: 375px) {
-  .app-text h1{
+  .app-text h1 {
     margin-top: 30px;
     font-size: 40px;
     width: 80%;
   }
-  .app-text p{
+  .app-text p {
     padding-top: 0px;
-    top:94%;
+    top: 94%;
     width: fit-content;
     margin-left: 33%;
     font-size: 25px;
@@ -924,34 +921,34 @@ footer {
   }
 }
 @media screen and (max-height: 700px) {
-  .app-text h1{
+  .app-text h1 {
     margin-top: 20px;
     font-size: 40px;
   }
-  .app-text p{
-    top:95%;
+  .app-text p {
+    top: 95%;
     margin-left: 34%;
     width: fit-content;
     font-size: 30px;
   }
-  .scroll-downs{
-    top:84%;
+  .scroll-downs {
+    top: 84%;
   }
 }
 @media screen and (max-height: 600px) {
-  .app-text h1{
+  .app-text h1 {
     margin-top: 20px;
     font-size: 35px;
     width: 70%;
   }
-  .app-text p{
-    top:95%;
+  .app-text p {
+    top: 95%;
     text-align: center;
     width: fit-content;
     font-size: 30px;
   }
-  .scroll-downs{
-    top:84%;
+  .scroll-downs {
+    top: 84%;
   }
 }
 
