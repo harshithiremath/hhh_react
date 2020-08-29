@@ -182,7 +182,7 @@ class SignIn extends React.Component {
         ) : (
           // // If user is already signed in, he should be redirected to /
           // // This closes issue #3
-          <div>
+          <div className="signInUPContainer">
             <Particles className="particles" params={this.particlesOptions} />
             <div className="signin-box-container">
               <h1>Log In</h1>

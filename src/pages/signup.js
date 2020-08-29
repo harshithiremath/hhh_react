@@ -70,16 +70,23 @@ export default class Signup extends Component {
       password: "",
       repassword: "",
       phone: "",
+      showServerErr: false,
     };
+    this.baseState = this.state;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleChange(event) {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
-  }
+    if (this.state.showServerErr) {
+      this.setState({
+        showServerErr: false,
+      });
+    }
+  };
   handleSubmit = (e, props) => {
     let user = {
       first_name: this.state.name,
@@ -107,6 +114,10 @@ export default class Signup extends Component {
               redirect: true,
             });
             return;
+          } else if (resp.status === 500) {
+            this.setState({
+              showServerErr: true,
+            });
           }
         });
     } else {
@@ -151,7 +162,7 @@ export default class Signup extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="signInUPContainer">
         {this.renderRedirect()}
         <Particles className="particles" params={this.particlesOptions} />
         <div className="signin-box-container">
@@ -163,63 +174,99 @@ export default class Signup extends Component {
                   className="forms"
                   onSubmit={(e) => this.handleSubmit(e, item)}
                 >
-                  <div className="tbox">
+                  <div className="form">
                     <input
                       type="text"
                       value={this.state.name}
                       onChange={this.handleChange}
-                      placeholder="First Name"
                       name="name"
+                      placeholder=" "
+                      required
                     />
+                    <label htmlFor="name" className="tbox">
+                      <span className="spanInLabel">First name</span>
+                    </label>
                   </div>
-                  <div className="tbox">
+                  <div className="form">
                     <input
                       type="text"
                       value={this.state.lastname}
                       onChange={this.handleChange}
-                      placeholder="Last Name"
                       name="lastname"
+                      placeholder=" "
+                      required
                     />
+                    <label htmlFor="lastname" className="tbox">
+                      <span className="spanInLabel">Last name</span>
+                    </label>
                   </div>
-                  <div className="tbox">
+
+                  <div className="form">
                     <input
                       type="number"
                       className="number-input"
                       value={this.state["phone"]}
                       onChange={this.handleChange}
-                      placeholder="Phone number"
                       name="phone"
+                      placeholder=" "
+                      required
                     />
+                    <label htmlFor="phone" className="tbox">
+                      <span className="spanInLabel">Phone Number</span>
+                    </label>
                   </div>
 
-                  <div className="tbox">
+                  <div className="form">
                     <input
                       type="email"
                       value={this.state["email"]}
                       onChange={this.handleChange}
-                      placeholder="Email"
                       name="email"
+                      placeholder=" "
+                      required
                     />
+                    <label htmlFor="email" className="tbox">
+                      <span className="spanInLabel">Email</span>
+                    </label>
                   </div>
 
-                  <div className="tbox">
+                  <div className="form">
                     <input
                       type="password"
                       value={this.state.password}
                       onChange={this.handleChange}
-                      placeholder="Password"
                       name="password"
+                      placeholder=" "
+                      required
                     />
+                    <label htmlFor="password" className="tbox">
+                      <span className="spanInLabel">Password</span>
+                    </label>
                   </div>
-                  <div className="tbox">
+                  <div className="form">
                     <input
                       type="password"
                       value={this.state.repassword}
                       onChange={this.handleChange}
-                      placeholder="Re-enter Password"
                       name="repassword"
+                      placeholder=" "
+                      required
                     />
+                    <label htmlFor="repassword" className="tbox">
+                      <span className="spanInLabel">Re-enter Password</span>
+                    </label>
                   </div>
+                  {this.state.showServerErr ? (
+                    <span
+                      style={{
+                        color: "#bd3131",
+                        fontStyle: "italic",
+                        cursor: "default",
+                      }}
+                    >
+                      Server Error!
+                    </span>
+                  ) : null}
                   <input className="loginbtn" type="submit" value="Sign Up" />
                 </form>
               </div>
@@ -231,5 +278,9 @@ export default class Signup extends Component {
         </div>
       </div>
     );
+  }
+
+  componentWillUnmount() {
+    this.setState(this.baseState);
   }
 }
