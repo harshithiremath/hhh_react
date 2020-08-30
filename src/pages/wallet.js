@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link,Redirect } from "react-router-dom";
-import "../css/wallet.css"
+import { Link, Redirect } from "react-router-dom";
+import "../css/wallet.css";
 export default class Wallet extends Component {
   state = {
     wallet: [],
   };
   componentDidMount() {
     if (this.props.context.signed_in) {
-  
       axios
-        .get("/getWalletInfo", 
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
-          }
+        .get("/getWalletInfo", {
+          headers: {
+            authorization: "Bearer " + this.props.context.user,
+          },
         })
         .then((res) => {
-          console.log(res.data);
-          this.setState({ wallet: res.data[0] });
+          this.setState({ wallet: res.data });
         });
     }
   }
@@ -27,9 +24,10 @@ export default class Wallet extends Component {
     // console.log(this.state);
     let date1 = new Date(this.state.wallet.expiry);
     let date_to_display = date1.toDateString();
-    if(this.props.context.signed_in){
-    return(
-      <>
+    // console.log(this.state.wallet.email);
+    if (this.props.context.signed_in) {
+      return (
+        <>
           <h1 className="checkout-page-h1">WALLET</h1>
           <div className="checkout-page-container">
             <div className="checkout-page-left-wallet-container">
@@ -71,21 +69,27 @@ export default class Wallet extends Component {
                 </div>
               </div>
               <div className="moneytowallet">
-                  <div>
-                    <Link
-                      to="/wallet/addToWallet"
-                      className="checkout-page-confirm-button"
-                    >
-                      ADD MONEY TO WALLET
-                    </Link>
-                  </div>
+                <div>
+                  <Link
+                    to={{
+                      pathname: "/wallet/addToWallet",
+                      userProps: {
+                        email: this.state.wallet.email,
+                        first_name: this.state.wallet.first_name,
+                        balance: this.state.wallet.balance,
+                      },
+                    }}
+                    className="checkout-page-confirm-button"
+                  >
+                    ADD MONEY TO WALLET
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </>
       );
-    }
-    else{
+    } else {
       return <Redirect to="/signin" />;
     }
     // return <Redirect to="/signin" />;

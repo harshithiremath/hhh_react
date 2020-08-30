@@ -14,22 +14,21 @@ export default class MerchCheckout extends Component {
   componentDidMount() {
     if (this.props.context.signed_in) {
       axios
-        .get("/getWalletInfo", 
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
-          }
+        .get("/getWalletInfo", {
+          headers: {
+            authorization: "Bearer " + this.props.context.user,
+          },
         })
         .then((res) => {
-          // console.log(res.data);
-          this.setState({ wallet: res.data[0] });
+          console.log(res.data);
+          this.setState({ wallet: res.data });
         });
       axios
         .get("/singleTour", {
           params: { tour_id: this.state.ticket_id },
         })
         .then((res) => {
-          // console.log(res);
+          // console.log(res.data);
           this.setState({ ticket: res.data[0] });
         });
     }
@@ -53,16 +52,19 @@ export default class MerchCheckout extends Component {
     if (!this.state.redirectToOrders) {
       console.log("called /confirmMetch");
       axios
-        .post("/checkoutconfirmTicket", {
-          tour_id: this.state.ticket_id,
-          user_email: this.props.context.user,
-          quantity: this.state.quantity,
-        },
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
+        .post(
+          "/checkoutconfirmTicket",
+          {
+            tour_id: this.state.ticket_id,
+            user_email: this.props.context.user,
+            quantity: this.state.quantity,
+          },
+          {
+            headers: {
+              authorization: "Bearer " + this.props.context.user,
+            },
           }
-        })
+        )
         .then((res) => {
           if (res) {
             if (res.status === 200) {
