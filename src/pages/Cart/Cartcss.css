@@ -18,8 +18,8 @@
 }
 .cart-container {
   margin-top: 1%;
-  width: 65%;
-  margin-left: 15%;
+  width: 74%;
+  margin-left: 13%;
   line-height: 45px;
   margin-bottom: 8%;
 }
@@ -158,4 +158,122 @@
 }
 .cart-bottom-buttons:hover {
   color: #292929;
+}
+@media screen and (max-width: 1000px) {
+  .cart-container {
+    width: 90% !important;
+    margin-left: 5% !important;
+  }
+  .cart-merch-name {
+    width: 49% !important;
+    font-size: 30px !important;
+  }
+  .cart-merch-quantity {
+    font-size: 20px !important;
+  }
+  .cart-quantity {
+    line-height: 23px !important;
+  }
+  .cart-merch-current-price {
+    font-size: 20px !important;
+  }
+  .cart-quantity--large .cart-quantity__CurrentQuantity {
+    width: 28px !important;
+    font-size: 18px !important;
+  }
+  .cart-quantity--large .cart-quantity__Button {
+    padding: 8px 10px !important;
+    font-size: 24px !important;
+  }
+
+  .cart-container-right-price {
+    width: 13% !important;
+    font-size: 20px !important;
+  }
+  .cart-container-left-ul {
+    width: 87% !important;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .cart-container-right-price {
+    font-size: 20px;
+  }
+  .cart-merch-current-price {
+    padding-left: 3%;
+    width: 12%;
+    font-size: 21px;
+  }
+  .cart-merch-quantity {
+    width: 4%;
+    font-size: 17px;
+  }
+  .cart-container {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .cart-container {
+    width: 96% !important;
+    margin-left: 2% !important;
+  }
+  .cart-container-left-ul {
+    width: 86% !important;
+  }
+  .cart-merch-quantity {
+    font-size: 15px !important;
+    width: 7% !important;
+  }
+  .cart-merch-name {
+    width: 45% !important;
+    font-size: 25px !important;
+  }
+  .cart-merch-current-price {
+    padding-left: 2% !important;
+    width: 15% !important;
+    font-size: 18px !important;
+  }
+  .cart-form__quantity {
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 620px) {
+  .cart-container {
+    width: 98% !important;
+    margin-left: 1% !important;
+  }
+  .cart-form__quantity {
+    transform: scale(0.8) !important;
+  }
+  .cart-container-left-ul {
+    width: 82% !important;
+  }
+  .cart-merch-name {
+    font-size: 20px !important;
+    width: 30% !important;
+    line-height: 1em;
+  }
+  .cart-merch-current-price {
+    font-size: 13px !important;
+  }
+  .cart-bottom-subtotal-container {
+    width: 78% !important;
+  }
+  .cart-container-right-price {
+    width: 18% !important;
+    font-size: 17px !important;
+  }
+  .cart-bottom-final-price-container {
+    width: 22% !important;
+  }
+  .cart-container-final-price {
+    font-size: 17px;
+  }
+  .cart-merch-current-price {
+    font-size: 12px !important;
+  }
+  .cart-merch-quantity {
+    font-size: 10px !important;
+    width: 7% !important;
+  }
 }

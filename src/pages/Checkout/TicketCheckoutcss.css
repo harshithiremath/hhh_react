@@ -12,25 +12,13 @@
   margin-bottom: 10%;
   border-bottom: none;
 }
-.order-ticket-img {
-  width: 7.5%;
-  background: #ecb3159d;
-  border-radius: 4px;
-}
 .ticket-name {
   padding-left: 1%;
   width: 40%;
   display: inline-block;
   vertical-align: top;
 }
-.ticket-current-price {
-  display: inline-block;
-  width: 14%;
-  margin-left: 2%;
-  font-size: 80%;
-  vertical-align: top;
-  color: rgb(170, 50, 19);
-}
+
 .ticket-quantity {
   display: inline-block;
   width: 7%;

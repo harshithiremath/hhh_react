@@ -38,6 +38,8 @@
 .checkout-page-left-wallet-right {
   display: inline-block;
   margin-left: 10px;
+  font-size: 24px !important;
+
   font-family: lato-light;
 }
 .checkout-page-right-container {
@@ -52,8 +54,7 @@
   display: block;
   border-bottom: 1px solid rgb(218, 216, 216);
 }
-.checkout-page-below-final-price {
-}
+
 .checkout-page-above-fp-left {
   display: inline-block;
   width: 65%;
@@ -96,6 +97,12 @@
   border-bottom: 1px solid #f4d078;
   font-size: 28px;
 }
+@media screen and (max-width: 1100px) {
+  .checkout-page-left-wallet-container {
+    width: 33%;
+    font-size: 25px;
+  }
+}
 @media screen and (max-width: 900px) {
   .checkout-page-container {
     flex-direction: column;
@@ -111,9 +118,12 @@
   }
   .checkout-page-above-fp-left {
     width: 61%;
+    font-size: 28px;
+    line-height: 1em !important;
   }
   .checkout-page-above-fp-right {
     width: 34%;
+    font-size: 21px;
   }
   .checkout-page-confirm-button {
     font-size: 22px;

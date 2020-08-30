@@ -222,6 +222,7 @@ body {
 .account-head-wrapper:hover > ul {
   background-color: #000000;
   border-radius: 5px;
+  z-index: 1;
   display: flex;
   margin: 0px;
   flex-direction: column;
@@ -794,7 +795,6 @@ footer {
 }
 .ticket-name {
   padding-left: 3%;
-  width: 49%;
   display: inline-block;
   vertical-align: top;
 }
@@ -916,6 +916,29 @@ footer {
     margin-left: 35%;
     font-size: 40px;
   }
+  .order {
+    font-size: 190%;
+  }
+  .order-price {
+    font-size: 85%;
+  }
+  .orders {
+    width: 92%;
+    margin-left: 4%;
+  }
+  .ticket-name {
+    width: 34% !important;
+  }
+  .h2_upcoming_tours {
+    font-size: 31px;
+    margin-top: 25px;
+  }
+  .order-ticket-img {
+    width: 11.5%;
+  }
+  .ticket-price {
+    font-size: 80%;
+  }
 }
 
 @media screen and (min-height: 1024px) {
@@ -952,6 +975,37 @@ footer {
     margin-left: 33%;
     width: fit-content;
     font-size: 30px;
+  }
+  .ticket-name {
+    width: 39% !important;
+    font-size: 19px !important;
+    padding-left: 2%;
+  }
+  .order-quantity {
+    right: 8%;
+    font-size: 15px;
+    width: 12%;
+  }
+  .order-price {
+    font-size: 65%;
+    padding-left: 2%;
+    width: 29%;
+  }
+  .ticket-current-price {
+    width: 15%;
+    font-size: 51%;
+  }
+  .ticket-quantity {
+    width: 10%;
+    font-size: 51%;
+  }
+  .ticket-price {
+    font-size: 56% !important;
+    width: 22.5% !important;
+  }
+  .order-merch-name {
+    font-size: 20px !important;
+    letter-spacing: 0px;
   }
 }
 @media screen and (max-width: 375px) {

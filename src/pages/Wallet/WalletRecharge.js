@@ -16,7 +16,7 @@ export default class WalletRecharge extends Component {
     // The user_email in the post body is actually user_id
     axios
       .post(
-        "http://localhost:5000/rechargeWallet",
+        "/rechargeWallet",
         {
           user_email: this.props.context.user,
           amount: this.state.amount,
@@ -39,7 +39,7 @@ export default class WalletRecharge extends Component {
     }
   }
   handleToken1000 = async (token) => {
-    const response = await axios.post("http://localhost:5000/rechargeStripe", {
+    const response = await axios.post("/rechargeStripe", {
       token: token,
       amount: 1000,
     });
@@ -53,7 +53,7 @@ export default class WalletRecharge extends Component {
     }
   };
   handleToken5000 = async (token) => {
-    const response = await axios.post("http://localhost:5000/rechargeStripe", {
+    const response = await axios.post("/rechargeStripe", {
       token: token,
       amount: 5000,
     });
@@ -67,7 +67,7 @@ export default class WalletRecharge extends Component {
     }
   };
   handleToken10000 = async (token) => {
-    const response = await axios.post("http://localhost:5000/rechargeStripe", {
+    const response = await axios.post("/rechargeStripe", {
       token: token,
       amount: 10000,
     });
