@@ -43,14 +43,38 @@ export default class WalletRecharge extends Component {
       return <Redirect to="/wallet" />;
     }
   }
-  async handleToken(token) {
-    const response = await axios.post("http://localhost:5000/rechargeStripe", {
+  async handleToken1000(token) {
+    const response = await axios.post("http://localhost:5000/rechargeStripe1000", {
       token: token,
     });
     console.log(response);
     if (response.status === 200) {
       console.log("Success");
-      alert("Success");
+      alert("Added ₹1000 to your account!");
+    } else {
+      console.log(response.status);
+    }
+  }
+  async handleToken5000(token) {
+    const response = await axios.post("http://localhost:5000/rechargeStripe5000", {
+      token: token,
+    });
+    console.log(response);
+    if (response.status === 200) {
+      console.log("Success");
+      alert("Added ₹5000 to your account!");
+    } else {
+      console.log(response.status);
+    }
+  }
+  async handleToken10000(token) {
+    const response = await axios.post("http://localhost:5000/rechargeStripe10000", {
+      token: token,
+    });
+    console.log(response);
+    if (response.status === 200) {
+      console.log("Success");
+      alert("Added ₹10000 to your account!");
     } else {
       console.log(response.status);
     }
@@ -123,10 +147,31 @@ export default class WalletRecharge extends Component {
             <div className="stripe">
               <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
+                label="₹1,000.00"
                 name="Harsh"
-                description="Pay HHH"
+                description="Recharge for ₹1,000"
                 amount={1000 * 100}
-                token={this.handleToken}
+                token={this.handleToken1000}
+                currency={"INR"}
+                email
+              />
+              <StripeCheckout
+                stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
+                name="Harsh"
+                label="₹5,000.00"
+                description="Recharge for ₹5,000"
+                amount={5000 * 100}
+                token={this.handleToken5000}
+                currency={"INR"}
+                email
+              />
+              <StripeCheckout
+                stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
+                name="Harsh"
+                label="₹10,000.00"
+                description="Recharge for ₹10,000"
+                amount={10000 * 100}
+                token={this.handleToken10000}
                 currency={"INR"}
                 email
               />
