@@ -1,14 +1,14 @@
 .checkout-page-h1 {
   text-align: center;
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   font-size: 45px;
   font-family: lato-bold;
 }
 .checkout-page-h3 {
   text-align: center;
   /* margin-top: 40px; */
-  margin-bottom: 30px;
+  margin-bottom: 18px;
   font-family: lato-bold;
 }
 .checkout-page-container {
@@ -95,4 +95,32 @@
 .checkout-page-alert-message a {
   border-bottom: 1px solid #f4d078;
   font-size: 28px;
+}
+@media screen and (max-width: 900px) {
+  .checkout-page-container {
+    flex-direction: column;
+  }
+  .checkout-page-left-wallet-container {
+    width: 91%;
+    font-size: 27px;
+  }
+  .checkout-page-right-container {
+    margin-left: 0;
+    width: 90%;
+    margin-right: 5%;
+  }
+  .checkout-page-above-fp-left {
+    width: 61%;
+  }
+  .checkout-page-above-fp-right {
+    width: 34%;
+  }
+  .checkout-page-confirm-button {
+    font-size: 22px;
+    /* margin-right: 20px; */
+    border-bottom: 2px solid #ccc;
+  }
+  .checkout-page-above-final-price {
+    font-size: 20px;
+  }
 }

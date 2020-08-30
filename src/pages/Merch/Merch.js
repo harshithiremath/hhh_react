@@ -9,7 +9,7 @@ function Merch(props) {
   //The function that determines if available/selling fast should be output
   let [redirectstate, setredirectstate] = useState(false);
   //redirect used to redirect to /signin page
-  let [redirect,setredirect]=useState(false);
+  let [redirect, setredirect] = useState(false);
   //re
   let text1 = "";
   let fast = false;
@@ -62,21 +62,20 @@ function Merch(props) {
       </Link>
       <h1>
         <Link
-          style={{ color: "#222f3e", textDecoration: "none" }}
+          style={{ color: "#222f3e", textDecoration: "none", fontSize: 35 }}
           to={`/merch/${props.item.merch_id}`}
         >
           {props.item.merch_name}
         </Link>
       </h1>
       <div className="tourLower">
-        
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
           Rs. {props.item.price}
         </h4>
         {fast ? (
           <h6 style={{ color: "red" }}>{text1}</h6>
         ) : (
-        <h6 style={{ color: "#fbfbfb" }}>{text1}</h6>
+          <h6 style={{ color: "#fbfbfb" }}>{text1}</h6>
         )}
         {soldOut ? (
           <button className="buy-btn soldout">Sold Out</button>

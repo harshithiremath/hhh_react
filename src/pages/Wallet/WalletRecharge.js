@@ -38,7 +38,7 @@ export default class WalletRecharge extends Component {
       return <Redirect to="/wallet" />;
     }
   }
-  async handleToken1000(token) {
+  handleToken1000 = async (token) => {
     const response = await axios.post("http://localhost:5000/rechargeStripe", {
       token: token,
       amount: 1000,
@@ -46,12 +46,13 @@ export default class WalletRecharge extends Component {
     console.log(response);
     if (response.status === 200) {
       console.log("Success");
-      alert(`Added ₹1000 to your account!`);
+      this.setState({ redirect: true });
+      alert(`Added ₹1000 to your account`);
     } else {
       console.log(response.status);
     }
-  }
-  async handleToken5000(token) {
+  };
+  handleToken5000 = async (token) => {
     const response = await axios.post("http://localhost:5000/rechargeStripe", {
       token: token,
       amount: 5000,
@@ -59,12 +60,13 @@ export default class WalletRecharge extends Component {
     console.log(response);
     if (response.status === 200) {
       console.log("Success");
-      alert("Added ₹5000 to your account!");
+      this.setState({ redirect: true });
+      alert("Added ₹5000 to your account");
     } else {
       console.log(response.status);
     }
-  }
-  async handleToken10000(token) {
+  };
+  handleToken10000 = async (token) => {
     const response = await axios.post("http://localhost:5000/rechargeStripe", {
       token: token,
       amount: 10000,
@@ -72,21 +74,23 @@ export default class WalletRecharge extends Component {
     console.log(response);
     if (response.status === 200) {
       console.log("Success");
-      alert("Added ₹10000 to your account!");
+      this.setState({ redirect: true });
+      alert("Added ₹10000 to your account");
     } else {
       console.log(response.status);
     }
-  }
+  };
   render() {
     return (
       <>
         {this.renderRedirect()}
         {this.props.context.signed_in ? (
           <div className="walletrecharge">
-            <h1>Wallet Recharge</h1>
-
-            <div className="stripe">
-              <h3>Choose from one of the following options</h3>
+            <form className="stripe">
+              <h2>Wallet Recharge</h2>
+              <text style={{ marginBottom: 15, fontSize: 20 }}>
+                Choose from the following options
+              </text>
               <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
                 label="₹1,000.00"
@@ -97,7 +101,15 @@ export default class WalletRecharge extends Component {
                 currency={"INR"}
                 email={this.props.location.userProps.email}
               >
-                <p>₹1,000</p>
+                <input
+                  type="radio"
+                  id="thousand"
+                  name="stripeChooseOne"
+                  className="stripeInputRadio"
+                />
+                <label htmlFor="thousand" className="stripeInputRadioLabel">
+                  <span style={{ fontSize: "x-large" }}>₹ </span>1,000
+                </label>
               </StripeCheckout>
               <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
@@ -109,7 +121,15 @@ export default class WalletRecharge extends Component {
                 currency={"INR"}
                 email={this.props.location.userProps.email}
               >
-                <h4>₹5,000</h4>
+                <input
+                  type="radio"
+                  id="fiveThousand"
+                  name="stripeChooseOne"
+                  className="stripeInputRadio"
+                />
+                <label htmlFor="fiveThousand" className="stripeInputRadioLabel">
+                  <span style={{ fontSize: "x-large" }}>₹ </span> 5,000
+                </label>
               </StripeCheckout>
               <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
@@ -121,9 +141,17 @@ export default class WalletRecharge extends Component {
                 currency={"INR"}
                 email={this.props.location.userProps.email}
               >
-                <h4>₹10,000</h4>
+                <input
+                  type="radio"
+                  id="tenThousand"
+                  name="stripeChooseOne"
+                  className="stripeInputRadio"
+                />
+                <label htmlFor="tenThousand" className="stripeInputRadioLabel">
+                  <span style={{ fontSize: "x-large" }}>₹ </span> 10,000
+                </label>
               </StripeCheckout>
-            </div>
+            </form>
           </div>
         ) : (
           <Redirect to="/signin" />

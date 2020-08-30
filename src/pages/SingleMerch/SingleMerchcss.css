@@ -136,3 +136,29 @@
   border: 1px solid #404041;
   cursor: pointer;
 }
+@media screen and (max-width: 800px) {
+  .product-page-container {
+    flex-direction: column;
+    margin-left: 9%;
+    margin-top: 5%;
+    width: 85%;
+  }
+  .product-page-image-container {
+    width: 100%;
+  }
+  .product-page-merch-info {
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 95px;
+  }
+  .product-page-merch-info-h1 {
+    margin-bottom: 18px;
+  }
+  .product-page-price {
+    margin-bottom: 20px;
+  }
+  .product-page-description-container {
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+}
