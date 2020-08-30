@@ -17,7 +17,7 @@ import TicketCheckout from "./pages/Checkout/TicketCheckout";
 import MerchSingleCheckout from "./pages/Checkout/MerchSingleCheckout";
 import MerchCheckout from "./pages/Checkout/MerchCheckout";
 import FloatingFooter from "./components/FloatingFooter";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import Wallet from "./pages/wallet";
 
 /*
@@ -90,9 +90,12 @@ class App extends React.Component {
                   <Route exact path="/wallet">
                     <Wallet context={context} />
                   </Route>
-                  <Route path="/wallet/addToWallet">
-                    <WalletRecharge context={context} />
-                  </Route>
+                  <Route
+                    path="/wallet/addToWallet"
+                    render={(props) => (
+                      <WalletRecharge context={context} {...props} />
+                    )}
+                  />
                 </Switch>
               );
             }}
@@ -103,7 +106,7 @@ class App extends React.Component {
                 <title>HHH</title>
               </Helmet>
               <MainPage />
-              <Footer/>
+              <Footer />
               <FloatingFooter />
             </Route>
             <Route path="/passes">
@@ -111,14 +114,14 @@ class App extends React.Component {
                 <title>Tours | HHH</title>
               </Helmet>
               <Tours />
-              <Footer/>
+              <Footer />
             </Route>
             <Route exact path="/merch">
               <Helmet>
                 <title>Merch | HHH</title>
               </Helmet>
               <Merchs />
-              <Footer/>
+              <Footer />
             </Route>
             <Route path="/signup">
               <Helmet>
@@ -128,8 +131,8 @@ class App extends React.Component {
             </Route>
             <Route path="/webPlayer">
               <WebPlayer />
-              <Footer/>
-              <FloatingFooter/>
+              <Footer />
+              <FloatingFooter />
             </Route>
           </Switch>
         </div>

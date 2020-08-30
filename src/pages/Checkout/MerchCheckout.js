@@ -10,22 +10,20 @@ export default class MerchCheckout extends Component {
   componentDidMount() {
     if (this.props.context.signed_in) {
       axios
-        .get("/getWalletInfo",
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
-          }
+        .get("/getWalletInfo", {
+          headers: {
+            authorization: "Bearer " + this.props.context.user,
+          },
         })
         .then((res) => {
           // console.log(res.data);
-          this.setState({ wallet: res.data[0] });
+          this.setState({ wallet: res.data });
         });
       axios
-        .get("/getCartTotalPrice", 
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
-          }
+        .get("/getCartTotalPrice", {
+          headers: {
+            authorization: "Bearer " + this.props.context.user,
+          },
         })
         .then((res) => {
           //   console.log("total subtotal", res);
@@ -38,14 +36,17 @@ export default class MerchCheckout extends Component {
     if (!this.state.redirectToOrders) {
       console.log("called /confirmMetch");
       axios
-        .post("/checkout/confirmMerch", {
-          user_id: this.props.context.user,
-        },
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
+        .post(
+          "/checkout/confirmMerch",
+          {
+            user_id: this.props.context.user,
+          },
+          {
+            headers: {
+              authorization: "Bearer " + this.props.context.user,
+            },
           }
-        })
+        )
         .then((res) => {
           if (res) {
             if (res.status === 200) {

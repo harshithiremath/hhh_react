@@ -11,14 +11,9 @@ export default class WalletRecharge extends Component {
     amount: "",
     redirect: false,
   };
-  handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
 
   handleSubmit = (e) => {
+    // The user_email in the post body is actually user_id
     axios
       .post(
         "http://localhost:5000/rechargeWallet",
@@ -44,20 +39,22 @@ export default class WalletRecharge extends Component {
     }
   }
   async handleToken1000(token) {
-    const response = await axios.post("http://localhost:5000/rechargeStripe1000", {
+    const response = await axios.post("http://localhost:5000/rechargeStripe", {
       token: token,
+      amount: 1000,
     });
     console.log(response);
     if (response.status === 200) {
       console.log("Success");
-      alert("Added ₹1000 to your account!");
+      alert(`Added ₹1000 to your account!`);
     } else {
       console.log(response.status);
     }
   }
   async handleToken5000(token) {
-    const response = await axios.post("http://localhost:5000/rechargeStripe5000", {
+    const response = await axios.post("http://localhost:5000/rechargeStripe", {
       token: token,
+      amount: 5000,
     });
     console.log(response);
     if (response.status === 200) {
@@ -68,8 +65,9 @@ export default class WalletRecharge extends Component {
     }
   }
   async handleToken10000(token) {
-    const response = await axios.post("http://localhost:5000/rechargeStripe10000", {
+    const response = await axios.post("http://localhost:5000/rechargeStripe", {
       token: token,
+      amount: 10000,
     });
     console.log(response);
     if (response.status === 200) {
@@ -85,96 +83,46 @@ export default class WalletRecharge extends Component {
         {this.renderRedirect()}
         {this.props.context.signed_in ? (
           <div className="walletrecharge">
-            <div className="recharge-container">
-              <h1
-                style={{ color: "#333", marginBottom: 10, userSelect: "none" }}
-              >
-                Wallet Recharge
-              </h1>
-              <div className="wallet_input_fields">
-                <input
-                  name="cardnum"
-                  className="cardNumberInput"
-                  value={this.state.cardnum}
-                  onChange={this.handleChange}
-                  placeholder="Card number"
-                  type="number"
-                  maxlength="16"
-                  pattern="[0-9][0-9]{16}"
-                />
-              </div>
-              <br />
-              <div className="wallet_input_fields">
-                <input
-                  name="expiry"
-                  value={this.state.expiry}
-                  onChange={this.handleChange}
-                  placeholder="MMYY"
-                  type="number"
-                  maxlength="4"
-                  pattern="[0-9]{4}"
-                  required
-                />
-              </div>
+            <h1>Wallet Recharge</h1>
 
-              <br />
-              <div className="wallet_input_fields">
-                <input
-                  name="pin"
-                  value={this.state.pin}
-                  onChange={this.handleChange}
-                  placeholder="Pin"
-                  type="password"
-                  // maxlength="4"
-                  pattern="[0-9][0-9]{3}"
-                  required
-                />
-              </div>
-              <br />
-              <div className="wallet_input_fields">
-                <input
-                  name="amount"
-                  value={this.state.amount}
-                  onChange={this.handleChange}
-                  placeholder="Amount"
-                  type="number"
-                  required
-                />
-              </div>
-              <br />
-              <button onClick={this.handleSubmit}>Continue</button>
-            </div>
             <div className="stripe">
+              <h3>Choose from one of the following options</h3>
               <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
                 label="₹1,000.00"
-                name="Harsh"
-                description="Recharge for ₹1,000"
+                name={this.props.location.userProps.first_name}
+                description={`Current Balance : ₹${this.props.location.userProps.balance}`}
                 amount={1000 * 100}
                 token={this.handleToken1000}
                 currency={"INR"}
-                email
-              />
+                email={this.props.location.userProps.email}
+              >
+                <p>₹1,000</p>
+              </StripeCheckout>
               <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
-                name="Harsh"
+                name={this.props.location.userProps.first_name}
                 label="₹5,000.00"
-                description="Recharge for ₹5,000"
+                description={`Current Balance : ₹${this.props.location.userProps.balance}`}
                 amount={5000 * 100}
                 token={this.handleToken5000}
                 currency={"INR"}
-                email
-              />
+                email={this.props.location.userProps.email}
+              >
+                <h4>₹5,000</h4>
+              </StripeCheckout>
               <StripeCheckout
                 stripeKey="pk_test_51GqJIvEkPqBpQLilcyu9WGiBe3RZ3LVo1wlmCQ7O9yv0rZDz9i0hcszPDf56UJvBAqVIAXlVOnvataXe4g1rY6bU00xc2wxNyW"
-                name="Harsh"
+                name={this.props.location.userProps.first_name}
                 label="₹10,000.00"
-                description="Recharge for ₹10,000"
+                description={`Current Balance : ₹${this.props.location.userProps.balance}`}
                 amount={10000 * 100}
                 token={this.handleToken10000}
                 currency={"INR"}
-                email
-              />
+                email={this.props.location.userProps.email}
+              >
+                <h4>₹10,000</h4>
+              </StripeCheckout>
             </div>
           </div>
         ) : (

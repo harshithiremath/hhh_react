@@ -10,21 +10,19 @@ export default class MerchCheckout extends Component {
     merch_id: this.props.context.SingleMerch_id,
     merch: {},
     quantity: 1,
-    merch_image_url:null,
+    merch_image_url: null,
   };
   componentDidMount() {
     if (this.props.context.signed_in) {
       axios
-        .get("/getWalletInfo", 
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
-          }
-        }
-        )
+        .get("/getWalletInfo", {
+          headers: {
+            authorization: "Bearer " + this.props.context.user,
+          },
+        })
         .then((res) => {
           // console.log(res.data);
-          this.setState({ wallet: res.data[0] });
+          this.setState({ wallet: res.data });
         });
       axios
         .get("/merch", {
@@ -33,7 +31,7 @@ export default class MerchCheckout extends Component {
         .then((res) => {
           //console.log("RES",res);
           this.setState({ merch: res.data[0] });
-          this.setState({merch_image_url:this.state.merch.image_url})
+          this.setState({ merch_image_url: this.state.merch.image_url });
         });
     }
   }
@@ -56,16 +54,19 @@ export default class MerchCheckout extends Component {
     if (!this.state.redirectToOrders) {
       console.log("called /confirmMerch");
       axios
-        .post("/checkoutconfirmSingleMerch", {
-          merch_id: this.state.merch_id,
-          user_email: this.props.context.user,
-          quantity: this.state.quantity,
-        },
-        {
-          headers:{
-            authorization:"Bearer "+this.props.context.user
+        .post(
+          "/checkoutconfirmSingleMerch",
+          {
+            merch_id: this.state.merch_id,
+            user_email: this.props.context.user,
+            quantity: this.state.quantity,
+          },
+          {
+            headers: {
+              authorization: "Bearer " + this.props.context.user,
+            },
           }
-        })
+        )
         .then((res) => {
           if (res) {
             if (res.status === 200) {
@@ -90,20 +91,24 @@ export default class MerchCheckout extends Component {
     let date1 = new Date(this.state.wallet.expiry);
     let date_to_display = date1.toDateString();
     let balance_after_payment =
-      (this.state.wallet.balance - this.state.merch.price * this.state.quantity ) || 0;
+      this.state.wallet.balance -
+        this.state.merch.price * this.state.quantity || 0;
     // let tour_date = time.toDateString();
     //console.log(this.state.merch_image_url)
-      let item_image= this.state.merch_image_url!= null ? (<img
-      src={this.state.merch_image_url}
-      alt="pass"
-      // style={{
-      //   width: 20,
-      //   background: "#ddd",
-      //   border: "1px solid #888",
-      //   borderRadius: 4,
-      // }}
-      className="order-ticket-img"
-    />): null
+    let item_image =
+      this.state.merch_image_url != null ? (
+        <img
+          src={this.state.merch_image_url}
+          alt="pass"
+          // style={{
+          //   width: 20,
+          //   background: "#ddd",
+          //   border: "1px solid #888",
+          //   borderRadius: 4,
+          // }}
+          className="order-ticket-img"
+        />
+      ) : null;
     if (this.props.context.signed_in) {
       return (
         <div className="checkout-page-main-container">
