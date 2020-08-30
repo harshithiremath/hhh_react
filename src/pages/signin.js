@@ -90,31 +90,40 @@ class SignIn extends React.Component {
   };
   handleGoogleSubmit = (e, context) => {
     e.preventDefault();
-    axios.get("http://localhost:5000/auth/google").then((res) => {
-      if (res.data.done) {
-        console.log("w");
-        context.SignIn(res.data.token);
-        this.setState({ redirect: true });
-      } else {
-        this.setState({
-          password: "",
-          showError: true,
-        });
-      }
+    let promise = new Promise(function(resolve, reject) {
+      // not taking our time to do the job
+      resolve(123); // immediately give the result: 123
     });
-    axios.get("http://localhost:5000/auth/google/callback").then((res) => {
-      if (res.data.done) {
-        console.log("w");
-        context.SignIn(res.data.token);
-        this.setState({ redirect: true });
-      } else {
-        this.setState({
-          password: "",
-          showError: true,
-        });
-      }
-    });
-    window.open("http://localhost:5000/auth/google", "_self");
+
+    window.open("http://localhost:5000/auth/google").then(
+    //axios.get("http://localhost:5000/auth/google").then((res) => {
+    //  if (res.data.done) {
+    //    console.log("w");
+    //    context.SignIn(res.data.token);
+    //    this.setState({ redirect: true });
+    //  } else {
+    //    this.setState({
+    //      password: "",
+    //      showError: true,
+    //    });
+    //  }
+    //});
+    ()=>{
+      axios.get("/google").then((res) => {
+        console.log(res)
+        if (res.headers.token) {
+          console.log("w");
+          context.SignIn(res.headers.token);
+          this.setState({ redirect: true });
+        } else {
+          this.setState({
+            password: "",
+            showError: true,
+          });
+        }
+      });
+    }
+    )
   };
 
   handleSubmit = (e, context) => {
