@@ -12,6 +12,17 @@
   margin-bottom: 10%;
   border-bottom: none;
 }
+@media screen and(max-width:1000px){
+
+  .ticket-checkout-page-right-container{
+    width: 100%;
+    position: relative !important;
+    color: khaki !important;
+  }
+  .ticket-checkout-details{
+    width:50%;
+  }
+}
 .ticket-name {
   padding-left: 1%;
   width: 40%;
@@ -20,11 +31,9 @@
 }
 
 .ticket-quantity {
-  display: inline-block;
   width: 7%;
   padding-right: 0%;
   font-size: 80%;
-  vertical-align: top;
 }
 
 .ticket-checkout-price {
@@ -76,6 +85,7 @@
 .ticket-checkout-event-time {
   font-size: 50%;
   margin-top: 5px;
+  margin-bottom:7px;
   color: #838591c5;
   user-select: none;
 }
@@ -91,3 +101,4 @@
   font-size: 30px;
   font-family: lato-bold;
 }
+

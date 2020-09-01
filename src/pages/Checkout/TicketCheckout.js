@@ -126,7 +126,10 @@ export default class MerchCheckout extends Component {
             </div>
             <div className="ticket-checkout-page-right-container">
               <div className="ticket-checkout-details">
-                <div>
+                <h4 className="ticket-checkout-event-time">
+                  Event on : {time.toString()}
+                </h4>
+                <div className="ticket-details">
                   <img
                     src={require("../images/pass.png")}
                     alt="pass"
@@ -180,9 +183,7 @@ export default class MerchCheckout extends Component {
                     ₹ {this.state.ticket.price * this.state.quantity}
                   </span>
                 </div>
-                <h4 className="ticket-checkout-event-time">
-                  Event on : {time.toString()}
-                </h4>
+                
               </div>
 
               <div className="checkout-page-above-final-price">

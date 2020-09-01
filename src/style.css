@@ -927,7 +927,7 @@ footer {
     margin-left: 4%;
   }
   .ticket-name {
-    width: 34% !important;
+    width: 50% !important;
   }
   .h2_upcoming_tours {
     font-size: 31px;
@@ -992,12 +992,20 @@ footer {
     width: 29%;
   }
   .ticket-current-price {
-    width: 15%;
-    font-size: 51%;
+    vertical-align: unset;
+    font-size: 75%;
+    display: inline;
+    padding-right: 5%;
+  }
+  .ticket-checkout-price{
+    display: inline;
+    vertical-align: unset;
   }
   .ticket-quantity {
-    width: 10%;
+    display: inline;
     font-size: 51%;
+    vertical-align: unset;
+    padding-right: 20%;
   }
   .ticket-price {
     font-size: 56% !important;

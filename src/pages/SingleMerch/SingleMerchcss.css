@@ -145,6 +145,7 @@
   }
   .product-page-image-container {
     width: 100%;
+    margin:0% 5%;
   }
   .product-page-merch-info {
     margin-top: 30px;
@@ -160,5 +161,8 @@
   .product-page-description-container {
     height: fit-content;
     margin-bottom: 20px;
+  }
+  .product-page-thumbnail-container{
+    display:none;
   }
 }
