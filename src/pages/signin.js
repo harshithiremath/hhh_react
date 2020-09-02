@@ -4,6 +4,7 @@ import { ContextConsumer } from "../components/Context";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import Cookies from 'js-cookie';
 class SignIn extends React.Component {
   particlesOptions = {
     particles: {
@@ -75,6 +76,15 @@ class SignIn extends React.Component {
   // componentDidMount() {
   //   this.props.context.SignOut();
   // }
+  componentDidMount(){
+    const cookieJwt = Cookies.get('token');
+    if (cookieJwt) {
+      console.log("HELL YEAH!")
+      Cookies.remove('token');
+      this.props.context.SignIn(cookieJwt);
+      this.setState({ redirect: true });
+    }
+  }
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({
@@ -88,43 +98,42 @@ class SignIn extends React.Component {
       return <Redirect to="/" />;
     }
   };
-  handleGoogleSubmit = (e, context) => {
-    e.preventDefault();
-    let promise = new Promise(function(resolve, reject) {
-      // not taking our time to do the job
-      resolve(123); // immediately give the result: 123
-    });
-
-    window.open("http://localhost:5000/auth/google").then(
-    //axios.get("http://localhost:5000/auth/google").then((res) => {
-    //  if (res.data.done) {
-    //    console.log("w");
-    //    context.SignIn(res.data.token);
-    //    this.setState({ redirect: true });
-    //  } else {
-    //    this.setState({
-    //      password: "",
-    //      showError: true,
-    //    });
-    //  }
-    //});
-    ()=>{
-      axios.get("/google").then((res) => {
-        console.log(res)
-        if (res.headers.token) {
-          console.log("w");
-          context.SignIn(res.headers.token);
-          this.setState({ redirect: true });
-        } else {
-          this.setState({
-            password: "",
-            showError: true,
-          });
-        }
-      });
-    }
-    )
-  };
+  //handleGoogleSubmit = (e, context) => {
+  //  e.preventDefault();
+  //  //let promise = new Promise(function(resolve, reject) {
+  //  //  // not taking our time to do the job
+  //  //  resolve(123); // immediately give the result: 123
+  //  //});
+  //
+  //  //window.open("http://localhost:5000/auth/google").then(
+  //  //axios.get("http://localhost:5000/auth/google").then((res) => {
+  //  //  if (res.data.done) {
+  //  //    console.log("w");
+  //  //    context.SignIn(res.data.token);
+  //  //    this.setState({ redirect: true });
+  //  //  } else {
+  //  //    this.setState({
+  //  //      password: "",
+  //  //      showError: true,
+  //  //    });
+  //  //  }
+  //  //});
+  //  //()=>{
+  //    axios.get("/google").then((res) => {
+  //      console.log(res)
+  //      if (res.headers.token) {
+  //        context.SignIn(res.headers.token);
+  //        this.setState({ redirect: true });
+  //      } else {
+  //        this.setState({
+  //          password: "",
+  //          showError: true,
+  //        });
+  //      }
+  //    });
+  //  //}
+  //  //)
+  //};
 
   handleSubmit = (e, context) => {
     e.preventDefault();
@@ -276,15 +285,27 @@ class SignIn extends React.Component {
 
                     <div
                       className="google-login"
-                      onClick={(e) => this.handleGoogleSubmit(e, context)}
                     >
-                      <>
-                        <img
-                          src={require("../components/images/google-logo.png")}
-                          alt="google-logo"
-                        />
-                        <h4>Google</h4>
-                      </>
+                      <a href="http://localhost:5000/auth/google">
+                        <>
+                          <img
+                            src={require("../components/images/google-logo.png")}
+                            alt="google-logo"
+                          />
+                          <h4>Google</h4>
+                        </>
+                      </a>
+                    </div>
+                    <div
+                      className="spotify-login"
+                    >
+                      <a href="http://localhost:5000/auth/spotify">
+                      <img
+                        src={require("../components/images/spotify-logo.png")}
+                        alt="spotify-logo"
+                      />
+                      <h4> Spotify</h4>
+                      </a>
                     </div>
                   </>
                 )}

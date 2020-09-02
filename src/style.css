@@ -411,7 +411,7 @@ footer {
   display: flex;
   flex-direction: column;
   width: 350px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 30px;
   font-family: "proxima_nova_rgregular";
   text-align: center;
@@ -552,61 +552,84 @@ footer {
   border: 1.3px solid #000;
   background: #fec325;
   color: black;
-}
-.google-login {
-  /* border-right: 1.5px solid #fec345; */
+}                    
+.google-login{
+  border-right: 1.5px solid #fec345;
   margin-top: 10px;
   width: 35%;
-  /* padding: 3px 5px 10px 50px; */
-  text-align: center;
-  align-self: center;
+  padding: 3px 5px 10px 40px;
   cursor: pointer;
   color: #c8c8c8c8;
   margin-bottom: 20px;
 }
-.google-login > h4 {
+.google-login h4{
   margin-top: -45px;
   margin-left: 40px;
   font-size: 22px;
   font-weight: 300;
   padding: 4px 6px 6px 0px;
+  
 }
-.google-login img {
+.google-login img{
   width: 40px;
-  height: 40px;
+  height:  40px ;
   padding: 2px 5px 4px 5px;
-  margin-left: -70%;
+  margin-left:-70%;
 }
-.google-login:hover {
+
+.google-login a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: 0;
+}
+
+.google-login a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: 0;
+}
+.google-login :hover{
   color: #fbfbfb;
 }
-.spotify-login {
+.spotify-login a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: 0;
+}
+
+.spotify-login a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: 0;
+}
+.spotify-login{
   color: #c8c8c8c8;
   border-radius: 10px;
-  margin-top: 10px;
-  margin-left: -10px;
-  margin-right: 10px;
-  width: 45%;
+  margin-top: -74px;
+  margin-left: 173px;
+  width: 42%;
   padding: 3px 0px 10px 0px;
-  text-align: center;
   cursor: pointer;
-  float: right;
   margin-bottom: 20px;
 }
-.spotify-login > h4 {
+.spotify-login h4{
   font-weight: 300;
   margin-top: -45px;
-  margin-left: 33px;
+  margin-left: 35px;
   font-size: 22px;
   padding: 4px 6px 6px 0px;
 }
-.spotify-login img {
+.spotify-login img{
   width: 40px;
-  height: 40px;
+  height:  40px ;
   padding: 2px 5px 4px 5px;
-  margin-left: -60%;
+  margin-left:-60%;
 }
-.spotify-login :hover {
+.spotify-login :hover{
   color: #fff;
 }
 .new_member_text {
