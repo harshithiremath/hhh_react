@@ -949,7 +949,8 @@ footer {
     margin-left: 4%;
   }
   .ticket-name {
-    width: 50% !important;
+    width: 34% !important;
+    font-size: 24px !important;
   }
   .h2_upcoming_tours {
     font-size: 31px;
@@ -999,7 +1000,7 @@ footer {
     font-size: 30px;
   }
   .ticket-name {
-    width: 39% !important;
+    width: 25% !important;
     font-size: 19px !important;
     padding-left: 2%;
   }

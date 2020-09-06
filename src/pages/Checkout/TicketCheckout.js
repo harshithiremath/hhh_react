@@ -109,6 +109,14 @@ export default class MerchCheckout extends Component {
               </div>
               <div>
                 <div className="checkout-page-left-wallet-left">
+                  <span>Email: </span>
+                </div>
+                <div className="checkout-page-left-wallet-right">
+                  <span>{this.state.wallet.email}</span>
+                </div>
+              </div>
+              <div>
+                <div className="checkout-page-left-wallet-left">
                   <span>Wallet ID: </span>
                 </div>
                 <div className="checkout-page-left-wallet-right">
@@ -183,7 +191,6 @@ export default class MerchCheckout extends Component {
                     ₹ {this.state.ticket.price * this.state.quantity}
                   </span>
                 </div>
-                
               </div>
 
               <div className="checkout-page-above-final-price">
