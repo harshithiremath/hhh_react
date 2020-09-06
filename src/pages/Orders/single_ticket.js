@@ -1,4 +1,5 @@
 import React from "react";
+import "../../css/SingleTicketOrderHist.css";
 import axios from "axios";
 export default class single_ticket extends React.Component {
   state = {
@@ -34,13 +35,13 @@ export default class single_ticket extends React.Component {
             // }}
             className="order-ticket-img"
           />
-          <div className="ticket-name">
+          <div className="ticket-name-orderHist">
             <h3>{ticket_arr.tour_name}</h3>
             <h6>{ticket_arr.location}</h6>
             <h4>Ticket ID : {this.props.ticket.ticket_id}</h4>
           </div>
           <span className="ticket-current-price">{ticket_arr.price}</span>
-          <span className="ticket-quantity">
+          <span className="ticket-quantity-orderHist">
             x {this.props.ticket.ticket_quantity}
           </span>
           <span className="ticket-price">₹ {this.props.ticket.price}</span>

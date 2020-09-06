@@ -552,8 +552,8 @@ footer {
   border: 1.3px solid #000;
   background: #fec325;
   color: black;
-}                    
-.google-login{
+}
+.google-login {
   border-right: 1.5px solid #fec345;
   margin-top: 10px;
   width: 35%;
@@ -562,19 +562,18 @@ footer {
   color: #c8c8c8c8;
   margin-bottom: 20px;
 }
-.google-login h4{
+.google-login h4 {
   margin-top: -45px;
   margin-left: 40px;
   font-size: 22px;
   font-weight: 300;
   padding: 4px 6px 6px 0px;
-  
 }
-.google-login img{
+.google-login img {
   width: 40px;
-  height:  40px ;
+  height: 40px;
   padding: 2px 5px 4px 5px;
-  margin-left:-70%;
+  margin-left: -70%;
 }
 
 .google-login a:link {
@@ -590,7 +589,7 @@ footer {
   cursor: pointer;
   outline: 0;
 }
-.google-login :hover{
+.google-login :hover {
   color: #fbfbfb;
 }
 .spotify-login a:link {
@@ -606,7 +605,7 @@ footer {
   cursor: pointer;
   outline: 0;
 }
-.spotify-login{
+.spotify-login {
   color: #c8c8c8c8;
   border-radius: 10px;
   margin-top: -74px;
@@ -616,20 +615,20 @@ footer {
   cursor: pointer;
   margin-bottom: 20px;
 }
-.spotify-login h4{
+.spotify-login h4 {
   font-weight: 300;
   margin-top: -45px;
   margin-left: 35px;
   font-size: 22px;
   padding: 4px 6px 6px 0px;
 }
-.spotify-login img{
+.spotify-login img {
   width: 40px;
-  height:  40px ;
+  height: 40px;
   padding: 2px 5px 4px 5px;
-  margin-left:-60%;
+  margin-left: -60%;
 }
-.spotify-login :hover{
+.spotify-login :hover {
   color: #fff;
 }
 .new_member_text {
@@ -1015,12 +1014,11 @@ footer {
     width: 29%;
   }
   .ticket-current-price {
-    vertical-align: unset;
     font-size: 75%;
     display: inline;
     padding-right: 5%;
   }
-  .ticket-checkout-price{
+  .ticket-checkout-price {
     display: inline;
     vertical-align: unset;
   }
