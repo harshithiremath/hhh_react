@@ -73,9 +73,6 @@ class SignIn extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  // componentDidMount() {
-  //   this.props.context.SignOut();
-  // }
   componentDidMount(){
     const cookieJwt = Cookies.get('token');
     if (cookieJwt) {
@@ -98,43 +95,6 @@ class SignIn extends React.Component {
       return <Redirect to="/" />;
     }
   };
-  //handleGoogleSubmit = (e, context) => {
-  //  e.preventDefault();
-  //  //let promise = new Promise(function(resolve, reject) {
-  //  //  // not taking our time to do the job
-  //  //  resolve(123); // immediately give the result: 123
-  //  //});
-  //
-  //  //window.open("http://localhost:5000/auth/google").then(
-  //  //axios.get("http://localhost:5000/auth/google").then((res) => {
-  //  //  if (res.data.done) {
-  //  //    console.log("w");
-  //  //    context.SignIn(res.data.token);
-  //  //    this.setState({ redirect: true });
-  //  //  } else {
-  //  //    this.setState({
-  //  //      password: "",
-  //  //      showError: true,
-  //  //    });
-  //  //  }
-  //  //});
-  //  //()=>{
-  //    axios.get("/google").then((res) => {
-  //      console.log(res)
-  //      if (res.headers.token) {
-  //        context.SignIn(res.headers.token);
-  //        this.setState({ redirect: true });
-  //      } else {
-  //        this.setState({
-  //          password: "",
-  //          showError: true,
-  //        });
-  //      }
-  //    });
-  //  //}
-  //  //)
-  //};
-
   handleSubmit = (e, context) => {
     e.preventDefault();
     let user = {

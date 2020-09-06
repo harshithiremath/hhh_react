@@ -102,6 +102,35 @@
     width: 33%;
     font-size: 25px;
   }
+  .ticket-checkout-page-right-container{
+    width: 90%;
+    margin-left:0px;
+    margin-right: 20px;
+  }
+  .ticket-quantity {
+    float: left;
+    width: 50%;
+    font-size: 75%;
+    padding-left: 30%;
+    margin-top: -32px;
+  }
+  .ticket-checkout-price{
+    float:right;
+    width: 100%;
+    margin-top:-44px;
+    padding-bottom: 15px;
+  }
+  .ticket-cart-form__quantity{
+    margin-left: 10%;
+    float: right;
+  }
+  .ticket-current-price{
+    float: left;
+    width: 100%;
+  }
+  .ticket-name{
+    padding-bottom: 30px;
+  }
 }
 @media screen and (max-width: 900px) {
   .checkout-page-container {
@@ -135,19 +164,29 @@
   }
   .ticket-checkout-page-right-container{
     width: 90%;
-    margin-left:0px;
+    margin-left: 0px;
   }
   .ticket-quantity {
-    display: inline;
+    float: left;
+    width: 50%;
     font-size: 75%;
-    vertical-align: unset;
-    padding-right: 20%;
+    padding-left: 30%;
+    margin-top: -32px;
   }
   .ticket-checkout-price{
-    display: inline;
-    vertical-align: middle;
+    float:right;
+    width: 100%;
+    margin-top:-44px;
+    padding-bottom: 15px;
   }
   .ticket-cart-form__quantity{
     margin-left: 10%;
+  }
+  .ticket-current-price{
+    float: left;
+    width: 100%;
+  }
+  .ticket-name{
+    padding-bottom: 30px;
   }
 }

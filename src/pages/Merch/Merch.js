@@ -70,7 +70,7 @@ function Merch(props) {
       </h1>
       <div className="tourLower">
         <h4 style={{ color: "#222f3e", paddingTop: 8 }}>
-          Rs. {props.item.price}
+          ₹ {props.item.price}
         </h4>
         {fast ? (
           <h6 style={{ color: "red" }}>{text1}</h6>

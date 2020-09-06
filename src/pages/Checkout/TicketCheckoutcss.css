@@ -12,17 +12,6 @@
   margin-bottom: 10%;
   border-bottom: none;
 }
-@media screen and(max-width:1000px){
-
-  .ticket-checkout-page-right-container{
-    width: 100%;
-    position: relative !important;
-    color: khaki !important;
-  }
-  .ticket-checkout-details{
-    width:50%;
-  }
-}
 .ticket-name {
   padding-left: 1%;
   width: 40%;
